@@ -10,5 +10,5 @@ git add --all
 git commit -m "Initial commit"
 git push -u origin master
 ## ...你完成了！
-启动浏览器并转到https：// wuxiumu .github.io
+启动浏览器并转到https://wuxiumu.github.io
 ```
