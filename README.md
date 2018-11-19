@@ -1,4 +1,4 @@
-# wuxiumu-.github.io
+# wuxiumu.github.io
 ```git
 ## 隆存储库,要存储项目的文件夹，并克隆新存储库：
 git clone https://github.com/wuxiumu/wuxiumu.github.io
