@@ -1,4 +1,4 @@
- ---
+---
 layout:     post
 title:      "Github pages 绑定个人域名"
 subtitle:   "Github pages,Bind a personal domain name"
