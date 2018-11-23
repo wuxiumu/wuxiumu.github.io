@@ -10,7 +10,7 @@ tags:
     - 工具
 ---
 
-> “Yeah It's on. ”
+> “JUST DO IT. ”
 
 
 ## 配置

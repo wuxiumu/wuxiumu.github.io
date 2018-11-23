@@ -10,10 +10,10 @@ tags:
     - 工具
 ---
 
-> “Yeah It's on. ”
+> “JUST DO IT. ”
 
 
-## git add . 的时候遇到warning: LF will be replaced by CRLF in ...... 解决办法
+**git add . 的时候遇到warning: LF will be replaced by CRLF in ...... 解决办法**
 输 入 git add . 后出现
 ```
 git add -A
