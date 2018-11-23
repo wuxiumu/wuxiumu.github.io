@@ -61,7 +61,7 @@ netease_comment: false
 
 # Google Analytics
 ga_track_id: 'UA-129669984-1'            # Format: UA-xxxxxx-xx （https://analytics.google.com）
-ga_domain: wuxiumu.github.io
+ga_domain: wqb.science
 
 
 
@@ -87,9 +87,9 @@ service-worker: true
 # Friends
 friends: [
     {
-    #     title: "Su",
-    #     href: "http://su.gallery/"
-    # },{
+        title: "吴庆宝的Wordpress",
+        href: "https://meiyoufan.com/"
+    },{
         title: "乱序",
         href: "http://mida.re/"
     },{
