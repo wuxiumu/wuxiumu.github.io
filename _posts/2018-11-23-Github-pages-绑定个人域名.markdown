@@ -17,7 +17,7 @@ tags:
 
 
 ## 前言
-近日搭建了自己的 Blog，使用的是 Hexo + github pages。众所周知，github pages的域名都是统一的your_name.github.io。想了想，能不能换个域名呢？当然是可以滴。
+近日搭建了自己的 Blog，使用的是 Hux + github pages。众所周知，github pages的域名都是统一的your_name.github.io。想了想，能不能换个域名呢？当然是可以滴。
 于是，在度娘了之后，也算找到了方法。但是网上的介绍都是操作流程，没有详细的解释，我自己也是有些迷糊。好在域名绑定成功了。
 遂决定写一篇博文分享一下自己对这个过程的理解。
 请自行准备：个人的 github pages，个人域名
@@ -37,12 +37,12 @@ tags:
 > 你的 `github.io` 的 `IP` 值
 > 在官方提供的两个 `IP` 中选择 `192.30.252.153`、`192.30.252.154`
 ```
-(2) CNAME类型 （如图提示），请选好主机记录，按主机记录类型填写记录值。推荐选择的 @ ，那么记录值就填写按各位github名填写your_name.github.io就好了。
+(2) CNAME类型，请选好主机记录，按主机记录类型填写记录值。推荐选择的 @ ，那么记录值就填写按各位github名填写your_name.github.io就好了。
 
 ### 2.github pages 方面的 CNAME 文件配置
 （1）在github的github pages的仓库根目录里加上CNAME文件，里面写上个人域名即可。我的是：
 ```
-wqb.me
+wqb.science
 ```
 （2）或者直接在github.io仓库的Settings的GitHub Pages项直接设置Custom domain,github会自动添加CNAME文件:
 
