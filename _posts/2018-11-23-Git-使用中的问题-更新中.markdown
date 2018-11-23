@@ -32,5 +32,7 @@ git config --global core.autocrlf false
 原因是路径中存在 / 的符号转义问题，false就是不转换符号默认是true，相当于把路径的 / 符号进行转义，这样添加的时候就有问题
 
 **git commit 报 "Changes not staged for commit:"是怎么回事?**
+
 你 git add 了吗
+
 —— wuxiumu 后记于 2018.11
