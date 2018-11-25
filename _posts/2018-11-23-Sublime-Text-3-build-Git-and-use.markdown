@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Sublime Text 3 搭建 Git 及使用"
-subtitle:   " \"Sublime Text 3 搭建 Git 及使用\""
+subtitle:   " \"Sublime Text 3 build Git and use\""
 date:       2018-11-23 12:00:00
 author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "git 更新代码到本地"
-subtitle:   " \"git 更新代码到本地\""
+subtitle:   " \"Git update code to local\""
 date:       2018-11-23 12:01:00
 author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"
