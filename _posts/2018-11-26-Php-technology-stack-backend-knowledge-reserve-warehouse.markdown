@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "knowledge"
+title:      "php技术栈后端程序员的知识储备仓库"
 subtitle:   " \"Php technology stack backend knowledge reserve warehouse\""
 date:       2018-11-26 09:10:00
 author:     "吴庆宝"
@@ -10,7 +10,7 @@ tags:
     - 知识
 ---
 
-> 一个php技术栈后端猿的知识储备仓库
+> php技术栈后端程序员的知识储备仓库
 
 ## 前言
 
