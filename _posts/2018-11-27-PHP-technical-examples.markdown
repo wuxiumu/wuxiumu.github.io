@@ -37,7 +37,7 @@ use Test\TestClass;//use引入类
 abstract class StandardExample 
 {
 
-｝
+}
 ```
 
 ## 常量描述.[大写下划线分割]
@@ -200,8 +200,8 @@ public function tooLangFunction(
     $valueThree = '',
     $valueFour  = '',
     $valueFive  = '',
-    $valueSix   = '')
-    // 参数过多换行
+    $valueSix   = '')// 参数过多换行
+    
 {
 
   // 控制结构=>后加空格,同{一行，（右边和)左边不加空格
