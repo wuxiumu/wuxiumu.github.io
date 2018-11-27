@@ -28,7 +28,7 @@ foreach ($arr as $k => $v) {
     ...
     // 一系列判断得到你想要的数据
     if (...) {
-        $tmp[$k]['youwantbyjudge'] = 'TIGERB';
+        $tmp[$k]['youwantbyjudge'] = 'wuxiumu';
     }
     ...
 }
@@ -41,7 +41,7 @@ foreach ($arr as $k => $v) {
     // 一系列判断得到你想要的数据
     if (...) {
         // 复写值为你想要的
-        $arr[$k]['youwantbyjudge'] = 'TIGERB'
+        $arr[$k]['youwantbyjudge'] = 'wuxiumu'
     }
     ...
     // 干掉你不想要的结构
@@ -58,7 +58,7 @@ foreach ($arr as ＆$v) {
     // 一系列判断得到你想要的数据
     if (...) {
         // 复写值为你想要的
-        $v['youwantbyjudge'] = 'TIGERB'
+        $v['youwantbyjudge'] = 'wuxiumu'
     }
     ...
     // 干掉你不想要的结构

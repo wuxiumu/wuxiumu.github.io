@@ -30,9 +30,29 @@ fixing    | 查漏补缺修改中
 ## 目录
 
 - PHP基础学习(done)
-  - [实例](/2018/11/27/PHP-technical-examples)
-  - [文档](/2018/11/27/PHP-coding-specifications-and-recommendations)
-  - [经验](/2018/11/27/PHP-experience/)
+
+  - 符合PSR的PHP编程规范
+
+    - [实例](/2018/11/27/PHP-technical-examples)
+    - [文档](/2018/11/27/PHP-coding-specifications-and-recommendations)
+    - [经验](/2018/11/27/PHP-experience/)
+
+  - 基础知识[读(R)好(T)文(F)档(M)]
+    - [数据类型] 
+
+    - [运算符优先级] 
+    - [string函数] 
+    - [array函数] 
+    - [math函数] 
+    - [面向对象] 
+    - 版本新特性
+
+      - [7.1] 
+      - [7.0] 
+      - [5.6] 
+      - [5.5] 
+      - [5.4] 
+      - [5.3] 
 - PHP深入学习(doing)
  
 - 网络编程(doing)
