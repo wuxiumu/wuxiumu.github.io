@@ -27,8 +27,8 @@ namespace Standard;
 use Test\TestClass;//use引入类
 ```
 
-##类描述[大写开头驼峰]
-  
+## 类描述[大写开头驼峰]
+   
 类名必须大写开头驼峰.
 
 ```php
@@ -40,13 +40,13 @@ abstract class StandardExample
 ｝
 ```
 
-##常量描述.[大写下划线分割]
+## 常量描述.[大写下划线分割]
 
 @var string
 ```php
 const THIS_IS_A_CONST = ''; // 常量全部大写下划线分割
 ```
-##属性描述.[小写驼峰]
+## 属性描述.[小写驼峰]
 
 @var string
 ```php
@@ -105,7 +105,9 @@ public function __construct($value = '')
 
 public function testFunction($value = '')
 {
+
     // code...
+
 }
 ```
 
@@ -119,7 +121,9 @@ public function testFunction($value = '')
 
 private function _privateTestFunction($value = '')
 {
+
     // code...
+
 }
 ```
 
@@ -135,6 +139,7 @@ private function _privateTestFunction($value = '')
 
 public static function staticFunction($value = '')
 {
+
   // code...
 }
 ```
@@ -163,7 +168,9 @@ abstract public function abstractFunction($value = '');
 
 final public function finalFunction($value = '')
 {
+
   // code...
+
 }
 ```
 ## 成员方法名称.[控制结构]
@@ -171,10 +178,15 @@ final public function finalFunction($value = '')
 成员方法描述
 
 @param  string $valueOne 形参名称/描述
+
 @param  string $valueTwo 形参名称/描述
+
 @param  string $valueThree 形参名称/描述
+
 @param  string $valueFour 形参名称/描述
+
 @param  string $valueFive 形参名称/描述
+
 @param  string $valueSix 形参名称/描述
 
 @return 返回值类型        返回值描述
@@ -195,10 +207,13 @@ public function tooLangFunction(
   // 控制结构=>后加空格,同{一行，（右边和)左边不加空格
 
   if ($valueOne === $valueTwo) {
+
     // code...
+
   }
 
   switch ($valueThree) {
+
     case 'value':
 
       // code...
@@ -227,7 +242,7 @@ public function tooLangFunction(
   for ($i=0; $i < $valueSix; $i++) {
    
     // code...
-    
+
   }
 }
 ```
