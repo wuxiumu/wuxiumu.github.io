@@ -30,9 +30,9 @@ fixing    | 查漏补缺修改中
 ## 目录
 
 - PHP基础学习(done)
-  - 实例
-  - 文档
-  - 经验
+  - [实例](/2018/11/27/PHP-technical-examples)
+  - [文档](/2018/11/27/PHP-coding-specifications-and-recommendations)
+  - [经验](/2018/11/27/PHP-experience/)
 - PHP深入学习(doing)
  
 - 网络编程(doing)

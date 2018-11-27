@@ -13,7 +13,7 @@ tags:
 
 > php技术栈后端程序员的知识储备仓库
 
-<h3 align="center">PHP编码规范及建议</h3>
+## PHP编码规范及建议 
 
 ### 编码规范
 
@@ -25,13 +25,13 @@ tags:
 // 不结尾
 ```
 
-- PHP代码文件必须以不带BOM的UTF-8编码。
+- PHP代码文件必须以**不带BOM的UTF-8**编码。
 
 ```
 例sublime, setting增加，"show_encoding" : true
 ```
 
-- 每行的字符数不超过 80 个字符
+- 每行的字符数**不超过 80 个字符**
 
 ```
 例，sublime
@@ -69,7 +69,7 @@ d.php
 ini_set('some_vars', value);
 ```
 
-- 类/trait/Interface的命名必须遵循 StudlyCaps 大写开头的驼峰命名规范。
+- 类/trait/Interface的命名必须遵循 StudlyCaps **大写开头的驼峰命名**规范。
 
 ```
 class StudlyCaps
@@ -89,7 +89,7 @@ Interface StudlyCaps
 
 ```
 
-- 类中的常量所有字母都必须大写，单词间用下划线分隔。
+- 类中的常量所有字母都**必须大写，单词间用下划线分隔**。
 
 ```
 define('FOO_BAR', 'something more');
@@ -98,7 +98,7 @@ const FOO_BAR = value;
 
 ```
 
-- 方法(类/trait中)名称必须符合 camelCase 式的小写开头驼峰命名规范。
+- 方法(类/trait中)名称必须符合 camelCase 式的**小写开头驼峰命名**规范。
 
 ```
 class StudlyCaps
@@ -111,7 +111,7 @@ class StudlyCaps
 
 ```
 
-- 函数名称必须符合 snake_case 式的下划线式命名规范。
+- 函数名称必须符合 snake_case 式的**下划线式命名**规范。
 
 ```
 function snake_case()
@@ -121,7 +121,7 @@ function snake_case()
 
 ```
 
-- 私有的(private)方法(类/trait中)名称必须符合 _camelCase 式的前置下划线小写开头驼峰命名规范。
+- 私有的(private)方法(类/trait中)名称必须符合_camelCase 式的**前置下划线小写开头驼峰命名**规范。
 
 ```
 class StudlyCaps
@@ -147,7 +147,7 @@ class StudlyCaps
 
 ```
 
-- 变量 必须符合 camelCase 式的小写开头驼峰命名规范。
+- **变量**必须符合 camelCase 式的**小写开头驼峰命名**规范。
 
 ```
 
@@ -162,7 +162,7 @@ class StudlyCaps
 
 ```
 
-- 方法/函数 多参数时，之间要有1个空格
+- 方法/函数 多参数时，之间要有**1个空格**
 
 ```
 
@@ -176,7 +176,7 @@ class StudlyCaps
 
 ```
 
-- 运算符/表达式 要有一个空格
+- 运算符/表达式 要有**一个空格**
 
 ```
 $a = $b + $c;
@@ -184,7 +184,7 @@ $a = $b . $c;
 
 ```
 
-- 每个 namespace 命名空间声明语句块 和 use 声明语句块后面，必须 插入一个空白行。
+- 每个 namespace 命名空间声明语句块 和 use 声明语句块后面，必须 **插入一个空白行**。
 
 ```
 namespace Standard;
@@ -360,7 +360,7 @@ $this->nameTest->functionOne()
                ->functionThree();
 ```
 
-- 数组php5.4以后，使用[]
+- 数组php5.4以后，**使用[]**
 
 ```
 $a = [
@@ -378,7 +378,7 @@ $str = 'str';
 $arg = "$str";
 ```
 
-- 声明类或者方法或函数添加描述&属性描述&作者
+- 声明类或者方法或函数添加**描述&属性描述&作者**
 
 ```
 /**
