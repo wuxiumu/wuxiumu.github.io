@@ -32,7 +32,9 @@ use Test\TestClass;//use引入类
 类名必须大写开头驼峰.
 
 ```php
-abstract class StandardExample // {}必须换行
+// {}必须换行
+
+abstract class StandardExample 
 {
 
 ｝
@@ -42,14 +44,16 @@ abstract class StandardExample // {}必须换行
 
 @var string
 ```php
-  const THIS_IS_A_CONST = ''; // 常量全部大写下划线分割
+const THIS_IS_A_CONST = ''; // 常量全部大写下划线分割
 ```
 ##属性描述.[小写驼峰]
 
 @var string
 ```php
 public $nameTest = ''; 
+
 // 属性名称建议开头小写驼峰
+
 // 成员属性必须添加public（不能省略）， private, protected修饰符
 ```
 
@@ -67,17 +71,23 @@ private $_privateNameTest = '';
 @param  string $value 形参名称/描述
 ```php  
 // 成员方法必须添加public（不能省略）， private, protected修饰符
+
+// {}必须换行
+
 public function __construct($value = '')
-{// {}必须换行
+{
   $this->nameTest = new TestClass();
 
   // 链式操作
+
   $this->nameTest->functionOne()
                  ->functionTwo()
                  ->functionThree();
 
   // 一段代码逻辑执行完毕 换行
+
   // code...
+
 }
 ```
 
@@ -92,6 +102,7 @@ public function __construct($value = '')
 返回值类型：string，array，object，mixed（多种，不确定的），void（无返回值）
 ```php  
 // 成员方法必须小写开头驼峰
+
 public function testFunction($value = '')
 {
     // code...
@@ -105,6 +116,7 @@ public function testFunction($value = '')
 @return 返回值类型        返回值描述
 ```php  
 // 私有成员方法【个人建议】下划线小写开头驼峰
+
 private function _privateTestFunction($value = '')
 {
     // code...
@@ -119,10 +131,11 @@ private function _privateTestFunction($value = '')
 
 @return 返回值类型        返回值描述
 ```php
- // static位于修饰符之后
+// static位于修饰符之后
+
 public static function staticFunction($value = '')
 {
-// code...
+  // code...
 }
 ```
 ## 成员方法名称.[abstract]
@@ -134,6 +147,7 @@ public static function staticFunction($value = '')
 @return 返回值类型        返回值描述
 ```php
 // abstract位于修饰符之前
+
 abstract public function abstractFunction($value = ''); 
 ```
 
@@ -146,6 +160,7 @@ abstract public function abstractFunction($value = '');
 @return 返回值类型        返回值描述
 ```php
 // final位于修饰符之前
+
 final public function finalFunction($value = '')
 {
   // code...
@@ -165,39 +180,54 @@ final public function finalFunction($value = '')
 @return 返回值类型        返回值描述
 ```php
 public function tooLangFunction(
+
     // 变量命名可小写开头驼峰或者下划线命名,个人那习惯，据说下划线可读性好
+
     $valueOne   = '', 
     $valueTwo   = '',
     $valueThree = '',
     $valueFour  = '',
     $valueFive  = '',
-    $valueSix   = '')// 参数过多换行
+    $valueSix   = '')
+    // 参数过多换行
 {
+
   // 控制结构=>后加空格,同{一行，（右边和)左边不加空格
+
   if ($valueOne === $valueTwo) {
     // code...
   }
 
   switch ($valueThree) {
     case 'value':
+
       // code...
+
       break;
 
     default:
+
       // code...
+
       break;
   }
 
   do {
+
     // code...
+
   } while ($valueFour <= 10);
 
   while ($valueFive <= 10) {
+    
     // code...
+
   }
 
   for ($i=0; $i < $valueSix; $i++) {
+   
     // code...
+    
   }
 }
 ```

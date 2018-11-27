@@ -38,21 +38,22 @@ fixing    | 查漏补缺修改中
     - [经验](/2018/11/27/PHP-experience/)
 
   - 基础知识[读(R)好(T)文(F)档(M)]
-    - [数据类型] 
+    - [数据类型](http://php.net/manual/zh/language.types.php)
 
-    - [运算符优先级] 
-    - [string函数] 
-    - [array函数] 
-    - [math函数] 
-    - [面向对象] 
+    - [运算符优先级](http://php.net/manual/zh/language.operators.precedence.php)
+    - [string函数](http://php.net/ref.strings.php)
+    - [array函数](http://php.net/manual/zh/ref.array.php)
+    - [math函数](http://php.net/manual/zh/ref.math.php)
+    - [面向对象](http://php.net/manual/zh/language.oop5.php)
     - 版本新特性
 
-      - [7.1] 
-      - [7.0] 
-      - [5.6] 
-      - [5.5] 
-      - [5.4] 
-      - [5.3] 
+      - [7.1](http://php.net/manual/zh/migration71.new-features.php)
+      - [7.0](http://php.net/manual/zh/migration70.new-features.php)
+      - [5.6](http://php.net/manual/zh/migration56.new-features.php)
+      - [5.5](http://php.net/manual/zh/migration55.new-features.php)
+      - [5.4](http://php.net/manual/zh/migration54.new-features.php)
+      - [5.3](http://php.net/manual/zh/migration53.new-features.php)
+       
 - PHP深入学习(doing)
  
 - 网络编程(doing)
