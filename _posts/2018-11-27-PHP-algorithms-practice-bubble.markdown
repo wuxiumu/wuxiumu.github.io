@@ -33,13 +33,19 @@ function bubble($value = [])
 {
   $length = count($value) - 1;
   // 外循环
+
   // outside loop
+
   for ($j = 0; $j < $length; ++$j) {
       // 内循环
+
       // inside loop
+
       for ($i = 0; $i < $length; ++$i) {
           // 如果后一个值小于前一个值，则互换位置
+
           // if the next value is less than the current value, exchange each other.
+          
           if ($value[$i + 1] < $value[$i]) {
               $tmp = $value[$i + 1];
               $value[$i + 1] = $value[$i];

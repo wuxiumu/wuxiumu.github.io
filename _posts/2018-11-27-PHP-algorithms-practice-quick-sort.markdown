@@ -36,6 +36,7 @@ shuffle($arr);
 function quick(&$value, $left, $right)
 {
 	// 左右界重合 跳出
+	
 	if ($left >= $right) {
 	  return;
 	}
@@ -53,6 +54,7 @@ function quick(&$value, $left, $right)
 		      $value[$i] = $value[$base];
 		      $value[$base] = $tmp;
 		      $base = $i; // 更新基准值索引
+
 		      break;
 		    }
 		}
@@ -74,7 +76,9 @@ function quick(&$value, $left, $right)
 	} while ($i > $j);// 直到左右索引重合为止
 
 	// 开始递归
+
 	// 以当前索引为分界
+
 	// 开始排序左部分
 
 	quick($value, $left, $i-1);
@@ -88,7 +92,7 @@ function quick(&$value, $left, $right)
 调用并测试运算时间
 ```php
 $t1 = microtime(true);
-bubble($arr);
+quick($arr);
 $t2 = microtime(true);
 echo (($t2 - $t1) * 1000 . 'ms');
 ```
@@ -151,7 +155,7 @@ function quick_while(&$value, $left, $right)
 调用并测试运算时间
 ```php
 $t1 = microtime(true);
-bubble($arr);
+quick_while($arr);
 $t2 = microtime(true);
 echo (($t2 - $t1) * 1000 . 'ms');
 ```
