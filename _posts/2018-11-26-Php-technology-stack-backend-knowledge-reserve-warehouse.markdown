@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "php技术栈后端程序员的知识储备仓库"
-subtitle:   " \"Php technology stack backend knowledge reserve warehouse\""
+title:      "PHP技术栈后端程序员的知识储备仓库"
+subtitle:   " \"PHP technology stack backend knowledge reserve warehouse\""
 date:       2018-11-26 09:10:00
 author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"

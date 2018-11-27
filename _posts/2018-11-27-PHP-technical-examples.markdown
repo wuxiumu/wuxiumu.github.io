@@ -141,6 +141,7 @@ public static function staticFunction($value = '')
 {
 
   // code...
+  
 }
 ```
 ## 成员方法名称.[abstract]
