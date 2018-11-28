@@ -69,6 +69,7 @@ function quick(&$value, $left, $right)
 		      $value[$j] = $value[$base];
 		      $value[$base] = $tmp;
 		      $base = $j; // 更新基准值索引
+		      
 		      break;
 		    }
 		}
@@ -109,6 +110,7 @@ echo (($t2 - $t1) * 1000 . 'ms');
 function quick_while(&$value, $left, $right)
 {
 	// 左右界重合 跳出
+
 	if ($left >= $right) {
 	  return;
 	}
@@ -117,7 +119,9 @@ function quick_while(&$value, $left, $right)
 	$i = $right;
 	$j = $left;
 	while ($i > $j) {
+
 	  //查右边值
+
 	  while ($i > $point) {
 	    if ($value[$i] < $value[$point]) {
 	      $tmp = $value[$i];
@@ -130,6 +134,7 @@ function quick_while(&$value, $left, $right)
 	  }
 
 	  //查左边值
+
 	  while ($j < $point) {
 	    if ($value[$j] > $value[$point]) {
 	      $tmp = $value[$j];
@@ -143,10 +148,15 @@ function quick_while(&$value, $left, $right)
 	}
 
 	// 开始递归
+
 	// 以当前索引为分界
+
 	// 开始排序左部分
+
 	quick_while($value, $left, $i-1);
+
 	// 开始排序右边部分
+
 	quick_while($value, $i+1, $right);
 
 	return $value;
