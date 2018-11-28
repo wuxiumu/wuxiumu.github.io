@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "knowledge"
 subtitle:   " \"PHP technology stack backend knowledge reserve warehouse\""
 date:       2018-11-26 09:10:00
