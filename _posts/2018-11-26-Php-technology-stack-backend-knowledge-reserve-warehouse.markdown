@@ -101,7 +101,7 @@ fixing    | 查漏补缺修改中
   - 常见业务实际使用
   - redis的基础数据结构
 
-- Docker
+- Docker(doing)
   - [redis主从搭建]
   - [mysql主从搭建]
   - [codis环境]
@@ -151,13 +151,13 @@ fixing    | 查漏补缺修改中
 
     - 排序算法(α)
 
-      - [冒泡排序] 
-      - [快速排序] 
-      - [选择排序] 
-      - [插入排序] 
-      - [归并排序] 
-      - [希尔排序] 
-      - [基数排序] 
+      - [冒泡排序](/2018/11/26/PHP-algorithms-practice-bubble) 
+      - [快速排序](/2018/11/26/PHP-algorithms-practice-quick-sort)
+      - [选择排序](/2018/11/28/PHP-algorithms-practice-select) 
+      - [插入排序](/2018/11/28/PHP-algorithms-practice-insert) 
+      - [归并排序](/2018/11/28/PHP-algorithms-practice-merge) 
+      - [希尔排序](/2018/11/28/PHP-algorithms-practice-shell) 
+      - [基数排序](/2018/11/28/PHP-algorithms-practice-radix) 
 
 - 网络基础(doing)
 
