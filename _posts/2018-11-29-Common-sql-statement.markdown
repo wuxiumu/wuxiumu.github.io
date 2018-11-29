@@ -13,6 +13,74 @@ tags:
 
 >  Mysql基础
 
+## mysql安装
+
+### 1、yum安装
+
+```sh
+
+# 检测已安装的mysql
+yum list installed | grep mysql
+
+# 移除已安装的mysql
+yum -y remove mysql-libs.x86_64
+
+# 下载mysql5.7的rpm包
+wget https://dev.mysql.com/get/mysql57-community-release-el6-11.noarch.rpm
+
+# yum本地安装源
+yum localinstall mysql57-community-release-el6-11.noarch.rpm
+
+# 检测允许安装的mysql插件
+yum repolist enabled | grep mysql
+yum search mysql-community
+
+# 安装mysql
+yum -y install mysql-community-server.x86_64
+
+# 启动mysql
+service mysqld start
+
+# 自启动
+chkconfig mysqld on
+
+# 初始密码
+-> 2lNu<K?kk;6%
+grep 'temporary password' /var/log/mysqld.log
+
+# 进入数据库
+mysql -u root -p 2lNu<K?kk;6%
+
+# 修改密码
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Root666,.';
+
+# 远程登录密码
+GRANT ALL ON *.* to root@'%' IDENTIFIED BY 'Root666,.';
+GRANT ALL ON *.* to shengj@'%' IDENTIFIED BY 'Root666,.';
+
+# 远程登录
+mysql -h 104.223.3.138  -u root  -p Root666,.
+```
+### 1、数据库
+
+```sql
+
+# 创建数据库
+create database `demo`;
+
+# 查看所有数据库
+show databases;
+
+# 查看某个数据库
+show create database `demo`;
+
+# 修改数据库编码
+alter database `demo` default character set utf8 collate utf8_unicode_ci;
+
+# 删除数据库
+drop database `demo`;
+```
+
 ## 常用sql语句整理：mysql
 
 
@@ -126,6 +194,73 @@ WHERE a.id = b.a_id...;
 ```
 SELECT `column_name_one`, `column_name_two`
 FROM `table_name`;
+```
+
+- where条件查询
+```
+select * from `user` where id=1;
+```
+
+- in/not in 关键字查询
+```
+select * from `user` where id in (1,2);
+select * from `user` where id not in (1,2);
+```
+
+- between and 关键字查询
+```
+select * from `user` where id between 1 and 3;
+```
+
+- 空值(null)查询，使用is null来判断
+```
+alter table `user` add `age` varchar(10) default null;
+select * from `user` where age is null;
+```
+
+- distinct(去重)关键字查询
+```
+select distinct(account) from `user`;
+```
+
+- like关键字查询
+```
+select * from `user` where `account` like "%en%";
+```
+
+- and关键字多条件查询,or关键字的使用也是类似
+```
+select * from `user` where `account`='shengj' and `id`>1;
+select * from `user` where `account`='shengj' or  `account`='cenh';
+```
+
+### 聚合函数
+count()函数 -> 记录总条数
+sum()函数 -> 某个字段的总和
+avg()函数 -> 字段的平均数
+max()函数 -> 字段的最大值
+min()函数 -> 字段的最小值
+
+- 排序 order by
+```
+select * from `user` order by `id` desc; // 倒序
+select * from `user` order by `id` asc; // 升序 默认
+```
+
+- 分组 group by
+```
+select * from `user` group by `id`;
+```
+
+- 使用limit限制查询结果的数量
+```
+select * from `user` limit 2;
+```
+
+- 别名 as
+```
+select u.id from `user` as u; // 表别名
+select account as name from `user`; // 字段别名
 ```
 
 - 关联查询

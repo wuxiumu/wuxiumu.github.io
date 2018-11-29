@@ -35,7 +35,7 @@ fixing    | 查漏补缺修改中
 
     - [实例](/2018/11/27/PHP-technical-examples)
     - [文档](/2018/11/27/PHP-coding-specifications-and-recommendations)
-    - [经验](/2018/11/27/PHP-experience/)
+    - [经验](/2018/11/27/PHP-experience)
 
   - 基础知识[读(R)好(T)文(F)档(M)]
     - [数据类型](http://php.net/manual/zh/language.types.php)
@@ -46,7 +46,8 @@ fixing    | 查漏补缺修改中
     - [math函数](http://php.net/manual/zh/ref.math.php)
     - [面向对象](http://php.net/manual/zh/language.oop5.php)
     - 版本新特性
-
+    
+      - [7.2](http://php.net/manual/zh/migration72.new-features.php)
       - [7.1](http://php.net/manual/zh/migration71.new-features.php)
       - [7.0](http://php.net/manual/zh/migration70.new-features.php)
       - [5.6](http://php.net/manual/zh/migration56.new-features.php)
@@ -62,8 +63,8 @@ fixing    | 查漏补缺修改中
  
 - Mysql(doing)
 
-  - [常用sql语句] 
-  - [引擎] 
+  - [常用sql语句](/2018/11/29/Common-sql-statement) 
+  - [引擎](/2018/11/29/Mysql-engine)  
   - [事务] 
   - [索引] 
     + 建立表结构时添加的索引
@@ -176,7 +177,7 @@ fixing    | 查漏补缺修改中
 
 - 计算机基础(doing)
 
-  - [linux常用命令]
+  - [linux常用命令](/2018/11/29/Linux-common-command) 
   - shell
 
 - 高并发相关(not-start)
@@ -184,28 +185,37 @@ fixing    | 查漏补缺修改中
 ---
 
 ## PHP基础学习
+[php.net](http://php.net/manual/zh/)
+[慕课网](https://www.imooc.com/course/list?c=php)
+```
+composer install
+php -S localhost:8000
+# 浏览器
+http://localhost:8000/php/index.php
+# 命令行
+php index.php
+```
 
-### 符合PSR的PHP编程规范(含个人建议)
+### 符合PSR的PHP编程规范
+[PHP 标准规范](https://psr.phphub.org/)
 
-#### [实例] 
+#### [实例](/2018/11/27/PHP-technical-examples)
 
-#### [文档] 
+#### [文档](/2018/11/27/PHP-coding-specifications-and-recommendations)
 
-#### [经验] 
-
-#### [记一些坑] 
+#### [经验](/2018/11/27/PHP-experience)
 
 ## Mysql
 
-### [常用sql语句] 
+### [常用sql语句](/2018/11/29/Common-sql-statement) 
 
-### [引擎] 
+### [引擎](/2018/11/29/Mysql-engine)  
 
-### [事务] 
+### [事务](/2018/11/29/Mysql-engine#事务)   
 
-### [索引] 
+### [索引](/2018/11/29/Mysql-engine#索引) 
 
-### [锁] 
+### [锁](/2018/11/29/Mysql-engine#锁)  
 
 ## Redis
 

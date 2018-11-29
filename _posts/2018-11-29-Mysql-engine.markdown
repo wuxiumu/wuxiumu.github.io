@@ -265,3 +265,87 @@ tags:
     * hash表(散列表)
 - b-tree索引
 - b+tree索引
+
+—— mysql优化 后记
+## 六、mysql优化
+
+### 1、编码
+
+```sql
+# 查看mysql编码
+show variables like 'character%';
++--------------------------+----------------------------+
+| Variable_name            | Value                      |
++--------------------------+----------------------------+
+| character_set_client     | utf8mb4                    | 客户端来源数据使用的字符集
+| character_set_connection | utf8mb4                    | 连接层字符集
+| character_set_database   | utf8                       | 当前选中数据库的默认字符集
+| character_set_results    | utf8mb4                    | 查询结果字符集
+| character_set_server     | latin1                     | 默认的内部操作字符集
+| character_set_system     | utf8                       | 系统元数据(字段名等)字符集
++--------------------------+----------------------------+
+8 rows in set (0.01 sec)
+
+# 字符集
+utf8、utf8mb4
+要在 Mysql 中保存 4 字节长度的 UTF-8 字符，需要使用 utf8mb4 字符集，但只有 5.5.3 版本以后的才支持(查看版本： select version();)。我觉得，为了获取更好的兼容性，应该总是使用 utf8mb4 而非 utf8.  对于 CHAR 类型数据，utf8mb4 会多消耗一些空间，根据 Mysql 官方建议，使用 VARCHAR  替代 CHAR。
+
+# 排序规则
+_ci、_bin
+_ci表示大小写不敏感
+_bin表示按编码值比较
+
+```
+
+### 2、多列索引规则
+
+左前缀规则
+
+举例：index(a,b,c)
+
+|条件|索引是否发挥作用|用了哪些列|
+|-|-|-|
+|Where a=3 | 是|只使用了a列|
+|Where a=3 and b=5| 是|使用了a,b列|
+|Where a=3 and b=5 and c=4| 是|使用了abc|
+|Where b=3  or  where c=4| 否||
+|Where a=3 and c=4| 是|a列能发挥索引,c不能|
+|Where a=3 and b>10 and c=7| 是|a能利用,b能利用, c不能利用|
+|where a=3 and b like ‘xxxx%’ and c=7| 是|a能用,b能用,c不能用|
+
+### 3、myisam和innodb索引区别
+
+描述
+
+- myisam主索引和次索引都指向物理行，比如id指向了物理行，由索引到磁盘拿数据（回行）
+- innodb的主索引行上直接存储行的数据，称为聚簇索引，次索引指向主索引，比如id行包括了name、age等等数据，name包括了id
+
+聚簇索引缺点：节点分裂，行数据搬运缓慢，因此尽量用递增整形做索引
+myisam则分裂较快
+
+索引覆盖：查找的字段正好是索引，速度快
+
+### 4、索引选择
+
+1. 查询频繁
+2. 区分度高
+3. 长度小 比如在word字段上设索引，最短长度为2，最长为14，需要测试覆盖率，count(left(word, 4))/count(*)
+4. 尽量能覆盖常用查询字段
+
+### 5、分页优化
+
+- 使用where id > 5000000 limit 10  => limit 5000000,10
+  - 这样的做法是会走id主键索引，速度是非常快的
+  - 需要id连续，因为逻辑删除数据
+- 延迟关联，先取索引数据，再由索引到磁盘拿数据（回行）
+  - select id,name from lx limit 5000000,10 => select lx.id,name from lx inner join (select id
+  - from lx limit 5000000,10) as tmp on lx.id = tmp.id
+
+### 6、索引与排序
+
+1. 对于覆盖索引,直接在索引上查询时,就是有顺序的, using index
+2. 先取出数据,形成临时表做filesort(文件排序,但文件可能在磁盘上,也可能在内存中)
+
+我们的争取目标-----取出来的数据本身就是有序的! 利用索引来排序.
+
+- [『浅入深出』MySQL 中事务的实现](http://draveness.me/mysql-transaction.html)
