@@ -99,7 +99,7 @@ tags:
 - b+tree索引
 
 —— mysql优化 后记
-## 六、mysql优化
+## mysql优化
 
 ### 1、编码
 
