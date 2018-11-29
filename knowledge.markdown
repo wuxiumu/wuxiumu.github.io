@@ -46,7 +46,7 @@ fixing    | 查漏补缺修改中
     - [math函数](http://php.net/manual/zh/ref.math.php)
     - [面向对象](http://php.net/manual/zh/language.oop5.php)
     - 版本新特性
-    
+
       - [7.2](http://php.net/manual/zh/migration72.new-features.php)
       - [7.1](http://php.net/manual/zh/migration71.new-features.php)
       - [7.0](http://php.net/manual/zh/migration70.new-features.php)
@@ -65,8 +65,8 @@ fixing    | 查漏补缺修改中
 
   - [常用sql语句](/2018/11/29/Common-sql-statement) 
   - [引擎](/2018/11/29/Mysql-engine)  
-  - [事务] 
-  - [索引] 
+  - [事务](/2018/11/29/Mysql-engine#事务)    
+  - [索引](/2018/11/29/Mysql-engine#索引)    
     + 建立表结构时添加的索引
       * 主键唯一索引
       * 唯一索引
@@ -81,7 +81,7 @@ fixing    | 查漏补缺修改中
       * b-tree索引
       * b+tree索引
     
-  - [锁] 
+  - [锁](/2018/11/29/Mysql-engine#锁)     
     - 悲观锁
     - 乐观锁
   - 分表
@@ -186,6 +186,7 @@ fixing    | 查漏补缺修改中
 
 ## PHP基础学习
 [php.net](http://php.net/manual/zh/)
+
 [慕课网](https://www.imooc.com/course/list?c=php)
 ```
 composer install
