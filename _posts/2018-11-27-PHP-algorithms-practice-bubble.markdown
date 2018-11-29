@@ -22,6 +22,13 @@ for ($k = 0; $k < 10000; $k++) {
 }
 shuffle($arr);
 ```
+## PHP - 数组的排序函数
+- sort() - 以升序对数组排序
+- rsort() - 以降序对数组排序
+- asort() - 根据值，以升序对关联数组进行排序
+- ksort() - 根据键，以升序对关联数组进行排序
+- arsort() - 根据值，以降序对关联数组进行排序
+- krsort() - 根据键，以降序对关联数组进行排序
 
 ## 排序算法-冒泡排序
 
@@ -119,3 +126,44 @@ bubble_better($arr);
 $t2 = microtime(true);
 echo (($t2 - $t1) * 1000 . 'ms');
 ```
+—— 其他
+```
+public function bubble($value = [])
+{
+    $len = count($value);
+    for ($i=0;$i<$len;$i++) {
+        // 第二层将从键为$i的地方循环到数组最后
+        for ($j=$i+1;$j<$len;$j++) {
+            // 比较数组中相邻两个值的大小
+            if ($value[$i] > $value[$j]) {
+                $tmp       = $value[$i]; // 这里的tmp是临时变量
+                $value[$i] = $value[$j]; // 第一次更换位置
+                $value[$j] = $tmp;       // 完成位置互换
+            }
+        }
+    }
+    return $value;
+}
+```  
+—— 其他
+```
+public function bubble($value = [])
+{
+    $len = count($value);
+    for ($i=0;$i<$len;$i++) {
+        // 第二层将从键为$i的地方循环到数组最后
+        for ($j=0;$j<$len-$i-1;$j++) {
+            // 比较数组中相邻两个值的大小
+            if ($value[$j] > $value[$j+1]) {
+                $tmp       = $value[$j+1]; // 这里的tmp是临时变量
+                $value[$j+1] = $value[$j]; // 第一次更换位置
+                $value[$j] = $tmp;       // 完成位置互换
+            }
+        }
+    }
+    return $value;
+}
+```
+
+## 拓展
+[冒泡排序以及优化]()
