@@ -313,7 +313,7 @@ FROM `destination_table_name`;
 ```
 
 ### 附录：mysql常用命令
-```
+ 
 - 登陆： mysql -h host -u username -p
 - 列出数据库：SHOW DATABESES;
 - 列出表:SHOW TABLES;
@@ -322,8 +322,7 @@ FROM `destination_table_name`;
 - 导入：source 'file';
 - 导出：mysqldump -h 127.0.0.1 -u root -p "database_name" "table_name" --where="condition" > file_name.sql;
 - 查看慢日志：mysqldumpslow -s [c:按记录次数排序/t:时间/l:锁定时间/r:返回的记录数] -t [n:前n条数据] -g "正则"　/path
-- 新增用户： insert into `user`(`Host`, `User`, `authentication_string`) value('localhost', 'username', password('pwd'))
-```
+- 新增用户： insert into `user`(`Host`, `User`, `authentication_string`) value('localhost', 'username', password('pwd')) 
 
 ### mysql 5.7 新增用户
 ```
