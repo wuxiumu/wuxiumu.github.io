@@ -15,7 +15,7 @@ tags:
 
 ## mysql安装
 
-### 1、yum安装
+### yum安装
 
 ```sh
 
@@ -61,7 +61,7 @@ GRANT ALL ON *.* to shengj@'%' IDENTIFIED BY 'Root666,.';
 # 远程登录
 mysql -h 104.223.3.138  -u root  -p Root666,.
 ```
-### 1、数据库
+### 数据库
 
 ```sql
 
@@ -235,10 +235,15 @@ select * from `user` where `account`='shengj' or  `account`='cenh';
 ```
 
 ### 聚合函数
+
 count()函数 -> 记录总条数
+
 sum()函数 -> 某个字段的总和
+
 avg()函数 -> 字段的平均数
+
 max()函数 -> 字段的最大值
+
 min()函数 -> 字段的最小值
 
 - 排序 order by
@@ -307,9 +312,8 @@ SELECT *
 FROM `destination_table_name`;
 ```
 
----
-
 ### 附录：mysql常用命令
+```
 - 登陆： mysql -h host -u username -p
 - 列出数据库：SHOW DATABESES;
 - 列出表:SHOW TABLES;
@@ -319,9 +323,9 @@ FROM `destination_table_name`;
 - 导出：mysqldump -h 127.0.0.1 -u root -p "database_name" "table_name" --where="condition" > file_name.sql;
 - 查看慢日志：mysqldumpslow -s [c:按记录次数排序/t:时间/l:锁定时间/r:返回的记录数] -t [n:前n条数据] -g "正则"　/path
 - 新增用户： insert into `user`(`Host`, `User`, `authentication_string`) value('localhost', 'username', password('pwd'))
+```
 
 ### mysql 5.7 新增用户
-
 ```
 // 插入新用户
 insert into mysql.user(Host, User, authentication_string, ssl_cipher, x509_issuer, x509_subject
