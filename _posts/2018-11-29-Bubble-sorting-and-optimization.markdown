@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "冒泡排序以及优化"
-subtitle:   " \">Bubble sorting and optimization\""
+subtitle:   " \"Bubble sorting and optimization\""
 date:       2018-11-29 15:20:00
 author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"

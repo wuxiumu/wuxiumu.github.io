@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "快速排序算法优化"
-subtitle:   " \">Fast sorting algorithm optimization\""
+subtitle:   " \"Fast sorting algorithm optimization\""
 date:       2018-11-29 15:30:00
 author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"
