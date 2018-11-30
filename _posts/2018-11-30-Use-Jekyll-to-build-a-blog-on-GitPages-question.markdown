@@ -19,6 +19,7 @@ tags:
 2. 拉取代码
 
 在项目页，找到原谅色按钮”clone or download”复制链接，通常为”https://github.com/用户名/项目名.git”。 
+
 调出命令行： 
 - windows为win键+R键，输入cmd 
 ```git
@@ -29,6 +30,7 @@ git clone https://github.com/Huxpro/huxpro.github.io.git
 ## Jekyll
 
 cd jekyll path // 移动到你的jekyll项目下，也就是你从git里clone下来的项目
+
 jekyll serve // 启动服务，默认链接地址\"http:localhost:4000\"
 
 期间遇到的一个问题：
@@ -45,4 +47,5 @@ jekyll 3.8.5 | Error:  jekyll-paginate
 gem install jekyll-paginate
 ```
 安装一下就好了。 
+
 另外也有可能出现没有jekyll-gist错误，解决方法同上，这些错误取决模板所采用的一些服务。 
