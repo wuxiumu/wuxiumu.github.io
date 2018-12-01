@@ -20,8 +20,10 @@ tags:
 
 在项目页，找到原谅色按钮”clone or download”复制链接，通常为”https://github.com/用户名/项目名.git”。 
 
-调出命令行： 
+调出命令行：
+
 - windows为win键+R键，输入cmd 
+
 ```git
 git clone https://github.com/Huxpro/huxpro.github.io.git
 ```
@@ -29,11 +31,20 @@ git clone https://github.com/Huxpro/huxpro.github.io.git
 
 ## Jekyll
 
-cd jekyll path // 移动到你的jekyll项目下，也就是你从git里clone下来的项目
+```
+cd jekyll path
+```
 
-jekyll serve // 启动服务，默认链接地址\"http:localhost:4000\"
+// 移动到你的jekyll项目下，也就是你从git里clone下来的项目
+
+```
+jekyll serve
+```
+
+// 启动服务，默认链接地址\"http:localhost:4000\"
 
 期间遇到的一个问题：
+
 ```
 $ jekyll serve
 Configuration file: C:/www/wuxiumu.github.io/_config.yml
@@ -43,6 +54,7 @@ jekyll 3.8.5 | Error:  jekyll-paginate
 ```
 
 这个原因是因为没有jekyll-paginate，使用
+
 ```
 gem install jekyll-paginate
 ```

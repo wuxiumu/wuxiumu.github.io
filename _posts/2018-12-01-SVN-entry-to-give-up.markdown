@@ -11,6 +11,7 @@ catalog: true
 tags:
     - 工具
 ---
+
 ## svn入门
 慕课网教程 ：[SVN从入门到放弃](https://www.imooc.com/learn/845)
 
@@ -320,7 +321,7 @@ xiaohu=r
 
 打开下面的5个注释
 ```
-anon-access = none#匿名用户可读
+anon-access = none #匿名用户可读
 auth-access = write #授权用户可写
 password-db = passwd #使用哪个文件作为账号文件
 authz-db = authz #使用哪个文件作为权限文件
