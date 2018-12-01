@@ -22,8 +22,10 @@ tags:
 
 解决办法：把这两个文件拷贝一份到系统目录下面，我放到windows下面，或是在httpd.conf的文件中配置一下：
 
+```
 LoadFile "D:/webserver/php/ssleay32.dll"
 LoadFile "D:/webserver/php/libeay32.dll"
+```
 
 ## 开始安装
 
@@ -78,7 +80,7 @@ hprose/hprose RPC框架
 首先得安装Composer命令行工具。由于国内互联网某种神秘的力量让Composer变得越来越不稳定，可能导致安装不了。如果无法按步骤安装，本小节最后我会提供国内下载地址。
 
 脚本自动安装
-下面是安装命令(来自https://getcomposer.org/download/)：
+下面是安装命令(来自[https://getcomposer.org/download/](https://getcomposer.org/download/))：
 
 ```
 php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
@@ -172,6 +174,7 @@ composer update
 声明依赖
 
 在项目目录下创建一个composer.json文件，指明依赖，比如，你的项目依赖 monolog：
+
 ```
 {
     "require": {
@@ -248,17 +251,23 @@ composer dump-autoload
 ```
 
 包版本约束
+
 精确版本：示例： 1.0.2。
 
+```
 范围：使用比较操作符你可以指定包的范围。这些操作符包括：>，>=，<，<=，!=。你可以定义多个范围，使用空格 或者逗号,表示逻辑上的与，使用双竖线||表示逻辑上的或。其中与的优先级会大于或。示例：
+```
 
+```
 >=1.0
 >=1.0 <2.0
 >=1.0 <1.1 || >=1.2
 
 ```
+
 范围（使用连字符）:
 
+```
 例子：1.0 - 2.0，等同于>=1.0.0 <2.1（2.0相当于2.0.*）。
 
 通配符：可以使用通配符去定义版本。1.0.*相当于>=1.0 <1.1。
@@ -325,7 +334,7 @@ composer command --help 以上所有命令都可以添加 --help选项查看帮�
 更多可用命令，可以在命令行输入composer进行查看。
 ```
 
-模块仓库
+#### 模块仓库
 
 packagist.org是Composer的仓库，很多著名的PHP库都能在其中找到。你也可以提交你自己的作品。
 
@@ -333,7 +342,9 @@ packagist.org是Composer的仓库，很多著名的PHP库都能在其中找到�
 
 所以，我们使用国内的镜像站点进行代替，常用方法有两种：
 
-1. 修改全局配置：全局配置的文件一般放在C:\Users\XXX\AppData\Roaming\Composer\config.json，例如C:\Users\YJC\AppData\Roaming\Composer\config.json。
+##### 1. 修改全局配置：
+
+全局配置的文件一般放在C:\Users\XXX\AppData\Roaming\Composer\config.json，例如C:\Users\YJC\AppData\Roaming\Composer\config.json。
 （这里以windows路径为例）。可以通过命令composer config -l查看配置，其中[home]为配置所在目录。config.json即为配置文件。
 
 ```
@@ -354,7 +365,7 @@ packagist.org是Composer的仓库，很多著名的PHP库都能在其中找到�
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
 ```
 
-2. 修改当前配置：即项目当前的composer.json文件；
+##### 2. 修改当前配置：即项目当前的composer.json文件；
 
 ```
 {
@@ -372,7 +383,7 @@ composer config -g repo.packagist composer https://packagist.phpcomposer.com
     ]
 }
 ```
-3. 常见镜像地址：
+##### 3. 常见镜像地址：
 
 https://packagist.org 国外的
 
@@ -395,7 +406,7 @@ intervention/image 图片处理
 mytharcher/alipay-php-sdk
 ```
 
-更多查看：https://packagist.org/explore/popular
+更多查看：[https://packagist.org/explore/popular](https://packagist.org/explore/popular)
 
 发布自己的包
 
@@ -457,40 +468,45 @@ PSR-3 (Logger Interface) 日志接口
 PSR-4 (Improved Autoloading) 自动加载优化标准
 ```
 
-之后，在此标准之上，Composer 横空出世！Composer 利用 PSR-0 和 PSR-4 以及 PHP5.3 的命名空间构造了一个繁荣的 PHP 生态系统。Composer 类似著名的 npm 和 RubyGems，给海量 PHP 包提供了一个异常方便的协作通道，Composer Hub 地址：https://packagist.org/。Composer 中文网站：http://www.phpcomposer.com/。
+之后，在此标准之上，Composer 横空出世！Composer 利用 PSR-0 和 PSR-4 以及 PHP5.3 的命名空间构造了一个繁荣的 PHP 生态系统。Composer 类似著名的 npm 和 RubyGems，给海量 PHP 包提供了一个异常方便的协作通道，
 
-目前 PHP 界风头正劲的 Laravel 和 Symfony 均直接基于 Composer，大家耳熟能详著名框架 CI 和 Yii 的正开发版本 CodeIgniter 3 和 Yii 2 也都基于 Composer（更新：北京时间2014年10月13日 Yii 2 已经发布）。Composer 就是 PHP 框架的未来，有了它，让 CI 的路由和 Laravel 的 Eloquent ORM 协作就会变的非常简单。
+Composer Hub 地址：[https://packagist.org/](https://packagist.org/)
 
-常见问题
+Composer 中文网站：[http://www.phpcomposer.com/](http://www.phpcomposer.com/)。
+
+#### 常见问题
+
 1、Windows下出现：Fxp\Composer\AssetPlugin\Repository\NpmRepository does not exist
 进入C:\Users\YJC\AppData\Roaming\Composer目录，删除vendor目录。
 
-有用的资源
+#### 有用的资源
+
 1、利用 Composer 一步一步构建自己的 PHP 框架（一）——基础准备 - 岁寒
-https://lvwenhan.com/php/405.html
+[https://lvwenhan.com/php/405.html](https://lvwenhan.com/php/405.html)
 
 2、PHP 开发者该知道的 5 个 Composer 小技巧 - 新闻 - SegmentFault
-https://segmentfault.com/a/1190000000355928
+[https://segmentfault.com/a/1190000000355928](https://segmentfault.com/a/1190000000355928)
 
 3、Composer 中文网
-http://www.phpcomposer.com/
+[http://www.phpcomposer.com/](http://www.phpcomposer.com/)
 
 4、Packagist / Composer 中国全量镜像
-http://pkg.phpcomposer.com/
+[http://pkg.phpcomposer.com/](http://pkg.phpcomposer.com/)
 
 5、Composer安装
-https://getcomposer.org/download/
+[https://getcomposer.org/download/](https://getcomposer.org/download/)
 
 6、composer之创建自己的包 - 始终不够
-http://www.huyanping.cn/composer%e4%b9%8b%e5%88%9b%e5%bb%ba%e8%87%aa%e5%b7%b1%e7%9a%84%e5%8c%85/
+[http://www.huyanping.cn/composer%e4%b9%8b%e5%88%9b%e5%bb%ba%e8%87%aa%e5%b7%b1%e7%9a%84%e5%8c%85/](http://www.huyanping.cn/composer%e4%b9%8b%e5%88%9b%e5%bb%ba%e8%87%aa%e5%b7%b1%e7%9a%84%e5%8c%85/)
 
 7、php - 请各位分享或推荐一下composer里面好用的包 - SegmentFault
-https://segmentfault.com/q/1010000000484379
+[https://segmentfault.com/q/1010000000484379](https://segmentfault.com/q/1010000000484379)
 
 8、给 CI 插上翅膀——在 CodeIgniter 2 中使用 Laravel Eloquent ORM - 岁寒
-https://lvwenhan.com/php/414.html
+[https://lvwenhan.com/php/414.html](https://lvwenhan.com/php/414.html)
 
 9、Composer进阶使用 —— 常用命令和版本约束 - icyfire - SegmentFault
-https://segmentfault.com/a/1190000005898222
+[https://segmentfault.com/a/1190000005898222](https://segmentfault.com/a/1190000005898222)
 
-10、http://blog.csdn.net/zzulp/article/details/18981029
+## PHP资源列表
+超出你想象[https://www.jianshu.com/p/f2e40c0baf54?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation](https://www.jianshu.com/p/f2e40c0baf54?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
