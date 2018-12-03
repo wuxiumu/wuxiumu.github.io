@@ -94,11 +94,11 @@ fixing    | 查漏补缺修改中
   - 常用命令
   - 实现原理&与memcache区别
   - 常见用途
-    - [缓存] 
-    - [队列] 
-    - [悲观锁] 
-    - [乐观锁] 
-    - [订阅/推送] 
+    - [缓存](/2018/12/03/Redis-Cache) 
+    - [队列](/2018/12/03/Redis-queue) 
+    - [悲观锁](/2018/12/03/Redis-pessimistic-lock) 
+    - [乐观锁](/2018/12/03/Redis-optimistic-lock) 
+    - [订阅/推送](/2018/12/03/Redis-subscribe-publish) 
   - 常见业务实际使用
   - redis的基础数据结构
 
@@ -162,10 +162,10 @@ fixing    | 查漏补缺修改中
 
 - 网络基础(doing)
 
-  - [互联网协议概述]
-  - [client和nginx简易交互过程] 
-  - [nginx和php-fpm简易交互过程] 
-  - [http] 
+  - [互联网协议概述](/2018/11/30/Internet-protocol)
+  - [client和nginx简易交互过程](/2018/11/30/Internet-protocol-simple-interaction-process) 
+  - [nginx和php-fpm简易交互过程](/2018/11/30/Internet-protocol-simple-interaction-process)
+  - [http](/2018/11/30/HTTP-concept) 
     - 报文
       - 报文头部
       - 报文体
@@ -218,7 +218,7 @@ php index.php
 
 ### [锁](/2018/11/29/Mysql-engine#锁)  
 
-## Redis
+## [Redis](/tags/#redis)
 
 ### 常见用途 
  
