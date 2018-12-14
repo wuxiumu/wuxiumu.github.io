@@ -1,0 +1,61 @@
+# PHP 删除字符串中的空格
+
+## 删除所有空格
+```
+echo str_replace(' ', '', ' a bab  ');echo "\n";
+echo preg_replace('/ /', '', '   ab  ab  ');echo "\n";
+echo strtr('    ab    ab    ', array(' '=>''));echo "\n";
+
+
+function trimall($str)//删除所有的空格
+{
+    $qian=array(" ","　","\t","\n","\r");
+    $hou=array("","","","","");
+    return str_replace($qian,$hou,$str); 
+}
+
+echo trimall(" a  v  ");
+echo "\n";
+```
+
+## 只删除字符串左右两端的空格
+
+ltrim、rtrim进行替换
+
+```
+删除左右两边的空格，字符串中间包含的空格不做处理
+//使用PHP自带的函数
+$str="   脚本之家      提供大量优秀脚本及素材供读者下载     ";
+echo ltrim($str);
+echo "\n";
+echo ltrim($str," ");
+echo "\n";
+echo rtrim($str);
+echo "\n";
+echo rtrim(ltrim($str," ")," ");
+echo "\n";
+```
+
+## 正则表达式进行替换
+
+```
+$str="  卑微的架构师     www.jb51.net     "; 
+$str = preg_replace('/^( )+/', '', $str); 
+echo $str."\n";
+$str = preg_replace('/( )+$/', '', $str); 
+echo $str;
+```
+
+```
+$str = " This line containstliberal rn use of whitespace.nn";
+ //去掉开始和结束的空白
+
+$str = trim($str);
+ //去掉跟随别的挤在一块的空白
+
+$str = preg_replace('/s(?=s)/', '', $str);
+ //最后，去掉非space 的空白，用一个空格代替
+
+$str = preg_replace('/[nrt]/', ' ', $str);
+ 	echo "
+ 	```
