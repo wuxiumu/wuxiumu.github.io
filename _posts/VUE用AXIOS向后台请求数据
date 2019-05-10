@@ -1,0 +1,66 @@
+VUE用AXIOS向后台请求数据
+
+vue的安装就不再多说了  可以参考我的第一篇博客<a href="http://www.cnblogs.com/missxiaojun/p/6825642.html">初学者VUE脚手架的搭建（哈哈 第一次写 不好的地方请指正）</a>
+
+## 1.如何安装axios
+
+使用 cnpm 安装 axios
+```
+cnpm install axios -S
+```
+
+## 2.其次  在入口文件（如果是按照上述文章的话，应该是main.js）中
+``
+import axios from 'axios';
+Vue.prototype.$axios = axios;
+``
+
+## 3.在入口文件中加入上述两行代码后，就可以在组件中使用
+```
+this.$axios.get('链接')
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+```
+### demo
+```
+ this.$axios.get('http://oneweb.cn/api/users')
+	.then(function (response) {
+	        console.log(response);
+	    })
+	.catch(function (error) {
+	    console.log(error);
+	});
+```                
+
+## 4.get  还可以这样传参----主要用于获取数据
+```
+this.$axios({
+    method: 'get',
+    url: 'XXX',
+    params: {
+        memberName: _this.searchMessage,
+        provinceCode: JSON.stringify(_this.selectedProvince),
+        memberType: JSON.stringify(_this.checkedMemberType),
+        number: _this.page,
+        size: _this.pageSize
+    }
+})
+```
+
+## 5.post 这样传参----主要用于提交数据
+```
+this.$axios({
+    method: 'post',
+    url: 'XXX',
+    data: {
+        id:'33333',
+        memberId: this.orderId,
+        checkStatus: this.checkStatus,
+        checkRecord: this.checkRecord
+    }
+})
+```
