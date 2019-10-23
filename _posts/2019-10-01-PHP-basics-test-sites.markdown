@@ -348,7 +348,8 @@ e：，s，U，x，A，D，u
 ## 7.文件及目录处理
 - 真题回顾
 
-     不断在hello.txt头部写入一行hello word 字符串，要求代码完整；
+不断在hello.txt头部写入一行hello word 字符串，要求代码完整；
+
 ```
 <?php
  
@@ -366,17 +367,19 @@ $handle = fopen($file, 'w');
 fwrite($handle, $content);
 fclose($handle);
 ```
+
 - 考点分析
 
     文件的读取/写入;
 
-        fopen()函数，打开模式：r/r+,w/w+, a/a+,x/x+,b,t
+    fopen()函数，打开模式：`r/r+,w/w+, a/a+,x/x+,b,t`
 
-   目录操作函数；
+    目录操作函数；
 
 - 一网打尽
 
-     通过php函数对目录进行遍历；
+通过php函数对目录进行遍历；
+
 ```
 <?php
  
@@ -553,7 +556,6 @@ ip2long()相反
 
 反序列化unserialize()：就是将序列化之后保存在硬盘（文件）上的“字符串数据”恢复为其原来的内存形式的变量数据的一种做法，即，把文件中保存的序列化后的“字符串数据”恢复为“内存数据”；
 
- 
 
 ## 网络协议
 osi七层模型：
@@ -617,6 +619,7 @@ HTTP协议工作特点
  
 
 请求/响应头：
+
 Content-Type请求与实体的对应的MME信息
 
 Accept指定客户端能接受的内容、类型
@@ -707,7 +710,6 @@ fclose($handle);
 //如果文件类型是文件，输出文件名称
 //关闭目录
  
- 
 $dir = './test';
  
     function loopDir($dir)   //递归遍历方法
@@ -729,4 +731,5 @@ $dir = './test';
  
 loopDir($dir);
 ```
+
 魔术方法
