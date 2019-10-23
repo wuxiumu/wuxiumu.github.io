@@ -20,23 +20,23 @@ tags:
 
 - ### 考点分析
 
-      php引用变量的概念及定义方式；
+php引用变量的概念及定义方式；
 
-      php变量的工作原理。理解COW（copy on write 写时复制机制）；
+php变量的工作原理。理解COW（copy on write 写时复制机制）；
 ```
 <?php
- 
+
 $a = range(0, 3);
 xdebug_debug_zval('a');
- 
+
 $b = &$a;
 xdebug_debug_zval('a');
- 
+
 $a = range(0, 3);
 xdebug_debug_zval('a');
 ```
-   考点 unset：
 
+考点 unset：
 ```
 <?php
 // unset 只会取消引用，不会销毁空间
@@ -48,6 +48,7 @@ unset($b);
  
 echo $a. "\n";//$a 还是1
 ```
+
 考点 :对象本身就是引用传值
 ```
 <?php
@@ -67,6 +68,7 @@ xdebug_debug_zval('p1');
 $p2->name = "lisi";
 xdebug_debug_zval('p1');
 ```
+
 - 一网打尽
 
 写出如下程序的输出结果
@@ -89,6 +91,7 @@ foreach ($data as $key=>$val)
  
 var_dump($data);
 ```
+
 延伸考点
 ```
 a.函数参数
@@ -141,6 +144,7 @@ c.系统内置函数
         rsort() 函数对索引数组进行降序排序
         ……………………
 ```
+
 ## 2.常量及数据类型
 - 真题回顾
 
@@ -197,7 +201,7 @@ c.系统内置函数
 
       递增/递减不影响布尔值、递增NULL 值为1、递减null没有效果；
 
-     理解逻辑运算符 短路作用；
+理解逻辑运算符 短路作用；
 ```
 <?php
  
@@ -215,8 +219,6 @@ if ($a = 3 > 0 || $b = 3 > 0)
     echo $b. "\n";
 }
 ```
-
-     
 
 ## 4.流程控制
 
