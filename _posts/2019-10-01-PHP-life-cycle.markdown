@@ -11,7 +11,7 @@ tags:
     - php
 ---
  
-- PHP的生命周期
+- [PHP的生命周期](http://wqb.science/2018/11/28/PHP-the-life-cycle/)
     - [文章1](https://segmentfault.com/a/1190000013321594)    
         - SAPI
         - PHP的启动和终止
