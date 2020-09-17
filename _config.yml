@@ -5,19 +5,20 @@ header-img: img/home-bg.jpg
 email: wuxiumu@163.com
 description: "关于后端服务与优化设计、黑科技与大国工匠 | 朽木，Web & Mobile Lover | 这里是 @Wqb吴庆宝 的个人博客，与你一起发现更大的世界。"
 keyword: "吴庆宝, 大宝天天见, 老宝你真好, 全栈, 朽木不可雕, @wuxiumu, 吴庆宝的博客, Wuxiumu Blog, 博客, 个人网站, 互联网, php, 数据库，后端, 前端, 设计, 产品"
-url: "https://git.meiyoufan.com"            
-baseurl: ""                       
+url: "https://git.meiyoufan.com"    
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
-
+# Publish posts or collection documents with a future date.
+future: true
 
 # SNS settings
 RSS: false
 weibo_username:     wuqingbao
 zhihu_username:     wuxiumu
 github_username:    wuxiumu
-#twitter_username:   wuxiumu
-#facebook_username:  wuxiumu
-# linkedin_username:  firstname-lastname-idxxxx
+# twitter_username:   wuxiumu
+#facebook_username:  huxpro
+#linkedin_username:  firstname-lastname-idxxxx
 
 
 
@@ -28,12 +29,16 @@ permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+# If you have timezone issue (e.g. #68) in China, uncomment to use this:
+#timezone: CN  
 
 
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+# make sure you have this gem installed
+# `$ gem install jekyll-paginate`
+plugins: [jekyll-paginate]
 
 
 
@@ -44,13 +49,19 @@ gems: [jekyll-paginate]
 markdown: kramdown
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 
 
 # Disqus settings
 disqus_username: wuxiumu
 
-# Netease setttings
+# Netease settings
 netease_comment: false
 
 
@@ -84,14 +95,19 @@ service-worker: true
 
 
 
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+
+
 # Friends
 friends: [
     {
-        title: "吴庆宝的Wordpress",
+        title: "meiyoufan Blog",
         href: "https://meiyoufan.com/"
     },{
-        title: "乱序",
-        href: "http://mida.re/"
+        title: "Hux Blog",
+        href: "http://huangxuan.me/"
     },{
         title: "前端外刊评论",
         href: "http://qianduan.guru/"
