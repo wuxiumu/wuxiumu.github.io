@@ -7,7 +7,8 @@ author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 运维    
+    - 运维   
+    - Docker 
 ---
 
 >  DOCKER快速入门

@@ -8,7 +8,7 @@ header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 命令
-    - linux
+    - Linux
 ---
 
 >  Linuxl基础

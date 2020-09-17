@@ -8,7 +8,7 @@ header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 数据库
-    - mysql
+    - MySql
 ---
 
 >  Mysql基础
