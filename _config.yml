@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: wuxiumu@163.com
 description: "关于后端服务与优化设计、黑科技与大国工匠 | 朽木，Web & Mobile Lover | 这里是 @Wqb吴庆宝 的个人博客，与你一起发现更大的世界。"
 keyword: "吴庆宝, 大宝天天见, 老宝你真好, 全栈, 朽木不可雕, @wuxiumu, 吴庆宝的博客, Wuxiumu Blog, 博客, 个人网站, 互联网, php, 数据库，后端, 前端, 设计, 产品"
-url: "https://git.meiyoufan.com"    
+url: "https://wuxiumu.github.io"    
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -62,7 +62,7 @@ kramdown:
 disqus_username: wuxiumu
 
 # Netease settings
-netease_comment: false
+netease_comment: true
 
 
 
@@ -72,7 +72,7 @@ ba_track_id: 'f19eb1e6be6d240fe5b7807fecac40c1'
 
 # Google Analytics
 ga_track_id: 'UA-129669984-1'            # Format: UA-xxxxxx-xx （https://analytics.google.com）
-ga_domain: wqb.science
+ga_domain: wuxiumu.github.io
 
 
 
