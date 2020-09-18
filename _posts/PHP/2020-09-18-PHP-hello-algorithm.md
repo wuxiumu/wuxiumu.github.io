@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "你好！ 算法"
+title: "你好！算法"
 subtitle: "Hello Algorithm"
-date: 2020-09-19
+date: 2020-09-18  11:00:00
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
+    - 算法
     - php
-	- 算法
 ---
 
 ## 排序算法的基本概念

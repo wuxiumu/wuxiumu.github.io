@@ -1,14 +1,15 @@
 ---
 layout:     post
 title:      "你好！ 冒泡排序"
-subtitle:   " \"Bubble Sort\""
+subtitle:   " \"hello algorithm Bubble\""
 date:       2020-09-18 12:00:01
 author:     "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
+tags:
+    - 算法
     - php
-	- 算法
 ---
 
 ## 冒泡排序的基本概念

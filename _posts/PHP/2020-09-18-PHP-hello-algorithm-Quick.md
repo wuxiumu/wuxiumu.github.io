@@ -7,8 +7,9 @@ author:     "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
+tags:
+    - 算法
     - php
-	- 算法
 ---
 
 ## 快速排序的基本概念
