@@ -363,7 +363,7 @@ function qs($a, $s=0, $e=null) {
             $a[$i] = $a[$j];
             $a[$j] = $t;
             for($i++;$i<$j;$i++) {
-                if($a[$i] > $n) {
+                if($a[$i] > $n) n
                     $t = $a[$j];
                     $a[$j] = $a[$i];
                     $a[$i] = $t;
