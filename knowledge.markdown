@@ -13,6 +13,10 @@ tags:
 
 > php技术栈后端程序员的知识储备仓库
 
+## gitee网络稳定速度快 
+
+新笔记地址 [newNote]( https://circleci.gitee.io/repsnote/#/)
+
 ## 前言
 
 基础不牢，地动山摇，谨以此句提醒自己。
@@ -54,13 +58,13 @@ fixing    | 查漏补缺修改中
       - [5.5](http://php.net/manual/zh/migration55.new-features.php)
       - [5.4](http://php.net/manual/zh/migration54.new-features.php)
       - [5.3](http://php.net/manual/zh/migration53.new-features.php)
-       
+  
 - PHP深入学习(doing)
- 
+
 - 网络编程(doing)
 
 - 问题排查(doing)
- 
+
 - Mysql(doing)
 
   - [常用sql语句](/2018/11/29/Common-sql-statement) 
@@ -221,4 +225,3 @@ php index.php
 ## [Redis](/tags/#redis)
 
 ### 常见用途 
- 

@@ -143,7 +143,7 @@ composer.bat
 @ECHO OFF
 php "%~dp0composer.phar" %*
 ```
-  
+
 ## 开始使用
 
 生成一个空的Composer项目
