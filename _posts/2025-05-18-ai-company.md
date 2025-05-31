@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "AI时代，如何创建「一人公司」？| 《极简创业家》一人公司创业指南（五个步骤）"
+title: "成功的一人公司案例"
 subtitle: "从痛点出发，找到事业的起点"
-date: 2025-05-31
+date: 2025-05-18
 author: "ai wu"
 header-img: "https://archive.biliimg.com/bfs/archive/c798deae30458c59a404d2b037548e950d7a4082.png"
 tags:
   - 产品思维
   - 终身成长
+  - 极简创业
 ---
 
 
