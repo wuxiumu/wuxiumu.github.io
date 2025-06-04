@@ -4,6 +4,9 @@
 {% endcomment %}
 
 {% if include.type == 'post' %}
+<script>
+    document.body.insertAdjacentHTML('beforeend', ` <img referrerpolicy="no-referrer" src="{% if page.header-img contains "http" %}{{ page.header-img }}{% else %}{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}{% endif %}" style="display: none;"  />`);
+</script>
 <style type="text/css">
     header.intro-header{
         position: relative;

@@ -4,7 +4,7 @@ title: "成功的一人公司案例"
 subtitle: "从痛点出发，找到事业的起点"
 date: 2025-05-18
 author: "ai wu"
-header-img: "https://archive.biliimg.com/bfs/archive/c798deae30458c59a404d2b037548e950d7a4082.png"
+header-img: "https://archive.biliimg.com/bfs/archive/ced415ab3ac9ba35c050e32dffe15f8197db9ec8.png"
 tags:
   - 产品思维
   - 终身成长
