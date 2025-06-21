@@ -1,5 +1,5 @@
 ---
-https://tools.thinkinai.xyz/layout: post
+layout: post
 title: "2025 年底，我能否跨越成为超人级程序员？"
 subtitle: "第一个推理模型 = 全球第1,000,000名最佳程序员"
 date: 2025-05-23

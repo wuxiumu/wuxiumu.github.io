@@ -1,5 +1,5 @@
 ---
-https://tools.thinkinai.xyz/layout: post
+layout: post
 title: "AI编程神器Cursor使用方法"
 subtitle: "多尝试不同的提示词，你会发现更多实用的功能"
 date: 2025-05-21
