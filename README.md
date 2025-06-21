@@ -4,13 +4,13 @@
 2. 中安装的依赖项。`Gemfile`:
 
 ```
-bundle install 
+bundle install
 ```
 
 1. 服务网站(`localhost:4000`(默认情况下)：
 
 ```
-bundle exec jekyll serve  
+bundle exec jekyll serve
 ```
 
 来自动生成上面的文章模板
@@ -24,4 +24,4 @@ rake post title="Hello 2020" subtitle="Hello World, Hello Blog"
 rake post title="PHP正则表达式，看这一篇就够了" subtitle="Hello PHP, Hello 正则"
 ```
 
- 
+

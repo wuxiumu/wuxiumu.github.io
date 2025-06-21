@@ -1,227 +1,97 @@
 ---
 layout: post
 title: "knowledge"
-subtitle:   " \"PHP technology stack backend knowledge reserve warehouse\""
+subtitle:   "十年全栈知识地图 · 2025 旗舰版"
 date:       2018-11-26 09:10:00
 author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 知识
-    - php
+    - 全栈
+    - go
+    - node
+    - java
+    - 前端
+    - 后端
+    - 数据库
+    - 安全
+    - 性能
+    - 架构
+    - 监控
+    - 项目管理
+    - 工具链
+    - 云计算
+    - 机器学习
+    - 自然语言处理
+    - 区块链
+    - 物联网
+    - 人工智能
 ---
+# 🧭 十年全栈知识地图 · 2025 旗舰版
 
-> php技术栈后端程序员的知识储备仓库
-
-## gitee网络稳定速度快 
-
-新笔记地址 [newNote]( https://circleci.gitee.io/repsnote/#/)
-
-## 前言
-
-基础不牢，地动山摇，谨以此句提醒自己。
-
-## 备注
-
-状态        | 含义
---------- | -------
-not-start | 当前未开始总结
-doing     | 总结中
-α         | 目前仅供参考未修正和发布
-done      | 总结完毕
-fixing    | 查漏补缺修改中
-
-## 目录
-
-- PHP基础学习(done)
-
-  - 符合PSR的PHP编程规范
-
-    - [实例](/2018/11/27/PHP-technical-examples)
-    - [文档](/2018/11/27/PHP-coding-specifications-and-recommendations)
-    - [经验](/2018/11/27/PHP-experience)
-
-  - 基础知识[读(R)好(T)文(F)档(M)]
-    - [数据类型](http://php.net/manual/zh/language.types.php)
-
-    - [运算符优先级](http://php.net/manual/zh/language.operators.precedence.php)
-    - [string函数](http://php.net/ref.strings.php)
-    - [array函数](http://php.net/manual/zh/ref.array.php)
-    - [math函数](http://php.net/manual/zh/ref.math.php)
-    - [面向对象](http://php.net/manual/zh/language.oop5.php)
-    - 版本新特性
-
-      - [7.2](http://php.net/manual/zh/migration72.new-features.php)
-      - [7.1](http://php.net/manual/zh/migration71.new-features.php)
-      - [7.0](http://php.net/manual/zh/migration70.new-features.php)
-      - [5.6](http://php.net/manual/zh/migration56.new-features.php)
-      - [5.5](http://php.net/manual/zh/migration55.new-features.php)
-      - [5.4](http://php.net/manual/zh/migration54.new-features.php)
-      - [5.3](http://php.net/manual/zh/migration53.new-features.php)
-  
-- PHP深入学习(doing)
-
-- 网络编程(doing)
-
-- 问题排查(doing)
-
-- Mysql(doing)
-
-  - [常用sql语句](/2018/11/29/Common-sql-statement) 
-  - [引擎](/2018/11/29/Mysql-engine)  
-  - [事务](/2018/11/29/Mysql-engine#事务)    
-  - [索引](/2018/11/29/Mysql-engine#索引)    
-    + 建立表结构时添加的索引
-      * 主键唯一索引
-      * 唯一索引
-      * 普通索引
-      * 联合索引
-        - 最左匹配原则
-    + 依据是否聚簇区分
-      * 聚簇索引
-      * 非聚簇索引
-    + 索引底层数据结构
-      * hash索引
-      * b-tree索引
-      * b+tree索引
-    
-  - [锁](/2018/11/29/Mysql-engine#锁)     
-    - 悲观锁
-    - 乐观锁
-  - 分表
-    - 垂直分表
-    - 水平分表
-  - sql优化
-  - 主从配置
-
-- Redis(doing)
-  - 常用命令
-  - 实现原理&与memcache区别
-  - 常见用途
-    - [缓存](/2018/12/03/Redis-Cache) 
-    - [队列](/2018/12/03/Redis-queue) 
-    - [悲观锁](/2018/12/03/Redis-pessimistic-lock) 
-    - [乐观锁](/2018/12/03/Redis-optimistic-lock) 
-    - [订阅/推送](/2018/12/03/Redis-subscribe-publish) 
-  - 常见业务实际使用
-  - redis的基础数据结构
-
-- Docker(doing)
-  - [redis主从搭建]
-  - [mysql主从搭建]
-  - [codis环境]
-  - mysql多主环境
-  - kafka的环境搭建和使用
-  - rabbitMQ的环境搭建和使用
-  - zookeeper的环境搭建和使用
-  - etcd的环境搭建和使用
-  - ELK的环境搭建和使用
-  - 网关服务kong的环境搭建和使用
-  - 我所理想的架构
-
-- 设计模式(done/fixing)
-
-  - [概念]
-
-  - 创建型模式实例
-
-    - [单例模式] 
-    - [工厂模式] 
-    - [抽象工厂模式]
-    - [原型模式]
-    - [建造者模式]
-
-  - 结构型模式实例
-
-  - 行为型模式实例
-
-
-- [数据结构(doing)]
-
-  - 数组
-  - 堆/栈
-  - 树
-  - 队列
-  - 链表
-  - 图
-  - 散列表
-
-- 算法(doing)
-
-  - 算法分析
-
-    - 时间复杂度/空间复杂度/正确性/可读性/健壮性
-
-  - 算法实战
-
-    - 排序算法(α)
-
-      - [冒泡排序](/2018/11/26/PHP-algorithms-practice-bubble) 
-      - [快速排序](/2018/11/26/PHP-algorithms-practice-quick-sort)
-      - [选择排序](/2018/11/28/PHP-algorithms-practice-select) 
-      - [插入排序](/2018/11/28/PHP-algorithms-practice-insert) 
-      - [归并排序](/2018/11/28/PHP-algorithms-practice-merge) 
-      - [希尔排序](/2018/11/28/PHP-algorithms-practice-shell) 
-      - [基数排序](/2018/11/28/PHP-algorithms-practice-radix) 
-
-- 网络基础(doing)
-
-  - [互联网协议概述](/2018/11/30/Internet-protocol)
-  - [client和nginx简易交互过程](/2018/11/30/Internet-protocol-simple-interaction-process) 
-  - [nginx和php-fpm简易交互过程](/2018/11/30/Internet-protocol-simple-interaction-process)
-  - [http](/2018/11/30/HTTP-concept) 
-    - 报文
-      - 报文头部
-      - 报文体
-    - 常见13种状态码
-    - 方法method
-    - https
-    - http2
-    - websocket
-
-- 计算机基础(doing)
-
-  - [linux常用命令](/2018/11/29/Linux-common-command) 
-  - shell
-
-- 高并发相关(not-start)
+> **“基础不牢，地动山摇；视野不宽，难破天花板。”** — 十年码海沉浮，愿此表助你复盘过往、开疆未来。
+>
+> **标识说明**：🟢 Mastered｜🟡 Experienced｜⚪ Familiar
 
 ---
 
-## PHP基础学习
-[php.net](http://php.net/manual/zh/)
+## 📚 核心目录
 
-[慕课网](https://www.imooc.com/course/list?c=php)
-```
-composer install
-php -S localhost:8000
-# 浏览器
-http://localhost:8000/php/index.php
-# 命令行
-php index.php
-```
+| 分类                             | 关键词                                                       | 熟练度 |
+| :----------------------------- | :-------------------------------------------------------- | :-- |
+| **1. 前端基础**                    | HTML5／CSS3、Flexbox、Grid、BEM、Accessibility                 | 🟢  |
+| **2. JavaScript & TypeScript** | ES6+、TS 5.x、模块化、单线程模型、事件循环                                | 🟢  |
+| **3. 前端框架**                    | Vue 2/3、React (Hooks / Suspense)、Nuxt、Vite、SSR / SSG      | 🟢  |
+| **4. 状态管理**                    | Pinia、Vuex、Redux Toolkit、Vue Query                        | 🟢  |
+| **5. 前端工程化**                   | Vite、Webpack、Rollup、Monorepo、Eslint、Prettier              | 🟢  |
+| **6. Mobile / 小程序**            | UniApp、微信小程序、H5 响应式、PWA                                   | 🟡  |
+| **7. UI / 动效**                 | TailwindCSS、Element Plus、Framer Motion、GSAP               | 🟢  |
+| **8. PHP**                     | 7.4 → 8.3 新特性、Laravel、Slim、Swoole、Composer                | 🟢  |
+| **9. Golang**                  | Gin、goroutine、channel、gRPC、wire、benchmark                 | 🟡  |
+| **10. Node.js**                | Express、Koa、NestJS、PM2、SSR with Next                      | 🟡  |
+| **11. Java**                   | Spring Boot 基础、JPA、Maven                                  | ⚪   |
+| **12. 数据库**                    | MySQL InnoDB、索引调优、分库分表、主从、事务                              | 🟢  |
+| **13. 缓存 / MQ**                | Redis 五大结构、哨兵 & Cluster、分布式锁、RabbitMQ、Kafka               | 🟡  |
+| **14. 搜索 & NoSQL**             | Elasticsearch、MongoDB                                     | ⚪   |
+| **15. DevOps**                 | GitHub Actions、GitLab CI、Jenkins、SonarQube、docker‑compose | 🟢  |
+| **16. 容器 & 云**                 | Docker、K8s 基础、Helm、阿里云 ECS / OSS、AWS Lambda               | 🟡  |
+| **17. 网络 & 协议**                | HTTP/1.1→3、TCP/IP、WebSocket、gRPC、GraphQL                  | 🟢  |
+| **18. 架构模式**                   | MVC、DDD、微服务、事件驱动、CQRS、Clean Arch                          | 🟡  |
+| **19. 安全**                     | JWT、OAuth2、CSRF / XSS、ACL、2FA、Secrets Mgmt                | 🟡  |
+| **20. 测试**                     | Vitest、Jest、Cypress、PHPUnit、`go test`、Postman/Newman      | 🟢  |
+| **21. 监控 & O11y**              | ELK、Loki、Prometheus、Grafana、OpenTelemetry                 | 🟡  |
+| **22. 性能 & 缓存策略**              | CDN、CDN 预热、Code Splitting、Lazy Load、HTTP Cache            | 🟢  |
+| **23. SEO & 增长**               | 白帽 SEO、内容矩阵、A/B Test、埋点分析、自研统计                            | 🟢  |
+| **24. AI & LLM**               | OpenAI API、LangChain、向量检索、Prompt Engineering              | 🟡  |
+| **25. 项目 & 团队**                | Scrum、Git Flow、Conventional Commits、PR Review             | 🟢  |
+| **26. 工具链**                    | VSCode、PhpStorm、GoLand、iTerm2、tmux、Oh My Zsh              | 🟢  |
 
-### 符合PSR的PHP编程规范
-[PHP 标准规范](https://psr.phphub.org/)
+---
 
-#### [实例](/2018/11/27/PHP-technical-examples)
+## 🛠️ 代表项目 & 技术切面
 
-#### [文档](/2018/11/27/PHP-coding-specifications-and-recommendations)
+|    年份    | 项目 / 场景             | 技术亮点                                                        |
+| :------: | :------------------ | :---------------------------------------------------------- |
+| **2017** | *小乐定制* 电商平台         | 首次重构 SPA，Vue 2 + Vuex + Element；SSR 直出提升 SEO，PV ↑ 38%       |
+| **2018** | 多站点内容管理 CMS         | PHP 7.2 + Laravel 多租户；Redis 缓存层复用；TinyMCE + Markdown Editor |
+| **2019** | 智能营销投放系统            | Go + Gin + gRPC；Kafka 消息队列；ELK 集群实时埋点分析                     |
+| **2020** | 直播 & 点播平台           | Vue 3 + Nuxt SSR；WebSocket 实时弹幕；HLS 流媒体；Nginx RTMP 模块       |
+| **2021** | 高并发支付网关             | Golang 协程池；MySQL 读写分离；限流熔断；Prometheus + Grafana 监控          |
+| **2022** | Typecho 小红书主题       | SEO 长尾优化；PJAX 无刷新；点赞 & 懒加载；打包脚本自动发布                         |
+| **2023** | 轻量 DevOps 平台        | Docker in Docker；GitHub Actions 自动化部署；SonarQube 代码质量守门      |
+| **2024** | *php‑gpt‑assistant* | PHP8 + OpenAI；LangChain PHP 适配；上下文持久化 & Vector Store        |
+| **2025** | Vue3 租赁平台（进行中）      | Vite + Pinia + Vue Query；Swoole 协程后端；GraphQL 网关；7‑5 MVP 目标  |
 
-#### [经验](/2018/11/27/PHP-experience)
+---
 
-## Mysql
+## 🎯 下一阶段提升路线
 
-### [常用sql语句](/2018/11/29/Common-sql-statement) 
+1. **深挖 Golang & 微服务**：落地 K8s Operator，完善服务网格。
+2. **AI Copilot 全栈渗透**：RAG + Function Calling，自动生成测试 & 文档。
+3. **安全左移**：引入 SCA / SAST 流水线，零信任网关实践。
+4. **数仓 & BI**：学习 ClickHouse、Superset，强化数据驱动决策。
 
-### [引擎](/2018/11/29/Mysql-engine)  
+---
 
-### [事务](/2018/11/29/Mysql-engine#事务)   
-
-### [索引](/2018/11/29/Mysql-engine#索引) 
-
-### [锁](/2018/11/29/Mysql-engine#锁)  
-
-## [Redis](/tags/#redis)
-
-### 常见用途 
+> **尾声**：技能是河流，项目是河床，心态是水流速度。愿我们在变量成海的时代，保持终身学习的定力与好奇。🌊

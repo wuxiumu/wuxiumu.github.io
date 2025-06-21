@@ -1,0 +1,225 @@
+---
+title: photo
+layout: default
+description: 生活是一场旅行，而家是最美的风景。那些共同度过的寻常日子，拼凑成最珍贵的回忆。笑声在这里停留，故事在这里生长，爱在这里永恒。
+header-img: "img/tag-bg.jpg"
+---
+{% include intro-header.html type='page' short=true %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>家庭时光相册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #f8f9fa;
+            margin: 0;
+            font-family: "PingFang SC", "Hiragino Sans", Arial, sans-serif;
+        }
+        .timeline {
+            position: relative;
+            width: 900px;
+            max-width: 100vw;
+            margin: 50px auto;
+            padding-left: 60px;
+            border-left: 4px solid #ddd;
+            min-height: 200px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: flex-start;
+            transition: box-shadow 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .timeline-item:hover {
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+            background: #fffbe8;
+            border-radius: 16px;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -14px;
+            top: 24px;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg,#eebd89 0%,#d13abd 100%);
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px #eee;
+            z-index: 2;
+        }
+        .timeline-date {
+            width: 110px;
+            font-size: 15px;
+            color: #888;
+            flex-shrink: 0;
+            margin-right: 36px;
+            text-align: right;
+            padding-top: 16px;
+            user-select: none;
+        }
+        .timeline-content {
+            flex: 1;
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px 26px 18px 26px;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            min-width: 0;
+        }
+        .timeline-txt {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+        }
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #444;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .timeline-desc {
+            font-size: 15px;
+            color: #888;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .timeline-img {
+            width: 160px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 0 8px 0 rgba(0,0,0,0.03);
+            margin-left: 24px;
+            background: #f0f0f0;
+            flex-shrink: 0;
+            transition: transform 0.18s;
+        }
+        .timeline-item:hover .timeline-img {
+            transform: scale(1.06);
+        }
+        .like-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+            color: #d1d1d1;
+            cursor: pointer;
+            font-size: 17px;
+            user-select: none;
+            transition: color 0.18s;
+            vertical-align: middle;
+            outline: none;
+            border: none;
+            background: none;
+            padding: 2px 7px;
+            border-radius: 6px;
+        }
+        .like-btn.liked {
+            color: #d13abd;
+            animation: like-pop 0.33s;
+        }
+        .like-btn:active {
+            background: #ffe0f7;
+        }
+        @keyframes like-pop {
+            0%   { transform: scale(1);}
+            35%  { transform: scale(1.3);}
+            65%  { transform: scale(0.97);}
+            100% { transform: scale(1);}
+        }
+        .like-btn .icon {
+            font-size: 20px;
+            margin-right: 2px;
+            line-height: 1;
+            display: inline-block;
+            transition: color 0.15s;
+        }
+        @media (max-width: 1000px) {
+            .timeline { width: 98vw; padding-left: 18px; }
+            .timeline-date { width: 65px; margin-right: 10px; font-size: 13px; }
+            .timeline-img { width: 80px; height: 60px; }
+            .timeline-title { font-size: 16px; }
+            .timeline-content { padding: 12px 10px; }
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align:center; margin-top:30px; color:#D13ABD; letter-spacing:2px;">家庭时光相册</h1>
+<div id="timeline" class="timeline"></div>
+<script>
+    // mock数据，实际可通过Ajax请求后端
+    function fetchTimelineData() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(
+                    [{"date":"2025-05-05","title":"\u5b9d\u5b9d\u5bb4","desc":"\u7b2c\u4e00\u6b21\u5e26\u7740\u6211\u4eec\u7684\u9f99\u51e4\u5b9d\u8d1d\u56de\u59e5\u59e5\u5bb6\u529e\u5b9d\u5b9d\u5bb4\uff0c\u5c0f\u5bb6\u4f19\u4eec\u4e00\u8def\u4e56\u5de7\uff0c\u8ba9\u6211\u611f\u53d7\u5230\u524d\u6240\u672a\u6709\u7684\u5e78\u798f\u3002\u59e5\u59e5\u59e5\u7237\u7684\u7b11\u5bb9\u4e2d\u5199\u6ee1\u4e86\u6ee1\u8db3\uff0c\u5bb6\u4eba\u7684\u6b22\u58f0\u7b11\u8bed\u6e29\u6696\u4e86\u6574\u95f4\u5c4b\u5b50\u3002\u4eba\u751f\u6700\u7f8e\u597d\u7684\u6837\u5b50\uff0c\u5927\u6982\u5c31\u662f\u4f60\u4eec\u5e73\u5b89\u6765\u5230\u8fd9\u4e2a\u4e16\u754c\uff0c\u88ab\u6240\u6709\u4eba\u7231\u7740\u3001\u75bc\u7740\u3002\u611f\u8c22\u751f\u547d\u7684\u6069\u8d50\uff0c\u613f\u4f60\u4eec\u5e73\u5b89\u957f\u5927\uff0c\u6bcf\u4e00\u6b65\u90fd\u5e78\u798f\u6ee1\u6ee1\u3002","img":"https:\/\/jiatingshiguangxiangce.oss-cn-beijing.aliyuncs.com\/20250505%E6%97%A0%E5%BF%A7%E6%97%A0%E8%99%91%E8%A7%81%E9%9D%A2%E4%BC%9A\/3V8A1874%20%E6%8B%B7%E8%B4%9D.jpg","link":".\/20250505\u65e0\u5fe7\u65e0\u8651\u89c1\u9762\u4f1a.html"},{"date":"2025-04-20","title":"\u5b9d\u5b9d\u7b2c\u4e00\u6b21\u7167\u76f8","desc":"\u770b\u7740\u955c\u5934\u91cc\u7684\u4f60\u4eec\uff0c\u773c\u91cc\u900f\u7740\u7eaf\u771f\u4e0e\u597d\u5947\uff0c\u9f99\u51e4\u80ce\u7684\u5c0f\u6a21\u6837\u8ba9\u6211\u5fc3\u90fd\u878d\u5316\u4e86\u3002\u8fd9\u662f\u4f60\u4eec\u6765\u5230\u6211\u4eec\u8eab\u8fb9\u540e\u7684\u7b2c\u4e00\u6b21\u6b63\u5f0f\u62cd\u7167\uff0c\u6bcf\u4e00\u5e27\u90fd\u5370\u523b\u7740\u751f\u547d\u6700\u521d\u7684\u7f8e\u597d\u3002\u5065\u5eb7\u3001\u5feb\u4e50\u3001\u5e73\u5b89\u6210\u957f\uff0c\u8fd9\u662f\u7238\u7238\u5988\u5988\u5bf9\u4f60\u4eec\u6700\u6734\u7d20\u7684\u671f\u76fc\u3002\u672a\u6765\u6f2b\u957f\uff0c\u800c\u6211\u4eec\uff0c\u4f1a\u4e00\u76f4\u966a\u4f34\uff0c\u5b88\u62a4\u4f60\u4eec\u6bcf\u4e00\u6b65\u7684\u6210\u957f\uff0c\u613f\u4f60\u4eec\u4e00\u751f\u65e0\u5fe7\u3002","img":"https:\/\/jiatingshiguangxiangce.oss-cn-beijing.aliyuncs.com\/20250420%E6%97%A0%E5%BF%A7%E6%97%A0%E8%99%91-%E7%99%BE%E5%A4%A9%E7%85%A7\/8D7A6407.jpg","link":".\/20250420\u65e0\u5fe7\u65e0\u8651-\u767e\u5929\u7167.html"},{"date":"2023-12-15","title":"\u9886\u8bc1\u7167","desc":"\u4eca\u5929\u6b63\u5f0f\u9886\u8bc1\u5566\uff01\u5e26\u7740\u5f7c\u6b64\u7684\u627f\u8bfa\uff0c\u6211\u4eec\u5f00\u59cb\u4e86\u5c5e\u4e8e\u81ea\u5df1\u7684\u5c0f\u5bb6\u3002\u8fd9\u4e00\u523b\uff0c\u7ea2\u672c\u672c\u89c1\u8bc1\u4e86\u6211\u4eec\u751c\u871c\u7684\u8a93\u8a00\uff0c\u7167\u7247\u91cc\u7684\u7b11\u5bb9\u6ee1\u662f\u5e78\u798f\u4e0e\u671f\u5f85\u3002\u4ece\u6b64\u4ee5\u540e\uff0c\u6211\u4eec\u5c06\u5171\u62c5\u98ce\u96e8\uff0c\u5171\u4eab\u9633\u5149\u3002\u613f\u672a\u6765\u7684\u6bcf\u4e00\u5929\uff0c\u90fd\u5145\u6ee1\u6e29\u6696\u4e0e\u7406\u89e3\uff0c\u4e92\u76f8\u6276\u6301\u7740\u4e00\u8def\u524d\u884c\u3002\u8c22\u8c22\u4f60\u9009\u62e9\u6211\uff0c\u613f\u6211\u4eec\u767d\u5934\u5230\u8001\uff0c\u6069\u7231\u5982\u521d\uff0c\u751f\u6d3b\u5904\u5904\u7686\u751c\u871c\u3002","img":"https:\/\/jiatingshiguangxiangce.oss-cn-beijing.aliyuncs.com\/20231215%E9%A2%86%E8%AF%81\/DSC05119.jpg","link":".\/20231215\u9886\u8bc1.html"},{"date":"2023-09-18","title":"\u5a5a\u7eb1\u7167","desc":"\u56fd\u5e86\u8282\u8ba2\u5a5a\u540e,\u53c8\u5e26\u7740\u6ee1\u6ee1\u7684\u4eea\u5f0f\u611f\uff0c\u6211\u4eec\u7275\u624b\u62cd\u4e86\u4eba\u751f\u4e2d\u7b2c\u4e00\u7ec4\u5a5a\u7eb1\u7167\u3002\u4ece\u964c\u751f\u5230\u76f8\u8bc6\uff0c\u4ece\u76f8\u8bc6\u5230\u76f8\u77e5\uff0c\u6bcf\u4e00\u6b65\u90fd\u73cd\u85cf\u7740\u6211\u4eec\u7684\u6545\u4e8b\u3002\u955c\u5934\u524d\u7684\u5fae\u7b11\u662f\u771f\u5fc3\u7684\uff0c\u5f7c\u6b64\u76f8\u671b\u7684\u773c\u795e\u662f\u575a\u5b9a\u7684\u3002\u613f\u672a\u6765\u65e5\u5b50\u4e2d\uff0c\u65e0\u8bba\u98ce\u96e8\u6216\u6674\u6717\uff0c\u6211\u4eec\u90fd\u80fd\u643a\u624b\u5171\u5ea6\uff0c\u4e0d\u8d1f\u5f7c\u6b64\u6df1\u60c5\uff0c\u4e0d\u8d1f\u65f6\u5149\u7737\u987e\u3002\u6b64\u523b\uff0c\u5e78\u798f\u5f00\u59cb\uff0c\u672a\u6765\uff0c\u6e29\u6696\u540c\u884c\u3002","img":"https:\/\/jiatingshiguangxiangce.oss-cn-beijing.aliyuncs.com\/20230918%E5%A9%9A%E7%BA%B1%E7%85%A7\/646A7955.jpg","link":".\/20230918\u5a5a\u7eb1\u7167.html"}]
+                          );
+            }, 500);
+        });
+    }
+
+    function escapeHTML(s) {
+        return s.replace(/[<>&"]/g, (c) => ({
+            '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;'
+        }[c]));
+    }
+
+    function renderTimeline(items) {
+        const container = document.getElementById('timeline');
+        container.innerHTML = '';
+        items.forEach((item, idx) => {
+            const html = `
+          <a class="timeline-item" href="${escapeHTML(item.link)}" target="_blank" data-idx="${idx}">
+            <span class="timeline-dot"></span>
+            <div class="timeline-date">${escapeHTML(item.date)}</div>
+            <div class="timeline-content" onclick="event.stopPropagation();">
+              <div class="timeline-txt">
+                <div class="timeline-title">${escapeHTML(item.title)}</div>
+                <div class="timeline-desc">${escapeHTML(item.desc)}</div>
+                <button class="like-btn" type="button" aria-label="点赞" data-idx="${idx}">
+                  <span class="icon">❤</span>
+                  <span class="like-num">99</span>
+                </button>
+              </div>
+              <img class="timeline-img" src="${escapeHTML(item.img)}" alt="${escapeHTML(item.title)}">
+            </div>
+          </a>
+        `;
+            container.insertAdjacentHTML('beforeend', html);
+        });
+
+        // 假点赞（仅前端本地，不刷新不持久化）
+        container.querySelectorAll('.like-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                e.preventDefault();
+                if (!btn.classList.contains('liked')) {
+                    btn.classList.add('liked');
+                    const numSpan = btn.querySelector('.like-num');
+                    numSpan.textContent = (+numSpan.textContent + 1).toString();
+                } else {
+                    btn.classList.remove('liked');
+                    const numSpan = btn.querySelector('.like-num');
+                    numSpan.textContent = (+numSpan.textContent - 1).toString();
+                }
+            });
+        });
+    }
+
+    // Ajax加载
+    fetchTimelineData().then(renderTimeline);
+</script>
+</body>
+</html>
+
