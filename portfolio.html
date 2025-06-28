@@ -1,0 +1,139 @@
+---
+title: 作品集
+layout: default
+description: 以下是我近年来完成的各类项目，涵盖网页设计、前端开发和交互体验优化
+header-img: "img/tag-bg.jpg"
+---
+{% include intro-header.html type='page' short=true %}
+<script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- 配置Tailwind CSS -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#722ED1',
+            dark: '#1E293B',
+            light: '#F8FAFC'
+          },
+          fontFamily: {
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .card-shadow {
+        box-shadow: 0 10px 30px -5px rgba(22, 93, 255, 0.1);
+      }
+      .card-shadow-hover {
+        box-shadow: 0 20px 40px -5px rgba(22, 93, 255, 0.15);
+      }
+    }
+  </style>
+
+  <style>
+    /* 自定义动画 */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-400 { animation-delay: 400ms; }
+
+    /* 平滑滚动 */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* 骨架屏加载效果 */
+    .skeleton {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: skeleton-loading 1.5s infinite;
+    }
+
+    @keyframes skeleton-loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+</head>
+<body class="font-inter bg-light text-dark antialiased">
+
+
+  <main>
+
+
+    <!-- 作品区域 -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+
+
+        <!-- 分类筛选 -->
+        <div id="filterBar" class="flex flex-wrap justify-center gap-3 mb-12 animate-fadeInUp delay-100"></div>
+
+        <!-- 技能标签筛选 -->
+        <div id="skillBar" class="flex flex-wrap justify-center gap-2 mb-8"></div>
+
+        <!-- 作品网格 - 骨架屏加载 -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 骨架屏占位 -->
+          <div class="project-card skeleton aspect-[3/4] rounded-xl overflow-hidden card-shadow"></div>
+          <div class="project-card skeleton aspect-[3/4] rounded-xl overflow-hidden card-shadow"></div>
+          <div class="project-card skeleton aspect-[3/4] rounded-xl overflow-hidden card-shadow"></div>
+          <div class="project-card skeleton aspect-[3/4] rounded-xl overflow-hidden card-shadow"></div>
+          <div class="project-card skeleton aspect-[3/4] rounded-xl overflow-hidden card-shadow"></div>
+          <div class="project-card skeleton aspect-[3/4] rounded-xl overflow-hidden card-shadow"></div>
+        </div>
+
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- 作品详情模态框 -->
+  <div id="projectModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="modalOverlay"></div>
+    <div class="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <button id="closeModal" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-dark hover:bg-white transition-colors z-10">
+        <i class="fa fa-times"></i>
+      </button>
+      <div class="p-6 md:p-10">
+        <div id="modalContent" class="text-center">
+          <div class="flex justify-center mb-6">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <i class="fa fa-spinner fa-spin"></i>
+            </div>
+          </div>
+          <p class="text-gray-500">加载作品详情...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 外部JavaScript -->
+  <script src="/js/portfolio.js"></script>
