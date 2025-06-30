@@ -161,7 +161,7 @@ header-img: "img/tag-bg.jpg"
 <script>
     // mock数据，实际可通过Ajax请求后端
     function fetchTimelineData() {
-    return fetch('/js/data/photo.html.js').then(res => res.json());
+        return fetch('/js/data/photo.html.js').then(res => res.json());
     }
 
     function escapeHTML(s) {
