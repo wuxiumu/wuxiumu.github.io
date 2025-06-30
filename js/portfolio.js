@@ -312,11 +312,45 @@ function openProjectModal(projectId) {
   const project = projectsData.find(p => p.id === projectId);
 
   if (project) {
+    let previewButtonHTML = '';
+    if (project.url && project.url.trim() !== '') {
+      previewButtonHTML = `
+        <a href="${project.url}" target="_blank" rel="noopener" class="preview-btn inline-flex items-center justify-center bg-blue-600 text-white text-lg font-semibold px-5 py-3 rounded-md mb-6 hover:bg-blue-700 transition-colors">
+          项目预览 <i class="fa fa-external-link-alt ml-2"></i>
+        </a>
+      `;
+    }
+
     modalContent.innerHTML = `
+      <style>
+        .preview-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #2563eb;
+          color: white;
+          font-size: 1.125rem;
+          font-weight: 600;
+          padding: 0.75rem 1.25rem;
+          border-radius: 0.375rem;
+          margin-bottom: 1.5rem;
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+        }
+        .preview-btn:hover {
+          background-color: #1e40af;
+          color: white;
+        }
+        .preview-btn i {
+          margin-left: 0.5rem;
+          font-size: 1rem;
+        }
+      </style>
       <div class="text-left">
         <div class="mb-8">
           <img src="${project.image}" alt="${project.title}" class="w-full h-auto rounded-xl">
         </div>
+        ${previewButtonHTML}
         <div class="mb-6">
           <span class="inline-block px-3 py-1 bg-primary/90 text-white text-base rounded-full mb-3">${project.categoryName}</span>
           <h2 class="text-2xl md:text-3xl font-bold mb-2">${project.title}</h2>
