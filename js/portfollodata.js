@@ -1,5 +1,42 @@
 [
     {
+        "id": 17,
+        "title": "GoShorty 高并发短链接服务",
+        "category": "backend",
+        "categoryName": "后端工程",
+        "image": "https://archive.biliimg.com/bfs/archive/d29246993311ac87dd6d3486bce3d71c2576524c.png",
+        "description": "一个用 Golang 构建的短链接服务，集成高并发处理、限流、Prometheus 监控、pprof 性能分析、泛型编程与反射等高级特性。",
+        "technologies": [
+            "Go",
+            "Goroutine",
+            "Channel",
+            "pprof",
+            "Prometheus",
+            "Docker",
+            "Makefile"
+        ],
+        "url": "https://github.com/wuxiumu/GoShorty",
+        "details": "GoShorty 是一个用于学习和实战 Golang 高级编程技巧的短链接服务示例项目。它使用内存 map 存储短链接数据，支持通过 HTTP API 创建、跳转、查看统计信息。项目使用 channel 实现非阻塞异步日志记录，使用令牌桶算法对访问进行限流，并通过 pprof 开启性能分析接口。引入 Prometheus 自定义指标，监控访问数与限流情况。结构模块清晰，具备 Dockerfile、Makefile 和单元测试模板，便于快速部署与扩展，适合用于系统学习 Golang 性能调优、微服务限流、指标采集等场景。"
+    },
+    {
+        "id": 16,
+        "title": "OpenAI-FAISS 本地知识库问答系统",
+        "category": "ai",
+        "categoryName": "AI 工具",
+        "image": "https://archive.biliimg.com/bfs/archive/b57a4dd9691c54647a1965624d3ae7c079819c6e.png",
+        "description": "基于 OpenAI 向量嵌入与 FAISS 相似度检索构建的本地知识库问答系统，支持多文档导入与语义问答。",
+        "technologies": [
+            "Python",
+            "FAISS",
+            "OpenAI API",
+            "LangChain",
+            "PyMuPDF",
+            "Streamlit"
+        ],
+        "url": "https://github.com/wuxiumu/OpenAI-FAISS-Demo",
+        "details": "该系统通过将本地 TXT、PDF、Markdown 文档自动分块并调用 OpenAI Embedding 模型生成向量，使用 FAISS 建立相似度索引，结合 ChatGPT 实现自然语言问答。支持控制台查询和 Streamlit 网页界面，适用于企业知识管理、教育问答、内部文档搜索等场景。系统结构简洁，支持快速构建私有化知识库，未来可扩展本地大模型、上传即入库、知识更新增量构建等功能。"
+    },
+    {
         "id": 1,
         "title": "金句分享+实时群聊平台",
         "category": "web",
