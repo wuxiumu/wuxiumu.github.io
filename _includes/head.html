@@ -29,7 +29,7 @@
     <meta property="og:image" content="{{ site.url }}{{ site.sidebar-avatar }}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.SEOTitle }}">
-    
+
     <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
     <meta name="referrer" content="no-referrer">
     <!-- Web App Manifest -->
@@ -37,7 +37,7 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
@@ -62,4 +62,23 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
+
+    <!-- Mermaid.js for rendering diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        // Convert markdown mermaid code blocks to div.mermaid
+        document.querySelectorAll('pre > code.language-mermaid').forEach(function (code) {
+          var pre = code.parentElement;
+          var container = document.createElement('div');
+          container.className = 'mermaid';
+          container.textContent = code.textContent;
+          pre.replaceWith(container);
+        });
+        mermaid.initialize({ startOnLoad: true, securityLevel: 'loose' });
+      });
+    </script>
+    <style>
+      .mermaid { overflow: auto; }
+    </style>
 </head>
