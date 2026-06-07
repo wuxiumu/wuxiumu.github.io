@@ -1,42 +1,92 @@
-## 开始
+# 吴庆宝的个人博客
 
-1. 你需要 [Ruby](https://www.ruby-lang.org/en/)和 [Bundler](https://bundler.io/) 使用 [Jekyll](https://jekyllrb.com/).。以下[使用Jekyll和Bundler](https://jekyllrb.com/tutorials/using-jekyll-with-bundler/)充分满足环境要求。
-2. 中安装的依赖项。`Gemfile`:
+> 路漫漫其修远兮，吾将上下而求索。
 
-```
+🌐 在线地址：[https://wuxiumu.github.io](https://wuxiumu.github.io)
+
+## 项目简介
+
+这是一个基于 **[Jekyll](https://jekyllrb.com/)** 构建的个人技术博客，托管于 [GitHub Pages](https://pages.github.com/)。主题基于 [Hux Blog](https://github.com/Huxpro/huxpro.github.io) 二次开发。
+
+博主 **吴庆宝**（@wuxiumu），十年全栈工程师，博客内容涵盖：
+
+- **后端开发**：PHP (Laravel/Swoole)、Golang (Gin/gRPC)、Node.js、Java
+- **前端开发**：Vue 2/3、React、TypeScript、Vite、小程序
+- **基础设施**：MySQL、Redis、Docker、K8s、CI/CD、监控
+- **AI / LLM**：Agent 开发、RAG、Prompt Engineering、Dify、Cursor
+- **架构与安全**：微服务、DDD、JWT/OAuth2、性能调优
+
+## 快速开始
+
+### 环境要求
+
+- [Ruby](https://www.ruby-lang.org/en/) (≥ 2.7)
+- [Bundler](https://bundler.io/)
+- [Jekyll](https://jekyllrb.com/)
+
+### 安装 & 运行
+
+```bash
+# 1. 安装依赖
 bundle install
-```
 
-1. 服务网站(`localhost:4000`(默认情况下)：
-
-```
+# 2. 本地启动开发服务器，访问 http://localhost:4000
 bundle exec jekyll serve
 ```
 
-来自动生成上面的文章模板
-```
-rake post title="Hello 2020" subtitle="Hello World, Hello Blog"
-```
+### 创建新文章
 
-2021 文章
-
-```
-rake post title="PHP正则表达式，看这一篇就够了" subtitle="Hello PHP, Hello 正则"
+```bash
+rake post title="文章标题" subtitle="副标题"
 ```
 
-7月份 总结3 条
-rake post title="生产级dify" subtitle="Longuse监控平台完整接入指南"
-rake post title="RAG十大关键" subtitle="Hello World, Hello Blog"
-rake post title="高级contenxt工程" subtitle="Hello World, Hello Blog"
-8月份 7条
-rake post title="Hello 2020" subtitle="Hello World, Hello Blog"
-rake post title="Hello 2020" subtitle="Hello World, Hello Blog"
-rake post title="Hello 2020" subtitle="Hello World, Hello Blog"
-rake post title="Hello 2020" subtitle="Hello World, Hello Blog"
-rake post title="Hello 2020" subtitle="Hello World, Hello Blog"
-rake post title="Hello 2020" subtitle="Hello World, Hello Blog"
-9月份 10条
+生成的文件位于 `_posts/` 目录，Markdown 格式，包含 Jekyll Front Matter。
 
-rake post title="Hello 2020" subtitle="Hello World, Hello Blog"
-rake post title="Agent最佳20条经验" subtitle="ai应用开发的20个核心原则与避坑指南"
+## 目录结构
 
+```
+├── _config.yml          # Jekyll 站点配置
+├── _posts/              # 博客文章（按日期命名）
+├── _includes/           # 可复用 HTML 片段（导航、页脚、侧栏等）
+├── _layouts/            # 页面模板
+├── css/                 # 样式文件（Less 编译输出）
+├── less/                # Less 源码
+├── js/                  # 前端脚本
+├── img/                 # 图片资源
+├── knowledge.markdown   # 全栈知识地图
+├── package.json         # Node 依赖（Grunt 任务）
+├── Gemfile              # Ruby 依赖
+└── Rakefile             # Rake 任务（生成文章模板）
+```
+
+## 功能特性
+
+- 响应式设计，移动端适配
+- 侧边栏 & 标签云
+- 文章目录（TOC）自动生成
+- 代码语法高亮（Rouge）
+- 站内搜索
+- 分页浏览
+- PWA 支持（Service Worker）
+- Disqus 评论 / 网易云跟帖
+- Google Analytics & 百度统计
+- MathJax 公式渲染
+
+## 开发
+
+```bash
+# 开发模式（监听 Less 变动 + Jekyll 热更新）
+npm run dev
+```
+
+## 部署
+
+推送到 `master` 分支即可，GitHub Pages 自动构建发布。
+
+```bash
+git push origin master
+```
+
+## 许可证
+
+[MIT License](LICENSE)
