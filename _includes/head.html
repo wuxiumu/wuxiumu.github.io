@@ -26,7 +26,7 @@
     <meta property="og:type" content="website">
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     {% endcase %}
-    <meta property="og:image" content="{{ site.url }}{{ site.sidebar-avatar }}">
+    <meta property="og:image" content="{% include img.html src=site.sidebar-avatar absolute=true %}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.SEOTitle }}">
 
@@ -36,16 +36,16 @@
     <link rel="manifest" href="{{ site.baseurl }}/pwa/manifest.json">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
+    <link rel="shortcut icon" href="{% include img.html src='/img/favicon.ico' %}">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{% include asset.html path='/css/bootstrap.min.css' %}">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/css/hux-blog.min.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{% include asset.html path='/css/hux-blog.min.css' %}">
 
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
@@ -63,19 +63,25 @@
     <!-- ga & ba script hoook -->
     <script></script>
 
-    <!-- Mermaid.js for rendering diagrams -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <!-- Mermaid.js: 按需加载，仅在页面有 mermaid 代码块时才下载（3.3MB 很大，避免阻塞其他页面）-->
     <script>
       window.addEventListener('DOMContentLoaded', function () {
-        // Convert markdown mermaid code blocks to div.mermaid
-        document.querySelectorAll('pre > code.language-mermaid').forEach(function (code) {
+        var blocks = document.querySelectorAll('pre > code.language-mermaid');
+        if (!blocks.length) return; // 没有 mermaid 图，跳过加载
+        blocks.forEach(function (code) {
           var pre = code.parentElement;
           var container = document.createElement('div');
           container.className = 'mermaid';
           container.textContent = code.textContent;
           pre.replaceWith(container);
         });
-        mermaid.initialize({ startOnLoad: true, securityLevel: 'loose' });
+        var s = document.createElement('script');
+        s.src = "{% include asset.html path='/js/mermaid.min.js' %}";
+        s.onload = function () {
+          mermaid.initialize({ startOnLoad: false, securityLevel: 'loose' });
+          mermaid.run({ querySelector: '.mermaid' });
+        };
+        document.body.appendChild(s);
       });
     </script>
     <style>

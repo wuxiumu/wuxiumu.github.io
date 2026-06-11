@@ -8,6 +8,11 @@ keyword: "吴庆宝, 大宝天天见, 老宝你真好, 全栈, 朽木不可雕, 
 url: "https://wuxiumu.github.io"
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
+# CDN 配置 - 阿里云 OSS 加速
+# 留空使用本地图片，填入 OSS 域名使用 CDN（注意不要以 / 结尾）
+# 示例: "https://your-bucket.oss-cn-hangzhou.aliyuncs.com"
+#cdn_url: "https://vbank8-test.oss-cn-beijing.aliyuncs.com/wuxiumu.github.io"
+
 # Publish posts or collection documents with a future date.
 future: true
 
@@ -58,11 +63,22 @@ kramdown:
 
 
 
-# Disqus settings
-disqus_username: wuxiumu
-
-# Netease settings
-netease_comment: true
+# Gitalk 评论系统（基于 GitHub Issues，国内可用）
+# 使用方法：
+# 1. 到 https://github.com/settings/applications/new 创建 OAuth App
+#    - Application name: 随意填，如 "博客评论"
+#    - Homepage URL: 你的博客地址，如 https://wuxiumu.github.io
+#    - Authorization callback URL: 和 Homepage URL 一样
+# 2. 创建后拿到 Client ID 和 Client Secret 填在下面
+# 3. repo: 用来存评论的仓库名（一般填博客仓库名）
+# 4. owner: 仓库所有者（你的 GitHub 用户名）
+# 5. admin: 有权限初始化评论的管理员数组
+gitalk:
+  clientID: "Ov23liXimaCrPDXT8d0Q"        # ← 填你的 OAuth App Client ID
+  clientSecret: "da9720e743ffd75d353c02b5ad4152846b4fe6db"    # ← 填你的 OAuth App Client Secret
+  repo: "wuxiumu.github.io"
+  owner: "wuxiumu"
+  admin: ["wuxiumu"]
 
 
 

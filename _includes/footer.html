@@ -17,22 +17,55 @@
 </footer>
 
 <!-- jQuery -->
-<script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
+<script src="{% include asset.html path='/js/jquery.min.js' %}"></script>
+
+{% if site.cdn_url != nil and site.cdn_url != "" %}
+<!-- CDN Image Replacement -->
+<script>
+(function() {
+    var CDN_URL = '{{ site.cdn_url }}';
+    // 替换文章正文中的图片
+    document.addEventListener('DOMContentLoaded', function() {
+        var images = document.querySelectorAll('.post-container img, .post-preview img');
+        images.forEach(function(img) {
+            var src = img.getAttribute('src');
+            if (src && src.startsWith('/') && !src.startsWith('//')) {
+                img.setAttribute('src', CDN_URL + src);
+            }
+        });
+        // 替换 background-image
+        var elements = document.querySelectorAll('[style*="background-image"]');
+        elements.forEach(function(el) {
+            var style = el.getAttribute('style');
+            if (style) {
+                var newStyle = style.replace(/url\(['"]?(\/[^'")\s]+)['"]?\)/g, function(match, path) {
+                    if (!path.startsWith('//')) {
+                        return 'url(' + CDN_URL + path + ')';
+                    }
+                    return match;
+                });
+                el.setAttribute('style', newStyle);
+            }
+        });
+    });
+})();
+</script>
+{% endif %}
 
 <!-- Bootstrap Core JavaScript -->
 <!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
-<script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
+<script src="{% include asset.html path='/js/bootstrap.min.js' %}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
+<script src="{% include asset.html path='/js/hux-blog.min.js' %}"></script>
 
 <!-- Simple Jekyll Search -->
-<script src="{{ "/js/simple-jekyll-search.min.js" | prepend: site.baseurl }}"></script>
+<script src="{% include asset.html path='/js/simple-jekyll-search.min.js' %}"></script>
 
 <!-- Service Worker -->
 {% if site.service-worker %}
-<script src="{{ "/js/snackbar.js " | prepend: site.baseurl }}"></script>
-<script src="{{ "/js/sw-registration.js " | prepend: site.baseurl }}"></script>
+<script src="{% include asset.html path='/js/snackbar.js' %}"></script>
+<script src="{% include asset.html path='/js/sw-registration.js' %}"></script>
 {% endif %}
 
 <!-- async load function -->
@@ -91,7 +124,7 @@
 {% if page.title == 'Archive' %}
 <!-- jquery.tagcloud.js -->
 <script>
-    async('{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}', function () {
+    async('{% include asset.html path='/js/jquery.tagcloud.js' %}', function () {
         $.fn.tagcloud.defaults = {
             //size: {start: 1, end: 1, unit: 'em'},
             color: { start: '#bbbbee', end: '#2f93b4' },
@@ -99,7 +132,7 @@
         $('#tag_cloud a').tagcloud();
     })
 </script>
-<script src='{{ "/js/archive.js " | prepend: site.baseurl }}'></script>
+<script src='{% include asset.html path='/js/archive.js' %}'></script>
 {% endif %}
 
 <!--fastClick.js -->
@@ -193,7 +226,7 @@
      * Doc: https://github.com/davist11/jQuery-One-Page-Nav
      * Fork by Hux to support padding
      */
-    async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
+    async("{% include asset.html path='/js/jquery.nav.js' %}", function () {
         $('.catalog-body').onePageNav({
             currentClass: "active",
             changeHash: !1,

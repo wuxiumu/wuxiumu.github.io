@@ -5,12 +5,12 @@
 
 {% if include.type == 'post' %}
 <script>
-    document.body.insertAdjacentHTML('beforeend', ` <img referrerpolicy="no-referrer" src="{% if page.header-img contains "http" %}{{ page.header-img }}{% else %}{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}{% endif %}" style="display: none;"  />`);
+    document.body.insertAdjacentHTML('beforeend', ` <img referrerpolicy="no-referrer" src="{% if page.header-img contains "http" %}{{ page.header-img }}{% else %}{% include img.html src=page.header-img default=site.header-img %}{% endif %}" style="display: none;"  />`);
 </script>
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('{% if page.header-img contains "http" %}{{ page.header-img }}{% else %}{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}{% endif %}');
+        background-image: url('{% if page.header-img contains "http" %}{{ page.header-img }}{% else %}{% include img.html src=page.header-img default=site.header-img %}{% endif %}');
         background: {{ page.header-bg-css }};
         background-blend-mode: multiply;
     }
@@ -95,7 +95,7 @@
 {% endif %}
 
 {% if include.type == 'page' %}
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+<header class="intro-header" style="background-image: url('{% include img.html src=page.header-img default=site.header-img %}')">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

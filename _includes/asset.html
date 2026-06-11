@@ -1,0 +1,10 @@
+{%- comment -%}
+  静态资源路径助手 (CSS / JS / 图片等)
+  用法: {% include asset.html path="/css/bootstrap.min.css" %}
+  逻辑: cdn_url 有值 → cdn_url + path，否则 → baseurl + path
+{%- endcomment -%}
+{%- if site.cdn_url != nil and site.cdn_url != "" -%}
+{{- site.cdn_url -}}{{- include.path -}}
+{%- else -%}
+{{- site.baseurl -}}{{- include.path -}}
+{%- endif -%}

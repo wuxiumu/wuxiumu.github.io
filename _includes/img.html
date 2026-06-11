@@ -1,0 +1,33 @@
+{%- comment -%}
+  图片路径处理器
+  用法:
+  - {% include img.html src="img/xxx.jpg" %}
+  - {% include img.html src=page.header-img default=site.header-img %}
+  - {% include img.html src=site.sidebar-avatar absolute=true %}  用于需要完整URL的场景
+
+  逻辑:
+  - 如果 src 有值且是完整 URL (http/https)，直接返回 src
+  - 如果 src 为空，使用 default 值
+  - 如果 site.cdn_url 有值，返回 cdn_url + "/" + path
+  - 如果 absolute=true，确保返回完整 URL (site.url + baseurl + path)
+  - 否则返回 site.baseurl + "/" + path
+{%- endcomment -%}
+{%- assign path = include.src -%}
+{%- if path == nil or path == "" -%}
+  {%- assign path = include.default -%}
+{%- endif -%}
+{%- assign first_char = path | slice:0 -%}
+{%- assign need_slash = true -%}
+{%- if first_char == "/" -%}
+  {%- assign need_slash = false -%}
+{%- endif -%}
+{%- if path == nil or path == "" -%}
+{%- elsif path contains "://" -%}
+{{- path -}}
+{%- elsif site.cdn_url != nil and site.cdn_url != "" -%}
+{{- site.cdn_url -}}/{%- if need_slash -%}{{- path -}}{%- else -%}{{- path | remove_first: "/" -}}{%- endif -%}
+{%- elsif include.absolute -%}
+{{- site.url -}}{{- site.baseurl -}}/{%- if need_slash -%}{{- path -}}{%- else -%}{{- path | remove_first: "/" -}}{%- endif -%}
+{%- else -%}
+{{- site.baseurl -}}/{%- if need_slash -%}{{- path -}}{%- else -%}{{- path | remove_first: "/" -}}{%- endif -%}
+{%- endif -%}
