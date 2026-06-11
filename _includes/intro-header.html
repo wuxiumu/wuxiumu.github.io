@@ -105,10 +105,71 @@
         <div class="site-heading">
         {% endif %}
           <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+          {% if site.quotes and site.quotes.size > 0 %}
+          <span class="subheading quotes-rotator">
+            {% for quote in site.quotes %}
+            <span class="quote-item{% if forloop.first %} active{% endif %}">{{ quote }}</span>
+            {% endfor %}
+          </span>
+          {% else %}
           <span class="subheading">{{ page.description }}</span>
+          {% endif %}
         </div>
       </div>
     </div>
   </div>
 </header>
+
+{% if site.quotes and site.quotes.size > 0 %}
+<style>
+.quotes-rotator {
+  display: block;
+  position: relative;
+  min-height: 60px;
+  overflow: hidden;
+}
+.quote-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+  line-height: 1.6;
+}
+.quote-item.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+</style>
+<script>
+(function() {
+  var quotes = document.querySelectorAll('.quote-item');
+  if (quotes.length <= 1) return;
+
+  var currentIndex = 0;
+  var interval = {{ site.quote_interval | default: 5000 }}; // 默认5秒切换
+
+  // 随机选择初始显示的那条
+  var randomIndex = Math.floor(Math.random() * quotes.length);
+  quotes.forEach(function(q, i) {
+    q.classList.remove('active');
+    if (i === randomIndex) {
+      q.classList.add('active');
+      currentIndex = i;
+    }
+  });
+
+  // 轮播切换
+  setInterval(function() {
+    quotes[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % quotes.length;
+    quotes[currentIndex].classList.add('active');
+  }, interval);
+})();
+</script>
+{% endif %}
 {% endif %}

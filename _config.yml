@@ -98,6 +98,19 @@ sidebar-about-description: "路漫漫其修远兮，<br>吾将上下而求索。
 sidebar-avatar: /img/aricwu.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
+# 首页轮播语录
+quotes:
+  - "我干了什么 究竟拿了时间换了什么"
+  - "记住：你是来定义世界和规则的，不是来被规则和世界统一和教化的。"
+  - "AI是杠杆，判断是支点，行动是力量。"
+  - "AI替代的是劳动，但替代不了经营。"
+  - "飞轮比喻 → 两个方向(正向/反向) → AI是油门(中性加速) → 方向错了AI越快越糟 → 所以：人先定方向，AI再加速"
+  - "不要在最该奋斗的年纪，选择了安逸。"
+  - "代码如人生，简洁即美。"
+  - "持续学习，终身成长。"
+  - "用技术改变世界，用思考定义未来。"
+
+
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
