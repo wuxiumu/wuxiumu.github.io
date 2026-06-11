@@ -79,8 +79,11 @@
         s.src = "{% include asset.html path='/js/mermaid.min.js' %}";
         s.onload = function () {
           mermaid.initialize({ startOnLoad: false, securityLevel: 'loose' });
-          mermaid.run({ querySelector: '.mermaid' }).catch(function (err) {
-            console.warn('[Mermaid] 渲染失败:', err);
+          // 等浏览器完成布局再渲染，避免 "svg element not in render tree" 错误
+          requestAnimationFrame(function () {
+            mermaid.run({ querySelector: '.mermaid' }).catch(function (err) {
+              console.warn('[Mermaid] 渲染失败:', err);
+            });
           });
         };
         document.body.appendChild(s);
