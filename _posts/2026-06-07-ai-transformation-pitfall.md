@@ -28,8 +28,8 @@ tags:
 graph LR
     A[旧体系 A] -->|转型| B[升级 A+]
     A -->|重构| C[新体系 B]
-    B -.->|结果| D[效率提升<br/>但竞争会追上]
-    C -.->|结果| E[范式跃迁<br/>新生态位诞生]
+    B -.->|结果| D[效率提升<br>但竞争会追上]
+    C -.->|结果| E[范式跃迁<br>新生态位诞生]
     style A fill:#ffcccc
     style B fill:#ffffcc
     style C fill:#ccffcc
@@ -45,8 +45,8 @@ graph LR
 
 ```mermaid
 graph TD
-    L1[第一层：任务效率提升<br/>🔧 工具层] --> L2[第二层：组织彻底重建<br/>🏢 组织层]
-    L2 --> L3[第三层：生态位创造<br/>🌍 生态层]
+    L1[第一层：任务效率提升<br>🔧 工具层] --> L2[第二层：组织彻底重建<br>🏢 组织层]
+    L2 --> L3[第三层：生态位创造<br>🌍 生态层]
     style L1 fill:#ffcccc
     style L2 fill:#ffffcc
     style L3 fill:#ccffcc

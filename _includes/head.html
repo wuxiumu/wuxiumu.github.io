@@ -79,7 +79,9 @@
         s.src = "{% include asset.html path='/js/mermaid.min.js' %}";
         s.onload = function () {
           mermaid.initialize({ startOnLoad: false, securityLevel: 'loose' });
-          mermaid.run({ querySelector: '.mermaid' });
+          mermaid.run({ querySelector: '.mermaid' }).catch(function (err) {
+            console.warn('[Mermaid] 渲染失败:', err);
+          });
         };
         document.body.appendChild(s);
       });

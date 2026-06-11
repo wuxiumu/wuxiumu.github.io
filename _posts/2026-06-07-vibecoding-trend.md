@@ -20,9 +20,9 @@ tags:
 ```mermaid
 graph LR
     A[AI技术普及] --> B[开发门槛大幅降低]
-    B --> C[非程序员也能开发<br/>VibeCoding]
+    B --> C[非程序员也能开发<br>VibeCoding]
     C --> D[创意快速落地为产品]
-    D --> E[发布平台转移<br/>GitHub → 抖音]
+    D --> E[发布平台转移<br>GitHub → 抖音]
     E --> F[抖音成为新开发者社区]
 ```
 

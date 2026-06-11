@@ -39,9 +39,9 @@ tags:
 
 ```mermaid
 graph LR
-    A[功能层<br/>有用] --> B[体验层<br/>好用]
-    B --> C[情感层<br/>想用]
-    C --> D[身份层<br/>想成为]
+    A[功能层<br>有用] --> B[体验层<br>好用]
+    B --> C[情感层<br>想用]
+    C --> D[身份层<br>想成为]
     
     style A fill:#9E9E9E,color:#fff
     style B fill:#2196F3,color:#fff
