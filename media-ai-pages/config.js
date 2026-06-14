@@ -1,15 +1,26 @@
 // 环境配置
-// OSS_BASE_URL 有值 → 走 OSS
-// OSS_BASE_URL 为空 → 走本地
+// OSS_BASE_URL 有值 → 资源走 OSS
+// 密码验证由实际访问域名决定
 
 (function() {
   // ====== 配置区域 ======
   const OSS_BASE_URL = 'https://vbank8-test.oss-cn-beijing.aliyuncs.com/wuxiumu.github.io/media-ai-pages';
   // ====== 配置结束 ======
 
-  // 本地环境不做任何处理
+  // 判断是否为本地访问（用于密码验证）
+  var hostname = window.location.hostname;
+  var isLocalAccess = hostname === '127.0.0.1' ||
+                      hostname === 'localhost' ||
+                      hostname.includes('github.io');
+
+  // 判断是否为主页面（不需要密码验证）
+  var isMainPage = window.location.pathname.endsWith('/index.html') ||
+                   window.location.pathname.endsWith('/media-ai-pages/') ||
+                   window.location.pathname === '/media-ai-pages';
+
+  // 没有配置 OSS，纯本地模式
   if (!OSS_BASE_URL) {
-    window.ENV_CONFIG = { isOSS: false, baseUrl: '.' };
+    window.ENV_CONFIG = { isOSS: false, isLocalAccess: true, baseUrl: '.' };
     return;
   }
 
@@ -60,7 +71,8 @@
 
   // 暴露全局配置
   window.ENV_CONFIG = {
-    isOSS: true,
+    isOSS: true,              // 资源从 OSS 加载
+    isLocalAccess: isLocalAccess,  // 是否为本地访问（用于密码验证）
     baseUrl: OSS_BASE_URL,
     getUrl: function(path) {
       return OSS_BASE_URL + '/' + path.replace(/^\.?\//, '');
@@ -87,9 +99,13 @@
     subtree: true
   });
 
-  // 动态加载 clarity.js 和 auth.js
+  // 动态加载 clarity.js
   loadJS('clarity.js');
-  loadJS('auth.js');
+
+  // 只有子页面才加载 auth.js（主页面不需要密码验证）
+  if (!isMainPage) {
+    loadJS('auth.js');
+  }
 
   // 停止观察（避免性能问题）
   setTimeout(function() {

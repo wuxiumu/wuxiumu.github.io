@@ -1,5 +1,22 @@
 // 密码验证模块
 (function() {
+  // 本地访问不需要密码验证（资源可以从 OSS 加载，但不需要密码）
+  if (window.ENV_CONFIG && window.ENV_CONFIG.isLocalAccess) {
+    return;  // 本地访问，跳过验证
+  }
+
+  // 被本地页面的 iframe 嵌入时，也不需要验证
+  try {
+    if (window.parent !== window) {
+      var parentHost = window.parent.location.hostname;
+      if (parentHost === '127.0.0.1' || parentHost === 'localhost' || parentHost.includes('github.io')) {
+        return;  // 被本地页面嵌入，跳过验证
+      }
+    }
+  } catch (e) {
+    // 跨域无法访问 parent.location，说明不是被本地嵌入
+  }
+
   // 默认密码
   const DEFAULT_PASSWORD = '123456';
   // 存储 key
