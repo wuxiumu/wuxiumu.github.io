@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 智能助手平台 · 媒体行业解决方案</title>
+<style>
+:root { --primary:#0f4c81; --primary-dark:#0a3660; --accent:#e8792f; --bg:#f5f7fa; --text:#1a2332; --text-sec:#5a6a7e; --border:#dfe5ed; --sidebar-w:260px; }
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);display:flex;overflow:hidden;}
+
+/* Sidebar */
+.sidebar{width:var(--sidebar-w);flex-shrink:0;background:#fff;border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:50;transition:transform .3s;}
+.sidebar-brand{padding:24px 20px 20px;border-bottom:1px solid var(--border);}
+.sidebar-brand h2{font-size:1rem;font-weight:700;color:var(--primary-dark);line-height:1.4;}
+.sidebar-brand small{font-size:.75rem;color:var(--text-sec);}
+.sidebar-nav{flex:1;overflow-y:auto;padding:12px 0;}
+.sidebar-nav::-webkit-scrollbar{width:4px;}
+.sidebar-nav::-webkit-scrollbar-thumb{background:#dfe5ed;border-radius:2px;}
+.nav-group{padding:0 12px;margin-bottom:6px;}
+.nav-group-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:var(--text-sec);padding:12px 12px 6px;opacity:.7;}
+.nav-link{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:.88rem;color:var(--text-sec);cursor:pointer;transition:all .2s;font-weight:500;user-select:none;}
+.nav-link:hover{background:#f0f4f8;color:var(--text);}
+.nav-link.active{background:var(--primary);color:white;font-weight:600;}
+.nav-link .nav-icon{width:22px;text-align:center;font-size:1rem;flex-shrink:0;}
+.nav-link .nav-badge{margin-left:auto;font-size:.68rem;padding:1px 7px;border-radius:10px;background:var(--accent);color:white;font-weight:600;}
+.nav-link.active .nav-badge{background:rgba(255,255,255,.25);}
+.sidebar-footer{padding:16px 20px;border-top:1px solid var(--border);font-size:.75rem;color:var(--text-sec);}
+
+/* Hamburger */
+.hamburger{display:none;position:fixed;top:16px;left:16px;z-index:60;width:40px;height:40px;border-radius:10px;background:white;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.08);cursor:pointer;align-items:center;justify-content:center;font-size:1.2rem;}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:40;}
+.overlay.show{display:block;}
+
+/* Content iframe */
+.content-frame{margin-left:var(--sidebar-w);flex:1;height:100vh;border:none;background:var(--bg);}
+
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%);}
+  .sidebar.open{transform:translateX(0);}
+  .hamburger{display:flex;}
+  .content-frame{margin-left:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="hamburger" onclick="toggleSidebar()">☰</div>
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <h2>AI 智能助手平台</h2>
+    <small>媒体行业解决方案 · v2.1</small>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-group">
+      <div class="nav-group-label">方案概述</div>
+      <div class="nav-link active" data-page="dashboard.html" onclick="go(this)"><span class="nav-icon">🎯</span>方案总览</div>
+      <div class="nav-link" data-page="solution.html" onclick="go(this)"><span class="nav-icon">📑</span>方案详情</div>
+      <div class="nav-link" data-page="problem.html" onclick="go(this)"><span class="nav-icon">🔍</span>问题分析</div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">技术方案</div>
+      <div class="nav-link" data-page="architecture.html" onclick="go(this)"><span class="nav-icon">🏗️</span>技术架构</div>
+      <div class="nav-link" data-page="roadmap.html" onclick="go(this)"><span class="nav-icon">📅</span>实施路线图</div>
+      <div class="nav-link" data-page="scenario.html" onclick="go(this)"><span class="nav-icon">🎯</span>场景设计</div>
+      <div class="nav-link" data-page="governance.html" onclick="go(this)"><span class="nav-icon">🔐</span>权限与治理</div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">评估与管理</div>
+      <div class="nav-link" data-page="roi.html" onclick="go(this)"><span class="nav-icon">📈</span>投资回报</div>
+      <div class="nav-link" data-page="risk.html" onclick="go(this)"><span class="nav-icon">⚠️</span>风险管理</div>
+      <div class="nav-link" data-page="change.html" onclick="go(this)"><span class="nav-icon">🤝</span>变革管理</div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">补充材料</div>
+      <div class="nav-link" data-page="faq.html" onclick="go(this)"><span class="nav-icon">❓</span>常见问题<span class="nav-badge">8</span></div>
+      <div class="nav-link" data-page="improvement.html" onclick="go(this)"><span class="nav-icon">🔄</span>改进计划</div>
+      <div class="nav-link" data-page="cases.html" onclick="go(this)"><span class="nav-icon">🏆</span>最佳案例</div>
+    </div>
+  </div>
+  <div class="sidebar-footer">2026 · 技术架构与实施方案</div>
+</aside>
+
+<iframe class="content-frame" id="frame" src=""></iframe>
+
+<script>
+// 获取 iframe URL（使用 OSS 或本地）
+function getFrameUrl(page) {
+  if (window.ENV_CONFIG && window.ENV_CONFIG.isOSS) {
+    return window.ENV_CONFIG.getUrl(page);
+  }
+  return page;
+}
+
+function go(el, pushState, tab) {
+  document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+  el.classList.add('active');
+  const page = el.dataset.page;
+  const frame = document.getElementById('frame');
+  frame.src = getFrameUrl(page);
+
+  // 构建 URL hash
+  let hash = '#' + page;
+  if (tab) hash += '/' + tab;
+
+  // 更新 URL hash
+  if (pushState !== false) {
+    history.pushState({page, tab}, '', hash);
+  }
+
+  // 如果有 tab，通过 postMessage 通知 iframe
+  if (tab) {
+    frame.onload = function() {
+      frame.contentWindow.postMessage({type: 'switchTab', tab: tab}, '*');
+    };
+  }
+
+  if (window.innerWidth <= 900) toggleSidebar();
+}
+
+// 页面加载时根据 hash 恢复页面
+function loadFromHash() {
+  const hash = location.hash.slice(1) || 'dashboard.html';
+  const parts = hash.split('/');
+  const page = parts[0];
+  const tab = parts[1];
+
+  const link = document.querySelector(`.nav-link[data-page="${page}"]`);
+  if (link) {
+    go(link, false, tab);
+  }
+}
+
+// 浏览器前进/后退支持
+window.addEventListener('popstate', loadFromHash);
+
+// 等待 ENV_CONFIG 加载后初始化
+function init() {
+  if (window.ENV_CONFIG) {
+    loadFromHash();
+  } else {
+    setTimeout(init, 50);
+  }
+}
+init();
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="styles.css"><title>实施路线图</title></head>
+<body>
+<div class="page-title"><span class="icon">📅</span><h1>实施路线图</h1><span class="sub">三阶段渐进推进</span></div>
+<div class="sec-desc">每个阶段都有明确交付物和验证指标。点击展开查看详细计划。</div>
+<div class="tl-container">
+  <div class="tl-item" onclick="toggleTL(0)">
+    <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+    <div class="tl-card">
+      <div class="tl-phase">Phase 1 · 试点验证</div><h3>验证单点场景价值，跑通最小闭环</h3><div class="period">第 1 — 2 个月</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;"><span class="tag">选定试点部门</span><span class="tag">MVP 开发</span><span class="tag">1-2 个高频场景</span><span class="tag">效率基线采集</span></div>
+      <div class="tl-hint">点击展开 ↓</div>
+      <div class="tl-expand" id="tl-e-0">
+        <div class="tl-sec"><h4 class="work">主要工作</h4><ul><li class="w">选定 1 个试点部门（推荐新媒体运营或采编部）</li><li class="w">采集效率基线数据：记录当前各场景平均耗时和产出质量</li><li class="w">搭建 MVP：桌面 Agent + 简单后端 + 1-2 个核心场景</li><li class="w">实现"录音转写→初稿"和"选题→文案批量生成"</li><li class="w">部署基础审计日志，试点运行 2-4 周</li></ul></div>
+        <div class="tl-sec"><h4 class="metric">验证指标</h4><ul><li class="m">任务完成耗时对比（改造前/后，目标降低 60%+）</li><li class="m">AI 产出内容的人工修改率（目标 &lt;30%）</li><li class="m">试点员工满意度调研评分（目标 4/5 分以上）</li><li class="m">系统稳定性：任务成功率 &gt;95%，平均响应时间 &lt;30 秒</li></ul></div>
+        <div class="tl-sec"><h4 class="deliver">交付物</h4><ul><li class="d">可运行的 MVP 系统（桌面端 + 后端服务）</li><li class="d">试点验证报告（效率对比数据 + 员工反馈 + 改进建议）</li><li class="d">阶段二资源需求与预算申请（基于验证数据）</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="tl-item" onclick="toggleTL(1)">
+    <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+    <div class="tl-card">
+      <div class="tl-phase">Phase 2 · 扩展集成</div><h3>打通统一管理后台，接入企业现有系统</h3><div class="period">第 3 — 6 个月</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;"><span class="tag">管理控制台上线</span><span class="tag">MCP 接入</span><span class="tag">扩展 2-3 个部门</span></div>
+      <div class="tl-hint">点击展开 ↓</div>
+      <div class="tl-expand" id="tl-e-1">
+        <div class="tl-sec"><h4 class="work">主要工作</h4><ul><li class="w">搭建完整管理控制台：权限分级配置、审计日志查看、用量监控 Dashboard</li><li class="w">开发 MCP 适配器：CMS 发稿系统、素材库、企业 IM 标准化接入</li><li class="w">扩展至 2-3 个部门，新增场景：数据报表自动生成、素材智能归档、舆情监控</li><li class="w">落地三级权限体系（普通员工 / 部门主管 / 系统管理员）</li><li class="w">建设"场景模板"机制：将验证过的场景固化为可配置模板</li><li class="w">完善异常监控：AI 生成内容质量异常检测、敏感信息外发告警</li></ul></div>
+        <div class="tl-sec"><h4 class="metric">验证指标</h4><ul><li class="m">接入系统数量（目标 ≥3 个核心系统）</li><li class="m">覆盖部门数与活跃使用率（目标使用率 &gt;70%）</li><li class="m">月度 AI 辅助任务量（持续上升趋势）</li><li class="m">违规/异常操作拦截次数（安全治理有效性验证）</li></ul></div>
+        <div class="tl-sec"><h4 class="deliver">交付物</h4><ul><li class="d">管理控制台 v1.0（含权限管理、审计日志、用量看板）</li><li class="d">MCP 适配器集合（CMS / 素材库 / IM）</li><li class="d">场景模板库 v1.0（≥5 个验证过的场景模板）</li><li class="d">安全治理报告（权限策略、审计日志样例、异常拦截统计）</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="tl-item" onclick="toggleTL(2)">
+    <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+    <div class="tl-card">
+      <div class="tl-phase">Phase 3 · 全面推广</div><h3>全公司覆盖，形成可复用的 AI 能力平台</h3><div class="period">第 6 — 12 个月</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;"><span class="tag">全公司推广</span><span class="tag">移动端完善</span><span class="tag">能力平台化</span></div>
+      <div class="tl-hint">点击展开 ↓</div>
+      <div class="tl-expand" id="tl-e-2">
+        <div class="tl-sec"><h4 class="work">主要工作</h4><ul><li class="w">覆盖行政、人力、财务等支持部门，定制各部门场景模板</li><li class="w">移动端控制能力完善：任务推送通知、远程审批确认、进度实时查看</li><li class="w">沉淀"场景模板库"，新部门接入只需配置模板而非重新开发</li><li class="w">平台化改造：开放场景开发 SDK，支持各部门自主开发定制化场景</li><li class="w">建设内部 AI 使用培训体系和持续运营机制</li><li class="w">完成全公司级别的 ROI 量化评估报告</li></ul></div>
+        <div class="tl-sec"><h4 class="metric">验证指标</h4><ul><li class="m">全公司活跃使用率（目标 &gt;80%）</li><li class="m">人均节省工时估算（月度持续追踪）</li><li class="m">新部门接入周期（目标 &lt;2 周，验证平台化效果）</li><li class="m">全公司 ROI 测算报告</li></ul></div>
+        <div class="tl-sec"><h4 class="deliver">交付物</h4><ul><li class="d">AI 智能助手平台 v2.0（全公司版本）</li><li class="d">完整的场景模板库（覆盖 5+ 部门、10+ 场景）</li><li class="d">场景开发 SDK 及开发文档</li><li class="d">全公司 ROI 评估报告及年度运营分析</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function toggleTL(i) {
+  const e = document.getElementById('tl-e-' + i);
+  const h = e.parentElement.querySelector('.tl-hint');
+  e.classList.toggle('open');
+  h.textContent = e.classList.contains('open') ? '点击收起 ↑' : '点击展开 ↓';
+}
+</script>
+</body>
+</html>

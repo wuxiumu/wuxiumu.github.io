@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="styles.css"><title>风险管理</title></head>
+<body>
+<div class="page-title"><span class="icon">⚠️</span><h1>风险管理</h1><span class="sub">评估与应对</span></div>
+<div class="sec-desc">识别项目实施过程中的主要风险，按影响程度分级，并制定对应的缓解策略。点击每张卡片查看详细应对方案。</div>
+
+<div class="grid-2">
+  <div class="risk-card high" onclick="toggleRisk(this)">
+    <div class="risk-level">高风险</div>
+    <h3>内容合规风险</h3>
+    <div class="rdesc">AI 生成内容出现事实错误、不当表述或虚假信息（幻觉问题），在媒体行业可能导致严重的公信力损害和法律风险。</div>
+    <div class="risk-sol"><div class="risk-sol-inner"><strong>应对策略：</strong><br>· 强制人工审核环节——所有对外发布内容必须经编辑审核确认<br>· AI 内容标注机制——发布时自动添加"AI 辅助生成"标识<br>· 事实核查辅助——AI 对关键数据、人名、日期等进行交叉验证提示<br>· 分级发布策略——内部稿件与对外稿件适用不同的审核严格程度</div></div>
+    <div class="risk-hint">点击查看应对策略 ↓</div>
+  </div>
+  <div class="risk-card high" onclick="toggleRisk(this)">
+    <div class="risk-level">高风险</div>
+    <h3>数据安全泄露</h3>
+    <div class="rdesc">敏感素材、未发布稿件、采访对象隐私信息在 AI 处理过程中可能通过 API 调用泄露至外部第三方服务。</div>
+    <div class="risk-sol"><div class="risk-sol-inner"><strong>应对策略：</strong><br>· 本地优先处理——敏感数据尽量在本地完成处理，不传输至外部<br>· 数据分级策略——按敏感等级定义不同的数据传输和处理规则<br>· 传输加密 + 存储加密——TLS 1.3 + AES-256 全链路加密<br>· 审计日志全覆盖——所有数据流转可追溯，异常行为实时告警</div></div>
+    <div class="risk-hint">点击查看应对策略 ↓</div>
+  </div>
+  <div class="risk-card medium" onclick="toggleRisk(this)">
+    <div class="risk-level">中风险</div>
+    <h3>员工接受度不足</h3>
+    <div class="rdesc">员工担心被 AI 替代而产生抵触情绪，使用意愿低，影响推广效果和投资回报。</div>
+    <div class="risk-sol"><div class="risk-sol-inner"><strong>应对策略：</strong><br>· 明确"助手"定位——从第一天起强调 AI 是工具而非替代者<br>· 试点先行——让早期使用者分享效率提升的真实案例，形成口碑效应<br>· 反馈闭环——定期收集使用反馈并快速迭代，让员工参与产品进化<br>· 技能升级——提供培训帮助员工掌握 AI 协作技能，提升职业竞争力</div></div>
+    <div class="risk-hint">点击查看应对策略 ↓</div>
+  </div>
+  <div class="risk-card low" onclick="toggleRisk(this)">
+    <div class="risk-level">低风险</div>
+    <h3>技术供应商锁定</h3>
+    <div class="rdesc">过度依赖单一 LLM 供应商，面临服务中断、价格变动或政策调整的风险。</div>
+    <div class="risk-sol"><div class="risk-sol-inner"><strong>应对策略：</strong><br>· 编排层抽象封装——定义统一的模型调用接口，业务代码不直接依赖特定 API<br>· 多模型支持——保持至少 2 家供应商的接入能力，支持快速切换<br>· 降级策略——主模型不可用时自动切换备选模型，保证业务连续性<br>· 定期评估——每季度评估各模型的性能、价格和合规性</div></div>
+    <div class="risk-hint">点击查看应对策略 ↓</div>
+  </div>
+</div>
+
+<script>
+function toggleRisk(card) {
+  const s = card.querySelector('.risk-sol');
+  const h = card.querySelector('.risk-hint');
+  const o = s.classList.contains('open');
+  document.querySelectorAll('.risk-sol').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.risk-hint').forEach(x => x.textContent = '点击查看应对策略 ↓');
+  if (!o) { s.classList.add('open'); h.textContent = '点击收起 ↑'; }
+}
+</script>
+</body>
+</html>

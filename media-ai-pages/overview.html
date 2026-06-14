@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="styles.css"><title>方案概览</title></head>
+<body>
+
+<!-- Hero 区 -->
+<div class="hero-section">
+  <div class="hero-content">
+    <div class="hero-badge">全栈可落地方案</div>
+    <h1 class="hero-title">媒体 AI 助手<br><span class="highlight">6 周上线，3 个月回本</span></h1>
+    <p class="hero-subtitle">基于 QoderWork CN + Claude API，不造轮子，只做集成<br>你会codeing 就能搞定</p>
+  </div>
+</div>
+
+<!-- 核心场景 1：选题调研 -->
+<div class="impl-section">
+  <div class="impl-header">
+    <span class="impl-num">01</span>
+    <h2>选题调研助手</h2>
+    <span class="impl-time">⏱️ 开发周期：3 天</span>
+  </div>
+
+  <div class="impl-grid">
+    <div class="impl-left">
+      <div class="impl-big">2h → 5min</div>
+      <div class="impl-desc">记者输入关键词，AI 自动抓取全网热点，生成结构化选题报告</div>
+    </div>
+    <div class="impl-right">
+      <h4>📋 实现步骤</h4>
+      <div class="impl-steps">
+        <div class="step"><span class="step-ico">1</span><div><strong>用 QoderWork 创建 Skill</strong><code>创建一个浏览器自动化脚本，抓取微博/知乎热搜 API</code></div></div>
+        <div class="step"><span class="step-ico">2</span><div><strong>调用 Claude API 整理</strong><code>将抓取的原始数据传给 Claude，提取 Top10 话题 + 角度建议</code></div></div>
+        <div class="step"><span class="step-ico">3</span><div><strong>输出 Word 文档</strong><code>用 docx 库生成格式化报告，含数据表格 + 选题建议</code></div></div>
+      </div>
+      <div class="impl-tech">
+        <span class="tech-tag">QoderWork CN</span>
+        <span class="tech-tag">Claude API</span>
+        <span class="tech-tag">Puppeteer</span>
+        <span class="tech-tag">docx</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-title">// 核心代码示意（QoderWork Skill）</div>
+    <pre><code>const topics = await browser.scrape('https://weibo.com/hot/search');
+const report = await claude.generate(`
+  分析以下热搜数据，提取 10 个适合我们媒体的选题：
+  ${JSON.stringify(topics)}
+  输出格式：标题 | 热度 | 角度建议 | 风险提示
+`);
+await docx.create(report, '选题报告.docx');</code></pre>
+  </div>
+</div>
+
+<!-- 核心场景 2：多平台改写 -->
+<div class="impl-section">
+  <div class="impl-header">
+    <span class="impl-num">02</span>
+    <h2>多平台内容改写</h2>
+    <span class="impl-time">⏱️ 开发周期：2 天</span>
+  </div>
+
+  <div class="impl-grid">
+    <div class="impl-left">
+      <div class="impl-big">1 篇 → 4 版本</div>
+      <div class="impl-desc">一篇长文自动改写为微信深度版、微博金句版、小红书种草版、抖音脚本版</div>
+    </div>
+    <div class="impl-right">
+      <h4>📋 实现步骤</h4>
+      <div class="impl-steps">
+        <div class="step"><span class="step-ico">1</span><div><strong>定义 4 种风格 Prompt</strong><code>微信：深度专业 | 微博：短平快金句 | 小红书：种草体 | 抖音：口播脚本</code></div></div>
+        <div class="step"><span class="step-ico">2</span><div><strong>批量调用 Claude API</strong><code>同一篇原文，4 个不同 Prompt，并行请求</code></div></div>
+        <div class="step"><span class="step-ico">3</span><div><strong>输出 4 个文档</strong><code>按平台格式要求输出，含标题、正文、标签</code></div></div>
+      </div>
+      <div class="impl-tech">
+        <span class="tech-tag">Claude API</span>
+        <span class="tech-tag">Prompt 模板</span>
+        <span class="tech-tag">并发请求</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-title">// Prompt 模板配置</div>
+    <pre><code>const styles = {
+  wechat: '你是资深媒体编辑，写一篇 2000 字深度分析...',
+  weibo: '提炼 3 条金句，每条不超过 140 字，带话题标签...',
+  xiaohongshu: '用种草语气，多用 emoji，突出体验感...',
+  douyin: '改写成 30 秒口播脚本，口语化，有节奏感...'
+};
+
+const results = await Promise.all(
+  Object.entries(styles).map(([platform, prompt]) =>
+    claude.generate(`${prompt}\n\n原文：${article}`)
+  )
+);</code></pre>
+  </div>
+</div>
+
+<!-- 核心场景 3：自动分发 -->
+<div class="impl-section">
+  <div class="impl-header">
+    <span class="impl-num">03</span>
+    <h2>多平台自动分发</h2>
+    <span class="impl-time">⏱️ 开发周期：5 天</span>
+  </div>
+
+  <div class="impl-grid">
+    <div class="impl-left">
+      <div class="impl-big">10min 全发完</div>
+      <div class="impl-desc">一键将内容分发到微信公众号、微博、小红书、抖音，自动适配格式</div>
+    </div>
+    <div class="impl-right">
+      <h4>📋 实现步骤</h4>
+      <div class="impl-steps">
+        <div class="step"><span class="step-ico">1</span><div><strong>接入各平台 API</strong><code>微信公众号 API、微博开放平台、小红书创作者 API</code></div></div>
+        <div class="step"><span class="step-ico">2</span><div><strong>格式适配层</strong><code>将内容转换为各平台要求的格式（富文本/图片/视频）</code></div></div>
+        <div class="step"><span class="step-ico">3</span><div><strong>定时任务调度</strong><code>用 Bull 队列实现定时发布，支持最优时间推荐</code></div></div>
+      </div>
+      <div class="impl-tech">
+        <span class="tech-tag">平台 API</span>
+        <span class="tech-tag">Bull Queue</span>
+        <span class="tech-tag">Redis</span>
+        <span class="tech-tag">Node.js</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-title">// 分发调度器</div>
+    <pre><code>const publishers = {
+  wechat: new WechatPublisher(config),
+  weibo: new WeiboPublisher(config),
+  xiaohongshu: new XHSPublisher(config),
+};
+
+async function distribute(content) {
+  const jobs = Object.entries(publishers).map(async ([platform, pub]) => {
+    const adapted = await pub.adapt(content);  // 格式适配
+    await queue.add('publish', { platform, data: adapted }, {
+      delay: getOptimalTime(platform)  // 最优发布时间
+    });
+  });
+  await Promise.all(jobs);
+}</code></pre>
+  </div>
+</div>
+
+<!-- 核心场景 4：数据看板 -->
+<div class="impl-section">
+  <div class="impl-header">
+    <span class="impl-num">04</span>
+    <h2>数据看板与复盘</h2>
+    <span class="impl-time">⏱️ 开发周期：4 天</span>
+  </div>
+
+  <div class="impl-grid">
+    <div class="impl-left">
+      <div class="impl-big">自动生成日报</div>
+      <div class="impl-desc">每日自动采集各平台数据，生成可视化报表，异常自动预警</div>
+    </div>
+    <div class="impl-right">
+      <h4>📋 实现步骤</h4>
+      <div class="impl-steps">
+        <div class="step"><span class="step-ico">1</span><div><strong>定时采集脚本</strong><code>Cron Job 每 2 小时采集一次各平台数据（阅读量/点赞/转发）</code></div></div>
+        <div class="step"><span class="step-ico">2</span><div><strong>数据存储</strong><code>PostgreSQL 存储历史数据，Redis 缓存实时数据</code></div></div>
+        <div class="step"><span class="step-ico">3</span><div><strong>前端看板</strong><code>React + ECharts 展示趋势图、对比图、排行榜</code></div></div>
+        <div class="step"><span class="step-ico">4</span><div><strong>异常预警</strong><code>阅读量低于均值 50% 自动通知企业微信</code></div></div>
+      </div>
+      <div class="impl-tech">
+        <span class="tech-tag">PostgreSQL</span>
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">ECharts</span>
+        <span class="tech-tag">Cron Job</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 技术架构简图 -->
+<div class="impl-section">
+  <div class="impl-header">
+    <span class="impl-num">05</span>
+    <h2>技术架构</h2>
+    <span class="impl-time">⏱️ 无新技术，全是老伙计</span>
+  </div>
+
+  <div class="arch-simple">
+    <div class="arch-row-simple">
+      <div class="arch-box-simple frontend">
+        <strong>前端</strong>
+        <span>React + Ant Design</span>
+        
+      </div>
+      <div class="arch-box-simple backend">
+        <strong>后端</strong>
+        <span>Node.js + Express</span>
+        
+      </div>
+      <div class="arch-box-simple db">
+        <strong>数据库</strong>
+        <span>PostgreSQL + Redis</span>
+        
+      </div>
+    </div>
+    <div class="arch-connector-simple">↓</div>
+    <div class="arch-row-simple">
+      <div class="arch-box-simple ai">
+        <strong>AI 层</strong>
+        <span>Claude API + QoderWork</span>
+      </div>
+      <div class="arch-box-simple queue">
+        <strong>任务队列</strong>
+        <span>Bull + Redis</span>
+        
+      </div>
+      <div class="arch-box-simple deploy">
+        <strong>部署</strong>
+        <span>Docker + 阿里云</span>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h3>💡 总结一下</h3>
+    <div class="summary-grid">
+      <div class="summary-item">
+        <div class="summary-num">6 周</div>
+        <div class="summary-label">开发周期</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-num">1 人</div>
+        <div class="summary-label">全栈即可</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-num">¥3k/月</div>
+        <div class="summary-label">API 成本</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-num">3 月</div>
+        <div class="summary-label">回本周期</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 行动召唤 -->
+<div class="cta-section">
+  <h2>🚀 本周就能开始</h2>
+  <p class="cta-sub">别想太多，先跑通一个场景再说</p>
+  <div class="cta-steps">
+    <div class="cta-step"><span>1</span>注册 QoderWork 账号</div>
+    <div class="cta-step"><span>2</span>写第一个选题调研 Skill</div>
+    <div class="cta-step"><span>3</span>找 3 个记者试用</div>
+    <div class="cta-step"><span>4</span>收集反馈迭代</div>
+  </div>
+  <a href="#plan.html" class="btn btn-cta" onclick="parent.go(document.querySelector('[data-page=&quot;plan.html&quot;]'))">查看完整实施计划 →</a>
+</div>
+
+</body>
+</html>

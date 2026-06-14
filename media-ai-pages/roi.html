@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="styles.css"><title>投资回报</title></head>
+<body>
+<div class="page-title"><span class="icon">📈</span><h1>投资回报分析</h1><span class="sub">ROI 计算器</span></div>
+<div class="sec-desc">拖动滑块调整参数，实时查看预估投资回报。用于量化方案的说服力。</div>
+
+<div class="card" style="padding:0;overflow:hidden;">
+  <div style="background:linear-gradient(135deg,#0f4c81,#1a6bb5);color:white;padding:24px 28px;">
+    <h3 style="font-size:1.08rem;font-weight:600;">ROI 交互式计算器</h3>
+    <p style="font-size:.85rem;opacity:.8;margin-top:4px;">根据实际团队参数调整，实时计算投资回报预估</p>
+  </div>
+  <div style="padding:28px;">
+    <div class="grid-4" style="margin-bottom:28px;">
+      <div>
+        <label style="font-size:.84rem;font-weight:500;color:var(--text-sec);">团队人数</label>
+        <div class="roi-slider"><input type="range" id="r-p" min="5" max="200" value="20" oninput="calcROI()"><div class="roi-val" id="r-p-v">20 人</div></div>
+      </div>
+      <div>
+        <label style="font-size:.84rem;font-weight:500;color:var(--text-sec);">每人每天节省（小时）</label>
+        <div class="roi-slider"><input type="range" id="r-h" min="0.5" max="4" step="0.5" value="1" oninput="calcROI()"><div class="roi-val" id="r-h-v">1.0 h</div></div>
+      </div>
+      <div>
+        <label style="font-size:.84rem;font-weight:500;color:var(--text-sec);">平均月薪（元）</label>
+        <div class="roi-slider"><input type="range" id="r-s" min="8000" max="40000" step="1000" value="15000" oninput="calcROI()"><div class="roi-val" id="r-s-v">1.5 万</div></div>
+      </div>
+      <div>
+        <label style="font-size:.84rem;font-weight:500;color:var(--text-sec);">月度系统成本（元）</label>
+        <div class="roi-slider"><input type="range" id="r-c" min="1000" max="20000" step="500" value="5000" oninput="calcROI()"><div class="roi-val" id="r-c-v">5,000</div></div>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="roi-result"><div class="lbl">月度节省工时</div><div class="num" id="ro-h">440</div><div class="unit">小时</div></div>
+      <div class="roi-result hl"><div class="lbl">月度净节省成本</div><div class="num" id="ro-net">32,400</div><div class="unit">元 / 月</div></div>
+      <div class="roi-result"><div class="lbl">年度净节省成本</div><div class="num" id="ro-yr">388,800</div><div class="unit">元 / 年</div></div>
+      <div class="roi-result"><div class="lbl">投入产出比</div><div class="num" id="ro-r">6.5x</div><div class="unit">节省 / 成本</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="hl-box blue" style="margin-top:16px;border-left:3px solid var(--primary-light);">
+  <strong>说明：</strong>以上为保守估算模型。实际效率提升数据需在阶段一试点中通过抽样统计获得。"月度系统成本"包含 LLM API 调用费、服务器运维、开发维护人力等。随着使用规模扩大，边际成本会显著降低，实际 ROI 通常优于初始估算。阶段一试点的验证指标是后续阶段预算决策的核心依据。
+</div>
+
+<script>
+function calcROI() {
+  const p = +document.getElementById('r-p').value;
+  const h = +document.getElementById('r-h').value;
+  const s = +document.getElementById('r-s').value;
+  const c = +document.getElementById('r-c').value;
+  document.getElementById('r-p-v').textContent = p + ' 人';
+  document.getElementById('r-h-v').textContent = h + ' h';
+  document.getElementById('r-s-v').textContent = s >= 10000 ? (s/10000).toFixed(s%10000 ? 1 : 0) + ' 万' : s.toLocaleString();
+  document.getElementById('r-c-v').textContent = c.toLocaleString();
+  const wd = 22, hr = Math.round(s / wd / 8), mh = p * h * wd;
+  const mg = Math.round(mh * hr), mn = mg - c, yn = mn * 12;
+  const r = c > 0 ? (mg / c).toFixed(1) : '—';
+  aN('ro-h', mh); aN('ro-net', mn); aN('ro-yr', yn);
+  document.getElementById('ro-r').textContent = r + 'x';
+}
+function aN(id, t) {
+  const e = document.getElementById(id);
+  const c = parseInt(e.textContent.replace(/,/g, '')) || 0;
+  const d = t - c;
+  if (Math.abs(d) < 2) { e.textContent = t.toLocaleString(); return; }
+  const st = 16, sv = d / st;
+  let i = 0;
+  const tm = setInterval(() => {
+    i++;
+    const v = i >= st ? t : Math.round(c + sv * i);
+    e.textContent = v.toLocaleString();
+    if (i >= st) clearInterval(tm);
+  }, 16);
+}
+calcROI();
+</script>
+</body>
+</html>

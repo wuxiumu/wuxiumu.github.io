@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>方案详情</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { height:100%; }
+body {
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:#f5f7fa; display:flex; flex-direction:column;
+}
+
+/* Tab 导航 */
+.tab-nav {
+  display:flex; background:white; border-bottom:1px solid #dfe5ed;
+  padding:0 24px; flex-shrink:0;
+}
+.tab-item {
+  padding:16px 24px; font-size:0.95rem; font-weight:500;
+  color:#5a6a7e; cursor:pointer; border-bottom:3px solid transparent;
+  transition:all 0.2s; user-select:none;
+}
+.tab-item:hover { color:#0f4c81; }
+.tab-item.active {
+  color:#0f4c81; font-weight:600; border-bottom-color:#0f4c81;
+}
+
+/* iframe 容器 */
+.frame-container {
+  flex:1; position:relative;
+}
+.frame-container iframe {
+  position:absolute; inset:0; width:100%; height:100%;
+  border:none; display:none;
+}
+.frame-container iframe.active {
+  display:block;
+}
+</style>
+</head>
+<body>
+
+<div class="tab-nav">
+  <div class="tab-item active" data-tab="overview" data-src="overview.html">📋 方案概览</div>
+  <div class="tab-item" data-tab="plan" data-src="plan.html">📄 实施计划</div>
+</div>
+
+<div class="frame-container">
+  <iframe id="frame-overview" src="overview.html" class="active"></iframe>
+  <iframe id="frame-plan" src="plan.html"></iframe>
+</div>
+
+<script>
+const tabItems = document.querySelectorAll('.tab-item');
+const frames = {
+  overview: document.getElementById('frame-overview'),
+  plan: document.getElementById('frame-plan')
+};
+
+function switchTab(tabName) {
+  // 更新 tab 状态
+  tabItems.forEach(item => {
+    item.classList.toggle('active', item.dataset.tab === tabName);
+  });
+  // 更新 iframe 显示
+  Object.entries(frames).forEach(([key, frame]) => {
+    frame.classList.toggle('active', key === tabName);
+  });
+  // 更新 URL
+  const newHash = '#solution.html/' + tabName;
+  history.replaceState(null, '', newHash);
+  // 通知父页面
+  if (window.parent !== window) {
+    window.parent.history.replaceState(null, '', newHash);
+  }
+}
+
+// 点击切换
+tabItems.forEach(item => {
+  item.addEventListener('click', () => switchTab(item.dataset.tab));
+});
+
+// 监听父页面消息
+window.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'switchTab') {
+    switchTab(event.data.tab);
+  }
+});
+
+// 页面加载时恢复
+function restoreTab() {
+  const hash = window.location.hash;
+  const parts = hash.split('/');
+  if (parts.length > 1 && frames[parts[1]]) {
+    switchTab(parts[1]);
+  }
+}
+restoreTab();
+</script>
+
+</body>
+</html>

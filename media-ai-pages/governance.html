@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="styles.css"><title>权限与治理</title></head>
+<body>
+<div class="page-title"><span class="icon">🔐</span><h1>权限与治理</h1><span class="sub">合规治理体系</span></div>
+<div class="sec-desc">治理体系从阶段一起内置，非后期补丁。按角色定义权限边界，明确哪些操作需要审批。</div>
+
+<div class="grid-3" style="margin-bottom:24px;">
+  <div class="perm-card">
+    <div class="perm-head"><div class="role-ico" style="background:#eef4fb;">👤</div><div><h3>普通员工</h3><small>日常内容生产者</small></div></div>
+    <div class="perm-body">
+      <div class="perm-row"><span class="badge allow">允许</span>调用 AI 生成初稿、整理本地文件、生成报表草稿</div>
+      <div class="perm-row"><span class="badge allow">允许</span>使用已配置的场景模板执行自动化任务</div>
+      <div class="perm-row"><span class="badge need">需审批</span>对外发布任何 AI 生成的内容</div>
+      <div class="perm-row"><span class="badge need">需审批</span>删除文件、跨部门调用素材</div>
+      <div class="perm-row"><span class="badge log">记录</span>所有操作均记录审计日志</div>
+    </div>
+  </div>
+  <div class="perm-card">
+    <div class="perm-head"><div class="role-ico" style="background:#fef7f0;">👔</div><div><h3>部门主管</h3><small>团队管理与策略配置</small></div></div>
+    <div class="perm-body">
+      <div class="perm-row"><span class="badge allow">允许</span>配置本部门的场景模板和工作流</div>
+      <div class="perm-row"><span class="badge allow">允许</span>查看本部门使用数据和效率报告</div>
+      <div class="perm-row"><span class="badge allow">允许</span>审核本部门员工提交的 AI 生成内容</div>
+      <div class="perm-row"><span class="badge need">需审批</span>批量授权操作、调整本部门权限策略</div>
+      <div class="perm-row"><span class="badge log">记录</span>所有管理操作均记录审计日志</div>
+    </div>
+  </div>
+  <div class="perm-card">
+    <div class="perm-head"><div class="role-ico" style="background:#eefbf5;">⚙️</div><div><h3>系统管理员</h3><small>全局配置与安全管控</small></div></div>
+    <div class="perm-body">
+      <div class="perm-row"><span class="badge allow">允许</span>全公司权限策略配置和组织架构管理</div>
+      <div class="perm-row"><span class="badge allow">允许</span>审计日志查看、异常行为告警处理</div>
+      <div class="perm-row"><span class="badge allow">允许</span>接入新系统（开发 MCP 适配器并配置）</div>
+      <div class="perm-row"><span class="badge allow">允许</span>模型调用配额管理和成本监控</div>
+      <div class="perm-row"><span class="badge log">记录</span>所有操作均记录审计日志，不可篡改</div>
+    </div>
+  </div>
+</div>
+
+<div class="gov-box">
+  <h3>⚠️ 不可省略的治理规则</h3>
+  <div class="gov-item"><span>📌</span><span><strong>AI 内容审核：</strong>所有 AI 生成的对外发布内容必须标注"AI 辅助生成"标识，并经至少一名编辑人工审核后方可发布。不允许 AI 内容绕过审核流程直接进入发布环节。</span></div>
+  <div class="gov-item"><span>🔐</span><span><strong>数据安全原则：</strong>涉及未发布稿件、采访对象隐私信息、内部策划方案等敏感数据，优先在本地处理。数据传输加密（TLS 1.3），存储加密（AES-256），禁止传输到非授权外部服务。</span></div>
+  <div class="gov-item"><span>📋</span><span><strong>审计日志全覆盖：</strong>所有 Agent 操作（文件读写、API 调用、模型请求、对外发布、权限变更）均记录审计日志。日志不可篡改，保留周期 ≥180 天，支持全文检索和时间线回溯。</span></div>
+  <div class="gov-item"><span>🚨</span><span><strong>异常监控告警：</strong>建立实时监控系统，对以下异常行为自动告警——单次调用数据量异常、高频重复请求、敏感关键词触发、非工作时间的异常操作。</span></div>
+</div>
+</body>
+</html>

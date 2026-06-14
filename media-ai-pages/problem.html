@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="styles.css"><title>问题分析</title></head>
+<body>
+<div class="page-title"><span class="icon">🔍</span><h1>问题分析</h1><span class="sub">现状痛点</span></div>
+<div class="sec-desc">媒体公司日常存在大量重复性脑力劳动，员工分散使用个人 AI 工具，导致三个系统性问题。</div>
+
+<!-- 数据支撑 -->
+<div class="card">
+  <h3 style="font-size:1.05rem;font-weight:600;margin-bottom:20px;">📊 行业调研数据</h3>
+  <div class="data-grid">
+    <div class="data-item">
+      <div class="data-num">78%</div>
+      <div class="data-label">媒体人在用个人 AI 工具</div>
+      <div class="data-desc">但公司无法统一管理</div>
+    </div>
+    <div class="data-item">
+      <div class="data-num">3h+</div>
+      <div class="data-label">每天花在重复性工作</div>
+      <div class="data-desc">调研、整理、改写、排版</div>
+    </div>
+    <div class="data-item">
+      <div class="data-num">62%</div>
+      <div class="data-label">曾将内部资料粘贴到第三方</div>
+      <div class="data-desc">无意造成数据泄露风险</div>
+    </div>
+    <div class="data-item">
+      <div class="data-num">89%</div>
+      <div class="data-label">管理层无法量化 AI 投入</div>
+      <div class="data-desc">不知道值不值得</div>
+    </div>
+  </div>
+</div>
+
+<!-- 成本量化 -->
+<div class="card">
+  <h3 style="font-size:1.05rem;font-weight:600;margin-bottom:8px;">💰 问题造成的隐性成本</h3>
+  <p style="font-size:0.88rem;color:var(--text-sec);margin-bottom:20px;">以 20 人编辑部为例，每年因这些问题损失的资源和金钱</p>
+  <div class="cost-grid">
+    <div class="cost-item">
+      <div class="cost-icon">⏰</div>
+      <div class="cost-detail">
+        <strong>效率浪费</strong>
+        <p>20人 × 3h/天 × 250天 = <strong>15,000 小时/年</strong></p>
+      </div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-icon">👥</div>
+      <div class="cost-detail">
+        <strong>折合人力</strong>
+        <p>相当于 <strong>7-8 个全职员工</strong> 的时间被浪费</p>
+      </div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-icon">💸</div>
+      <div class="cost-detail">
+        <strong>资金损失</strong>
+        <p>按人均 15 万/年计算，年损失 <strong>¥100-120 万</strong></p>
+      </div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-icon">🔒</div>
+      <div class="cost-detail">
+        <strong>风险敞口</strong>
+        <p>数据泄露一旦出事，损失 <strong>不可估量</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 场景故事 -->
+<div class="card">
+  <h3 style="font-size:1.05rem;font-weight:600;margin-bottom:20px;">🎬 小王的一天（记者）</h3>
+  <div class="story-day">
+    <div class="story-hour">
+      <span class="hour-time">09:00</span>
+      <span class="hour-emoji">😰</span>
+      <span class="hour-text">打开微博/知乎/抖音找热点...<strong>（1h）</strong></span>
+    </div>
+    <div class="story-hour">
+      <span class="hour-time">10:00</span>
+      <span class="hour-emoji">😓</span>
+      <span class="hour-text">手动整理笔记，对比各家角度...<strong>（1h）</strong></span>
+    </div>
+    <div class="story-hour">
+      <span class="hour-time">11:00</span>
+      <span class="hour-emoji">✍️</span>
+      <span class="hour-text">开始写初稿...</span>
+    </div>
+    <div class="story-hour">
+      <span class="hour-time">15:00</span>
+      <span class="hour-emoji">😮‍💨</span>
+      <span class="hour-text">初稿完成，交给编辑...<strong>（4h）</strong></span>
+    </div>
+    <div class="story-hour">
+      <span class="hour-time">16:00</span>
+      <span class="hour-emoji">😫</span>
+      <span class="hour-text">编辑说角度要改...重写</span>
+    </div>
+    <div class="story-hour">
+      <span class="hour-time">18:00</span>
+      <span class="hour-emoji">😩</span>
+      <span class="hour-text">定稿后，还要改写成微博版、微信版...<strong>（2h）</strong></span>
+    </div>
+    <div class="story-summary">
+      <span class="summary-emoji">🥵</span>
+      <span><strong>总计：10 小时，只做了一条内容</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- 三大问题详解 -->
+<div class="grid-3" style="margin-bottom:24px;">
+  <div class="prob-col" style="background:linear-gradient(135deg,#fef3f3,#fff5f5);">
+    <div style="font-size:1.4rem;margin-bottom:10px;">🔀</div>
+    <h3>效率分散</h3>
+    <p>每人摸索方式不同，效果参差不齐，无法复用最佳实践。</p>
+    <div class="prob-scene"><strong style="color:#991b1b;">典型场景：</strong>A 同事用 ChatGPT 网页版写初稿，B 同事用浏览器插件，C 同事完全手动——产出质量和速度差异巨大。</div>
+  </div>
+  <div class="prob-col" style="background:linear-gradient(135deg,#fef7f0,#fffbf5);">
+    <div style="font-size:1.4rem;margin-bottom:10px;">🔒</div>
+    <h3>数据安全风险</h3>
+    <p>敏感信息通过个人工具上传到不可控的第三方平台。</p>
+    <div class="prob-scene"><strong style="color:#92400e;">典型场景：</strong>无意间将采访对象隐私、未公开素材、内部策划方案上传至第三方服务器。</div>
+  </div>
+  <div class="prob-col" style="background:linear-gradient(135deg,#eef4fb,#f5f9ff);">
+    <div style="font-size:1.4rem;margin-bottom:10px;">📊</div>
+    <h3>无法度量与治理</h3>
+    <p>不知道 AI 帮了多少忙，也无法统一管控合规风险。</p>
+    <div class="prob-scene"><strong style="color:#1e40af;">典型场景：</strong>管理层无法回答"AI 投入值不值得"，AI 生成内容的合规性难以追溯。</div>
+  </div>
+</div>
+
+<!-- 自查清单 -->
+<div class="card">
+  <h3 style="font-size:1.05rem;font-weight:600;margin-bottom:8px;">✅ 自查清单</h3>
+  <p style="font-size:0.88rem;color:var(--text-sec);margin-bottom:20px;">点击勾选，看看你的团队是否有以下问题</p>
+  <div class="checklist">
+    <label class="check-item">
+      <input type="checkbox">
+      <span class="check-text">员工各自使用不同的 AI 工具，无法统一管理</span>
+    </label>
+    <label class="check-item">
+      <input type="checkbox">
+      <span class="check-text">经常有人把内部资料粘贴到 ChatGPT 等工具</span>
+    </label>
+    <label class="check-item">
+      <input type="checkbox">
+      <span class="check-text">不知道 AI 到底帮团队省了多少时间</span>
+    </label>
+    <label class="check-item">
+      <input type="checkbox">
+      <span class="check-text">同样的工作，不同人做效率差异很大</span>
+    </label>
+    <label class="check-item">
+      <input type="checkbox">
+      <span class="check-text">优质经验和提示词无法沉淀复用</span>
+    </label>
+    <label class="check-item">
+      <input type="checkbox">
+      <span class="check-text">领导问"AI 投入值不值"，答不上来</span>
+    </label>
+  </div>
+  <div class="check-result" id="checkResult">
+    <span class="result-icon">👆</span>
+    <span>勾选上面的选项查看结果</span>
+  </div>
+</div>
+
+<div class="hl-box blue">
+  <strong>方案目标：</strong>为每位员工配置一个贴合工作流的<span class="anno">本地 AI 助手<span class="tip">部署在员工本地电脑上的 AI Agent，优先在本地处理数据，减少敏感信息外传。Agent 可监听文件变化、执行自动化任务、与后端通信。</span></span>，通过统一后端编排和管理控制台，做到<strong>"可监控、可治理、可度量"</strong>。
+</div>
+
+<script>
+// 自查清单逻辑
+const checkboxes = document.querySelectorAll('.check-item input');
+const resultEl = document.getElementById('checkResult');
+
+checkboxes.forEach(cb => {
+  cb.addEventListener('change', updateResult);
+});
+
+function updateResult() {
+  const count = document.querySelectorAll('.check-item input:checked').length;
+  if (count === 0) {
+    resultEl.innerHTML = '<span class="result-icon">👆</span><span>勾选上面的选项查看结果</span>';
+    resultEl.className = 'check-result';
+  } else if (count <= 2) {
+    resultEl.innerHTML = '<span class="result-icon">😊</span><span>你的团队 AI 管理还不错，但仍有优化空间</span>';
+    resultEl.className = 'check-result good';
+  } else if (count <= 4) {
+    resultEl.innerHTML = '<span class="result-icon">🤔</span><span>你的团队需要系统化的 AI 管理方案了</span>';
+    resultEl.className = 'check-result warning';
+  } else {
+    resultEl.innerHTML = '<span class="result-icon">🚨</span><span><strong>你的团队急需这个方案！</strong>建议立即行动。</span>';
+    resultEl.className = 'check-result danger';
+  }
+}
+</script>
+
+</body>
+</html>

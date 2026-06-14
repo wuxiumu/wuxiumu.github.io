@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="styles.css"><title>最佳案例</title></head>
+<body>
+<div class="page-title"><span class="icon">🏆</span><h1>行业最佳案例</h1><span class="sub">3 个代表性案例</span></div>
+<div class="sec-desc">媒体和内容行业 AI 辅助落地的代表性案例，包含正面成功经验和反面警示教训，提炼可复用的经验和模式。</div>
+
+<!-- 美联社 -->
+<div class="case-card" onclick="toggleCase(this)">
+  <div class="case-header">
+    <div class="case-logo" style="background:linear-gradient(135deg,#eef4fb,#dbeafe);">📰</div>
+    <div class="case-info">
+      <h3>美联社 — AI 辅助财经快讯自动化</h3>
+      <div class="case-type">通讯社 · 新闻生产自动化</div>
+    </div>
+  </div>
+  <div class="case-body">
+    <div class="case-metrics">
+      <div class="case-metric"><div class="cm-num">10x</div><div class="cm-lbl">季度财报报道产量提升</div></div>
+      <div class="case-metric"><div class="cm-num">0</div><div class="cm-lbl">裁员人数（记者转向深度报道）</div></div>
+      <div class="case-metric"><div class="cm-num">2014</div><div class="cm-lbl">启动年份，已持续 10+ 年</div></div>
+    </div>
+    <div class="case-detail">
+      <h4>核心做法</h4>
+      <p>美联社与 Automated Insights 合作，使用 Wordsmith 平台自动将企业财报数据转化为结构化新闻稿件。每季度自动生成数千篇财报快讯，记者转向深度分析和调查报道。</p>
+      <div class="case-expand">
+        <h4>可借鉴经验</h4>
+        <p><strong>从最标准化的场景切入：</strong>财报数据结构高度统一，非常适合模板化自动写作。对应到本方案，"录音转写→初稿"同样是从最标准化的场景开始验证。</p>
+        <p><strong>人机协作而非替代：</strong>AI 负责数据搬运和初稿生成，记者负责深度分析和判断。这个定位让记者群体从抵触转为接受。</p>
+        <p><strong>渐进式扩展：</strong>从财报快讯开始，逐步扩展到体育赛况、选举结果等更多结构化数据场景。</p>
+        <h4>与方案的关联</h4>
+        <p>验证了"标准化场景 + 模板化生成 + 人工审核"这一模式的可行性，与本方案 MVP 的设计思路高度一致。</p>
+      </div>
+    </div>
+    <div class="case-hint">点击展开详细分析 ↓</div>
+  </div>
+</div>
+
+<!-- 路透社 -->
+<div class="case-card" onclick="toggleCase(this)">
+  <div class="case-header">
+    <div class="case-logo" style="background:linear-gradient(135deg,#fef7f0,#fff1e6);">🗞️</div>
+    <div class="case-info">
+      <h3>路透社 — AI 驱动的新闻编辑室工具链</h3>
+      <div class="case-type">通讯社 · 全流程 AI 工具集成</div>
+    </div>
+  </div>
+  <div class="case-body">
+    <div class="case-metrics">
+      <div class="case-metric"><div class="cm-num">200+</div><div class="cm-lbl">记者日常使用 AI 工具</div></div>
+      <div class="case-metric"><div class="cm-num">3x</div><div class="cm-lbl">线索发现效率提升</div></div>
+      <div class="case-metric"><div class="cm-num">2018</div><div class="cm-lbl">Lynx Insight 项目启动</div></div>
+    </div>
+    <div class="case-detail">
+      <h4>核心做法</h4>
+      <p>路透社开发了内部 AI 工具"Lynx Insight"，集成到记者日常工作流中。功能包括：自动监控海量数据源发现新闻线索、辅助生成报道初稿、自动翻译多语言内容、生成摘要和要点提取。</p>
+      <div class="case-expand">
+        <h4>可借鉴经验</h4>
+        <p><strong>深度嵌入工作流：</strong>不是让记者去另一个平台使用 AI，而是将 AI 能力嵌入记者已经在用的编辑系统中。这正是本方案"终端层 Agent + MCP 适配现有系统"的设计逻辑。</p>
+        <p><strong>内部自建+外部模型：</strong>路透社自研了编排层和交互界面，但底层 NLP 能力调用了外部模型服务。验证了"不自研模型、聚焦编排和集成"的技术路线。</p>
+        <p><strong>安全合规前置：</strong>路透社对 AI 工具制定了明确的使用规范——AI 产出必须标注、敏感内容自动告警、所有操作有审计记录。与本方案的治理体系设计一致。</p>
+      </div>
+    </div>
+    <div class="case-hint">点击展开详细分析 ↓</div>
+  </div>
+</div>
+
+<!-- BuzzFeed -->
+<div class="case-card" onclick="toggleCase(this)">
+  <div class="case-header">
+    <div class="case-logo" style="background:linear-gradient(135deg,#fef3f3,#fff5f5);">📱</div>
+    <div class="case-info">
+      <h3>BuzzFeed — AI 内容规模化生产（反面警示）</h3>
+      <div class="case-type">数字媒体 · AI 内容策略转型</div>
+    </div>
+  </div>
+  <div class="case-body">
+    <div class="case-metrics">
+      <div class="case-metric"><div class="cm-num" style="color:var(--danger);">警示</div><div class="cm-lbl">反面案例</div></div>
+      <div class="case-metric"><div class="cm-num" style="color:var(--danger);">↓40%</div><div class="cm-lbl">AI 内容导致搜索排名下降</div></div>
+      <div class="case-metric"><div class="cm-num">2023</div><div class="cm-lbl">大规模 AI 内容生产启动</div></div>
+    </div>
+    <div class="case-detail">
+      <h4>案例概述</h4>
+      <p>BuzzFeed 在 2023 年大规模使用 AI 生成旅游指南等内容，短期内产出大量文章。但由于缺乏人工审核和质量把控，被 Google 搜索算法降权，流量大幅下降。</p>
+      <div class="case-expand">
+        <h4>反面教训</h4>
+        <p><strong>质量红线不可逾越：</strong>AI 生成的内容如果缺乏人工审核和事实核查，不仅不能带来价值，反而会损害品牌信誉和搜索排名。这直接验证了本方案"强制人工审核"治理规则的必要性。</p>
+        <p><strong>不能为了 AI 而 AI：</strong>BuzzFeed 的案例说明，如果 AI 只是用来"生产更多内容"而不是"帮助员工做得更好"，最终会适得其反。本方案将 AI 定位为"助手"而非"内容工厂"，正是为了避免这一陷阱。</p>
+        <p><strong>透明度的价值：</strong>BuzzFeed 未标注 AI 生成内容引发信任危机，进一步验证了"AI 内容标注"机制的必要性。</p>
+      </div>
+    </div>
+    <div class="case-hint">点击展开详细分析 ↓</div>
+  </div>
+</div>
+
+<!-- 总结 -->
+<div class="card">
+  <h3 style="font-size:1.02rem;font-weight:600;margin-bottom:12px;color:var(--primary-dark);">案例提炼：四条核心成功模式</h3>
+  <div class="lesson-list">
+    <div class="lesson"><div class="ln">1</div><div><strong>从标准化场景切入</strong> — 数据结构化程度越高，AI 效果越好。优先选择模板化程度高的场景（如财报、快讯、归档）作为试点。</div></div>
+    <div class="lesson"><div class="ln">2</div><div><strong>人机协作是底线</strong> — 成功案例无一例外地采用"AI 生成 + 人工审核"模式，反面案例的共同特征是缺少人工质量把控环节。</div></div>
+    <div class="lesson"><div class="ln">3</div><div><strong>嵌入工作流而非独立平台</strong> — AI 能力必须嵌入员工日常使用的工具中，而非要求员工切换到新平台。这是"终端层 Agent + MCP 适配"架构的直接依据。</div></div>
+    <div class="lesson"><div class="ln">4</div><div><strong>渐进式推进</strong> — 从 1 个部门、1-2 个场景开始验证，用数据说话，逐步扩展。一步到位的大规模推广风险极高。</div></div>
+  </div>
+</div>
+
+<div class="final-box">
+  <h3>方案核心价值总结</h3>
+  本方案的工程重点不在于大模型本身，而在于<strong>编排、治理与企业系统集成</strong>。方案设计的核心优势在于：每个阶段都有明确的验证指标和交付物，资源投入是渐进式而非一次性的；技术架构复用成熟 LLM API 但通过抽象封装避免供应商锁定；治理体系从第一天起内置而非后期补丁。<strong>阶段一试点的验证数据，将是后续阶段资源投入决策的最有力依据。</strong>
+</div>
+
+<script>
+function toggleCase(card) {
+  const e = card.querySelector('.case-expand');
+  const h = card.querySelector('.case-hint');
+  const o = e.classList.contains('open');
+  document.querySelectorAll('.case-expand').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.case-hint').forEach(x => x.textContent = '点击展开详细分析 ↓');
+  if (!o) { e.classList.add('open'); h.textContent = '点击收起 ↑'; }
+}
+</script>
+</body>
+</html>

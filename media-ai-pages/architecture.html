@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="styles.css"><title>技术架构</title></head>
+<body>
+<div class="page-title"><span class="icon">🏗️</span><h1>技术架构</h1><span class="sub">四层解耦设计</span></div>
+<div class="sec-desc">点击每一层查看技术细节和工程重点。各层通过标准化 API 通信，可独立迭代升级。</div>
+
+<div>
+  <div class="arch-layer" onclick="toggleArch(0)">
+    <div class="arch-label">终端层<small>Terminal</small></div>
+    <div class="arch-body"><div class="role">员工桌面 Agent + 手机端确认/控制</div><div class="tech"><span class="tech-tag">Electron</span><span class="tech-tag">PWA</span><span class="tech-tag">文件沙箱</span><span class="tech-tag">WebSocket</span></div></div>
+  </div>
+  <div class="arch-detail" id="arch-d-0"><strong>工程重点：前端 + 本地文件操作 / 权限沙箱</strong><ul><li>Electron 跨平台桌面 Agent（macOS/Windows/Linux）</li><li>本地文件监听（文件夹变更检测）、读写、通知推送</li><li>严格沙箱：只能访问授权目录，操作需用户确认</li><li>移动端 PWA：轻量级任务确认和远程控制</li><li>WebSocket 与编排层长连接，实时同步状态</li></ul></div>
+
+  <div class="arch-conn">↕ API / WebSocket</div>
+
+  <div class="arch-layer" onclick="toggleArch(1)">
+    <div class="arch-label">管理控制台<small>Admin</small></div>
+    <div class="arch-body"><div class="role">权限配置、操作审计、用量监控、效率看板</div><div class="tech"><span class="tech-tag">React/Vue</span><span class="tech-tag">ECharts</span><span class="tech-tag">REST API</span><span class="tech-tag">RBAC</span></div></div>
+  </div>
+  <div class="arch-detail" id="arch-d-1"><strong>工程重点：Dashboard + 数据可视化 + 权限管理</strong><ul><li>基于 RBAC 的细粒度权限管理</li><li>效率看板：部门使用率、任务量、处理时间、ROI</li><li>审计日志全文检索、时间线回溯、异常告警</li><li>面向非技术管理者的直观可视化面板</li></ul></div>
+
+  <div class="arch-conn">↕ REST / gRPC</div>
+
+  <div class="arch-layer" onclick="toggleArch(2)">
+    <div class="arch-label">编排与集成层<small>Orchestration</small></div>
+    <div class="arch-body"><div class="role">任务队列、权限校验、大模型调用、<span class="anno">MCP 协议<span class="tip">Model Context Protocol — Anthropic 提出的模型上下文协议，类似 AI 的"USB 接口"，让 Agent 统一调用外部系统。</span></span>连接</div><div class="tech"><span class="tech-tag">Node.js/Python</span><span class="tech-tag">Claude API</span><span class="tech-tag">MCP Server</span><span class="tech-tag">Redis</span><span class="tech-tag">PostgreSQL</span></div></div>
+  </div>
+  <div class="arch-detail" id="arch-d-2"><strong>后端核心，工程含量最高的部分</strong><ul><li>请求接收 → 身份认证 → 权限校验 → 任务队列</li><li>调度器根据优先级、并发限制、部门配额分配资源</li><li>LLM API 调用，多模型切换和降级策略</li><li>通过 MCP 与企业内部系统进行数据交互</li><li>完整调用链追踪，全链路可审计</li><li>模型调用抽象封装层：统一接口设计，便于切换底层模型供应商</li></ul></div>
+
+  <div class="arch-conn">↕ MCP Protocol</div>
+
+  <div class="arch-layer" onclick="toggleArch(3)">
+    <div class="arch-label">企业内部系统<small>Enterprise</small></div>
+    <div class="arch-body"><div class="role">CMS 发稿系统、素材库、OA 审批、企业 IM</div><div class="tech"><span class="tech-tag">现有系统</span><span class="tech-tag">MCP 适配器</span><span class="tech-tag">API 网关</span></div></div>
+  </div>
+  <div class="arch-detail" id="arch-d-3"><strong>接口对接 / 适配层开发</strong><ul><li>通过 MCP 适配层将现有系统接入 AI 编排服务，不重建系统</li><li>每个内部系统开发一个 MCP Server 适配器，暴露标准化接口</li><li>例：CMS MCP Server 提供"创建稿件""查询栏目""提交审核"等能力</li><li>素材库 MCP Server 提供"按标签检索""按日期归档""批量重命名"等能力</li><li>适配层遵循"新增系统只需开发适配器，无需修改编排核心"的扩展原则</li></ul></div>
+</div>
+
+<div class="hl-box blue" style="margin-top:20px;">
+  <strong>核心原则：</strong>不自研大模型，工程精力集中在<strong>编排、权限治理、企业系统集成</strong>。每一层可独立演进，模型供应商可在不修改业务代码的情况下切换。
+</div>
+
+<script>
+function toggleArch(i) {
+  const p = document.getElementById('arch-d-' + i);
+  const o = p.classList.contains('open');
+  document.querySelectorAll('.arch-detail').forEach(x => x.classList.remove('open'));
+  if (!o) p.classList.add('open');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="styles.css"><title>场景设计</title></head>
+<body>
+<div class="page-title"><span class="icon">🎯</span><h1>场景设计</h1><span class="sub">试点场景与效率验证</span></div>
+<div class="sec-desc">优先落地的三个高频场景。选择标准：使用频率高、耗时差异大、效果可量化。</div>
+<div class="card" style="padding:0;overflow:hidden;">
+  <table class="sc-table">
+    <thead><tr><th>场景</th><th>当前耗时</th><th>AI 辅助后</th><th>效率对比</th><th>验证方法</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>采访录音转写 + 新闻初稿</strong><div style="font-size:.8rem;color:var(--text-sec);margin-top:4px;">听录音 → 整理要点 → 成文 → 自查</div></td>
+        <td>20-30 min/篇</td><td>约 5 min/篇</td>
+        <td>
+          <div class="bar-group"><div class="bar-row"><span class="bar-lbl">前</span><div class="bar old" data-width="120"></div><span class="bar-lbl">25m</span></div><div class="bar-row"><span class="bar-lbl">后</span><div class="bar new" data-width="24"></div><span class="bar-lbl">5m</span></div></div>
+          <div style="font-size:.74rem;color:var(--success);font-weight:600;margin-top:4px;">↓ 80%</div>
+        </td>
+        <td style="font-size:.84rem;">抽样 10 篇稿件，统计"AI 初稿到可发布"修改耗时，与传统流程对比</td>
+      </tr>
+      <tr>
+        <td><strong>社媒文案批量生成</strong><div style="font-size:.8rem;color:var(--text-sec);margin-top:4px;">选题策划 → 选图 → 写文案 → 排版</div></td>
+        <td>约 10 min/条</td><td>约 2 min/条</td>
+        <td>
+          <div class="bar-group"><div class="bar-row"><span class="bar-lbl">前</span><div class="bar old" data-width="95"></div><span class="bar-lbl">10m</span></div><div class="bar-row"><span class="bar-lbl">后</span><div class="bar new" data-width="19"></div><span class="bar-lbl">2m</span></div></div>
+          <div style="font-size:.74rem;color:var(--success);font-weight:600;margin-top:4px;">↓ 80%</div>
+        </td>
+        <td style="font-size:.84rem;">统计运营人员每周产出条数变化，并验证内容点击率是否受影响</td>
+      </tr>
+      <tr>
+        <td><strong>素材整理与智能归档</strong><div style="font-size:.8rem;color:var(--text-sec);margin-top:4px;">分类 → 重命名 → 打标签 → 归档</div></td>
+        <td>约 15 min/批</td><td>约 2 min/批</td>
+        <td>
+          <div class="bar-group"><div class="bar-row"><span class="bar-lbl">前</span><div class="bar old" data-width="85"></div><span class="bar-lbl">15m</span></div><div class="bar-row"><span class="bar-lbl">后</span><div class="bar new" data-width="12"></div><span class="bar-lbl">2m</span></div></div>
+          <div style="font-size:.74rem;color:var(--success);font-weight:600;margin-top:4px;">↓ 87%</div>
+        </td>
+        <td style="font-size:.84rem;">归档准确率抽查（目标 &gt;95%）+ 归档耗时统计</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="hl-box blue" style="margin-top:28px;">
+  <h3 style="font-size:1.05rem;font-weight:600;margin-bottom:10px;color:var(--primary-dark);">MVP 最小闭环设计</h3>
+  <p style="margin-bottom:18px;">涵盖"文件监听 — API 调用 — 任务流转 — 人工确认"四个核心环节，完整体现整体架构每一层的协作方式。该原型可在 1-2 周内开发完成，作为整个系统的验证基础。</p>
+  <div class="flow-chain">
+    <div class="flow-node"><div class="flow-icon"><span>📂</span></div><div class="flow-label">文件监听</div><div class="flow-desc">Agent 监听指定文件夹，检测新录音文件</div></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-node"><div class="flow-icon"><span>🎙️</span></div><div class="flow-label">调用转写 API</div><div class="flow-desc">上传至转写服务，获取结构化文本</div></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-node"><div class="flow-icon"><span>📝</span></div><div class="flow-label">生成结构化初稿</div><div class="flow-desc">LLM 按新闻模板生成标题、摘要、正文</div></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-node"><div class="flow-icon"><span>📲</span></div><div class="flow-label">推送等待确认</div><div class="flow-desc">推送到管理后台和移动端等待审核</div></div>
+    <div class="flow-arr">→</div>
+    <div class="flow-node"><div class="flow-icon"><span>✅</span></div><div class="flow-label">确认后生成文档</div><div class="flow-desc">审核通过后按公司模板生成发布格式</div></div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:18px;">
+    <span class="tag">覆盖：终端层</span><span class="tag">覆盖：编排层</span><span class="tag">覆盖：LLM API</span><span class="tag">覆盖：审批流转</span><span class="tag">覆盖：审计日志</span>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.bar').forEach((b, i) => {
+    setTimeout(() => { b.style.width = b.dataset.width + 'px'; }, i * 100 + 200);
+  });
+});
+</script>
+</body>
+</html>

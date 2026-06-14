@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="config.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="styles.css"><title>方案总览</title></head>
+<body>
+<div class="page-title"><span class="icon">🎯</span><h1>方案总览</h1><span class="sub">核心内容一图读懂</span></div>
+<div class="sec-desc">媒体行业 AI 智能助手平台 — 为每位员工配备本地 AI 助手，实现效率提升、数据安全与合规治理。</div>
+
+<!-- 核心指标 - 始终显示 -->
+<div class="stat-grid">
+  <div class="stat-card"><div class="st-icon">🎯</div><h4>核心定位</h4><p>AI 助手而非替代者</p></div>
+  <div class="stat-card"><div class="st-icon">🏗️</div><h4>4层架构</h4><p>端到端解耦设计</p></div>
+  <div class="stat-card"><div class="st-icon">📅</div>9月周期</h4><p>三阶段实施</p></div>
+  <div class="stat-card"><div class="st-icon">📈</div><h4>80%效率提升</h4><p>核心场景耗时降低</p></div>
+</div>
+
+<!-- Tab 导航 -->
+<div class="tab-nav">
+  <div class="tab-item active" data-tab="problem">🔍 问题与方案</div>
+  <div class="tab-item" data-tab="architecture">🏗️ 架构设计</div>
+  <div class="tab-item" data-tab="roadmap">📅 实施路线</div>
+  <div class="tab-item" data-tab="benefit">📈 预期收益</div>
+</div>
+
+<!-- Tab 内容区 -->
+<div class="tab-content">
+
+  <!-- Tab 1: 问题与方案 -->
+  <div class="tab-panel active" id="tab-problem">
+    <div class="card">
+      <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:20px;">🔍 现状痛点 → 💡 解决方案</h3>
+      <div class="compare-grid">
+        <div class="compare-col problem">
+          <div class="compare-title">❌ 现状问题</div>
+          <div class="compare-item"><span class="problem-icon">🔀</span><div><strong>效率分散</strong><p>员工各自摸索，效果参差不齐</p></div></div>
+          <div class="compare-item"><span class="problem-icon">🔒</span><div><strong>数据安全</strong><p>敏感素材上传至第三方平台</p></div></div>
+          <div class="compare-item"><span class="problem-icon">📊</span><div><strong>无法度量</strong><p>AI 投入产出无法量化</p></div></div>
+        </div>
+        <div class="compare-arrow">→</div>
+        <div class="compare-col solution">
+          <div class="compare-title">✅ 解决方案</div>
+          <div class="compare-item"><span class="solution-icon">🤖</span><div><strong>统一 AI 助手</strong><p>标准化工作流，最佳实践复用</p></div></div>
+          <div class="compare-item"><span class="solution-icon">🛡️</span><div><strong>本地沙箱</strong><p>数据不出本地，权限可控</p></div></div>
+          <div class="compare-item"><span class="solution-icon">📈</span><div><strong>管理控制台</strong><p>全链路审计，ROI 可视化</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 2: 架构设计 -->
+  <div class="tab-panel" id="tab-architecture">
+    <div class="card">
+      <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:20px;">🏗️ 四层架构设计</h3>
+      <div class="arch-diagram">
+        <div class="arch-row">
+          <div class="arch-box terminal"><span class="arch-icon">💻</span><strong>终端层</strong><small>Electron + PWA</small></div>
+          <div class="arch-desc">员工桌面 Agent + 手机端确认</div>
+        </div>
+        <div class="arch-connector">↕ WebSocket</div>
+        <div class="arch-row">
+          <div class="arch-box admin"><span class="arch-icon">📊</span><strong>管理控制台</strong><small>React + ECharts</small></div>
+          <div class="arch-desc">权限配置、审计日志、效率看板</div>
+        </div>
+        <div class="arch-connector">↕ REST / gRPC</div>
+        <div class="arch-row">
+          <div class="arch-box orchestration"><span class="arch-icon">⚙️</span><strong>编排与集成层</strong><small>Node.js + Claude API</small></div>
+          <div class="arch-desc">任务队列、权限校验、MCP 协议</div>
+        </div>
+        <div class="arch-connector">↕ MCP Protocol</div>
+        <div class="arch-row">
+          <div class="arch-box enterprise"><span class="arch-icon">🏢</span><strong>企业系统</strong><small>CMS / OA / IM</small></div>
+          <div class="arch-desc">现有业务系统接入</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 3: 实施路线 -->
+  <div class="tab-panel" id="tab-roadmap">
+    <div class="card">
+      <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:20px;">📅 实施路线图</h3>
+      <div class="roadmap-chart">
+        <div class="roadmap-phase">
+          <div class="phase-header phase1">
+            <span class="phase-num">P1</span>
+            <span class="phase-name">试点验证</span>
+            <span class="phase-time">1-3 月</span>
+          </div>
+          <div class="phase-bar">
+            <div class="bar-fill bar1" style="width:33%"></div>
+          </div>
+          <div class="phase-content">
+            <ul>
+              <li>选择 1-2 个部门试点</li>
+              <li>核心 Agent 功能开发</li>
+              <li>基础管理后台搭建</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-phase">
+          <div class="phase-header phase2">
+            <span class="phase-num">P2</span>
+            <span class="phase-name">扩展推广</span>
+            <span class="phase-time">4-6 月</span>
+          </div>
+          <div class="phase-bar">
+            <div class="bar-fill bar2" style="width:66%"></div>
+          </div>
+          <div class="phase-content">
+            <ul>
+              <li>覆盖全部门使用</li>
+              <li>企业系统深度集成</li>
+              <li>完善权限与审计</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-phase">
+          <div class="phase-header phase3">
+            <span class="phase-num">P3</span>
+            <span class="phase-name">全面落地</span>
+            <span class="phase-time">7-9 月</span>
+          </div>
+          <div class="phase-bar">
+            <div class="bar-fill bar3" style="width:100%"></div>
+          </div>
+          <div class="phase-content">
+            <ul>
+              <li>全员标配 AI 助手</li>
+              <li>智能工作流自动化</li>
+              <li>持续优化迭代</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 4: 预期收益 -->
+  <div class="tab-panel" id="tab-benefit">
+    <div class="card">
+      <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:20px;">📈 预期收益</h3>
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <div class="benefit-chart">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#e5e7eb" stroke-width="12"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#0d9f6e" stroke-width="12"
+                      stroke-dasharray="251.2" stroke-dashoffset="50.24" transform="rotate(-90 50 50)"/>
+              <text x="50" y="55" text-anchor="middle" class="chart-text">80%</text>
+            </svg>
+          </div>
+          <div class="benefit-info">
+            <strong>效率提升</strong>
+            <p>内容创作耗时大幅降低</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-chart">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#e5e7eb" stroke-width="12"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#3b8fd4" stroke-width="12"
+                      stroke-dasharray="251.2" stroke-dashoffset="25.12" transform="rotate(-90 50 50)"/>
+              <text x="50" y="55" text-anchor="middle" class="chart-text">90%</text>
+            </svg>
+          </div>
+          <div class="benefit-info">
+            <strong>数据安全</strong>
+            <p>敏感信息本地化处理</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-chart">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#e5e7eb" stroke-width="12"/>
+              <circle cx="50" cy="50" r="40" fill="none" stroke="#e8792f" stroke-width="12"
+                      stroke-dasharray="251.2" stroke-dashoffset="75.36" transform="rotate(-90 50 50)"/>
+              <text x="50" y="55" text-anchor="middle" class="chart-text">70%</text>
+            </svg>
+          </div>
+          <div class="benefit-info">
+            <strong>ROI 回报</strong>
+            <p>预计 6 个月内回本</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hl-box blue">
+      <strong>💡 核心原则：</strong>不自研大模型，直接调用成熟 LLM API。工程精力聚焦在<strong>编排、权限治理、与企业系统集成</strong>——这是 AI 落地项目中工程含量最高的部分。
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Tab 切换逻辑
+const tabItems = document.querySelectorAll('.tab-item');
+const tabPanels = document.querySelectorAll('.tab-panel');
+
+function switchTab(tabName) {
+  // 更新 tab 导航状态
+  tabItems.forEach(item => {
+    item.classList.toggle('active', item.dataset.tab === tabName);
+  });
+  // 更新面板显示
+  tabPanels.forEach(panel => {
+    panel.classList.toggle('active', panel.id === 'tab-' + tabName);
+  });
+  // 更新 URL hash（保留页面 hash）
+  const pageHash = window.location.hash.split('/')[0] || '#dashboard.html';
+  const newHash = pageHash + '/' + tabName;
+  history.replaceState(null, '', newHash);
+}
+
+// 点击 tab 切换
+tabItems.forEach(item => {
+  item.addEventListener('click', () => {
+    switchTab(item.dataset.tab);
+    // 通知父页面更新 URL
+    if (window.parent !== window) {
+      const newHash = '#dashboard.html/' + item.dataset.tab;
+      window.parent.history.replaceState(null, '', newHash);
+    }
+  });
+});
+
+// 监听父页面传来的 tab 切换消息
+window.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'switchTab') {
+    switchTab(event.data.tab);
+  }
+});
+
+// 页面加载时从 URL 恢复 tab 状态
+function restoreTab() {
+  const hash = window.location.hash;
+  const parts = hash.split('/');
+  if (parts.length > 1) {
+    const tabName = parts[1];
+    switchTab(tabName);
+  }
+}
+restoreTab();
+</script>
+
+</body>
+</html>
