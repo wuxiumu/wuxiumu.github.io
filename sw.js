@@ -11,7 +11,7 @@
 // A namespace can prevent potential name conflicts and mis-deletion.
 const CACHE_NAMESPACE = 'main-'
 
-const CACHE = CACHE_NAMESPACE + 'precache-then-runtime-v3';
+const CACHE = CACHE_NAMESPACE + 'precache-then-runtime-v4';
 const PRECACHE_LIST = [
   "./",
   "./offline.html",
@@ -182,13 +182,30 @@ self.addEventListener('fetch', event => {
       return;
     }
 
-    // Stale-while-revalidate for possiblily dynamic content
-    // similar to HTTP's stale-while-revalidate: https://www.mnot.net/blog/2007/12/12/stale
-    // Upgrade from Jake's to Surma's: https://gist.github.com/surma/eb441223daaedf880801ad80006389f1
+    // For HTML navigation (pages), always fetch fresh content
+    // This ensures homepage and posts show latest updates immediately
+    if (isNavigationReq(event.request)) {
+      const fetched = fetch(getCacheBustingUrl(event.request));
+      const fetchedCopy = fetched.then(resp => resp.clone());
+
+      event.respondWith(
+        fetched.catch(() => caches.match(event.request) || caches.match(‘offline.html’))
+      );
+
+      // Update cache with fresh version for offline use
+      event.waitUntil(
+        Promise.all([fetchedCopy, caches.open(CACHE)])
+          .then(([response, cache]) => response.ok && cache.put(event.request, response))
+          .catch(_ => {/* eat any errors */})
+      );
+      return;
+    }
+
+    // Stale-while-revalidate for other potentially dynamic content
     const cached = caches.match(event.request);
     const fetched = fetch(getCacheBustingUrl(event.request));
     const fetchedCopy = fetched.then(resp => resp.clone());
-    
+
     // Call respondWith() with whatever we get first.
     // Promise.race() resolves with first one settled (even rejected)
     // If the fetch fails (e.g disconnected), wait for the cache.
@@ -197,7 +214,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(
       Promise.race([fetched.catch(_ => cached), cached])
         .then(resp => resp || fetched)
-        .catch(_ => caches.match('offline.html'))
+        .catch(_ => caches.match(‘offline.html’))
     );
 
     // Update the cache with the version we fetched (only for ok status)
@@ -206,15 +223,6 @@ self.addEventListener('fetch', event => {
         .then(([response, cache]) => response.ok && cache.put(event.request, response))
         .catch(_ => {/* eat any errors */ })
     );
-
-    // If one request is a HTML naviagtion, checking update!
-    // Skip in local development — Jekyll dev server returns unstable Last-Modified headers
-    if (isNavigationReq(event.request) && self.location.hostname !== '127.0.0.1' && self.location.hostname !== 'localhost') {
-      // you need "preserve logs" to see this log
-      // cuz it happened before navigating
-      console.log(`fetch ${event.request.url}`)
-      event.waitUntil(revalidateContent(cached, fetchedCopy))
-    }
   }
 });
 
