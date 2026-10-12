@@ -11,7 +11,7 @@
 // A namespace can prevent potential name conflicts and mis-deletion.
 const CACHE_NAMESPACE = 'main-'
 
-const CACHE = CACHE_NAMESPACE + 'precache-then-runtime-v4';
+const CACHE = CACHE_NAMESPACE + 'precache-then-runtime-v5';
 const PRECACHE_LIST = [
   "./",
   "./offline.html",
@@ -117,14 +117,17 @@ self.addEventListener('install', e => {
  *  waitUntil(): activating ====> activated
  */
 self.addEventListener('activate', event => {
-  // delete old deprecated caches.
-  caches.keys().then(cacheNames => Promise.all(
-    cacheNames
-      .filter(cacheName => DEPRECATED_CACHES.includes(cacheName))
-      .map(cacheName => caches.delete(cacheName))
-  ))
+  // Purge ALL caches that are not the current version (including DEPRECATED_CACHES
+  // and any legacy names), so stale precached HTML from old service workers
+  // never survives an upgrade.
+  event.waitUntil(
+    caches.keys().then(cacheNames => Promise.all(
+      cacheNames
+        .filter(cacheName => cacheName !== CACHE)
+        .map(cacheName => caches.delete(cacheName))
+    )).then(() => self.clients.claim())
+  )
   console.log('service worker activated.')
-  event.waitUntil(self.clients.claim());
 });
 
 
@@ -189,7 +192,7 @@ self.addEventListener('fetch', event => {
       const fetchedCopy = fetched.then(resp => resp.clone());
 
       event.respondWith(
-        fetched.catch(() => caches.match(event.request) || caches.match(‘offline.html’))
+        fetched.catch(() => caches.match(event.request) || caches.match('./offline.html'))
       );
 
       // Update cache with fresh version for offline use
@@ -214,7 +217,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(
       Promise.race([fetched.catch(_ => cached), cached])
         .then(resp => resp || fetched)
-        .catch(_ => caches.match(‘offline.html’))
+        .catch(_ => caches.match('./offline.html'))
     );
 
     // Update the cache with the version we fetched (only for ok status)
