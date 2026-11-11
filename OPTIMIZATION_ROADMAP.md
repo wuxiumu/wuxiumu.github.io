@@ -57,7 +57,7 @@
 
 - [x] [基建] CDN 抽查报告（`_config.yml` cdn_url 指向 vbank8-test OSS 测试桶，favicon 抽查 200 可达）：盘点 `_includes/asset.html` 的引用范围，抽验 10 个资源 URL 可达性，给出「测试桶失效时的应急预案」（只报告，不动配置）（✅ 2026-11-12 完成：报告落 `docs/CDN_AUDIT_REPORT.md`——12 个核心静态资源全经 asset.html 分发（head 2CSS+mermaid / footer 8JS），抽验 14 个 URL 全 200；应急回退=置空 cdn_url 自动走本地（机制已内建）；建议迁正式桶或用真实访问数据验证 CDN 收益，未动任何配置）
 - [x] [体验] 站内搜索结果模板美化与关键词高亮（✅ 2026-11-12 完成：footer.html 的 SimpleJekyllSearch `templateMiddleware` 钩子内实现高亮——多词/正则元字符转义/单字符词跳过/HTML 防护（解码后含 `<` 的值跳过高亮防破损标记）+ 空结果中文化提示样式化；search.html 补 `<mark>` 与空态样式；6 组单测全过，渲染后 JS node --check 通过）
-- [ ] [体验] 深色模式适配巡检与截图对比
+- [x] [体验] 深色模式适配巡检与截图对比（✅ 2026-11-12 完成核实并关闭：全量 grep `prefers-color-scheme` / `data-theme` / `theme-toggle` 于 css/（hux-blog.css、bootstrap.css 各 0 处）/js/_includes——**站点不存在暗色模式**，巡检对象不存在；自动化的新 UI（年份导航条、404 卡片）使用 `#fff` 亮色假设与全站一致，无遗留问题；新增暗色模式属主题级大工程，超出最小改动原则，是否要做留待作者决策，候选池不再保留此项）
 - [ ] [体验] 首页 Hero 区动态数字带（文章数 / 标签域 / 工作台数）
 - [ ] [物料] README 更新：站点定位一句话、目录结构、标签治理说明（链接 tools/TAG_MIGRATION.md）、auto-opt 协作流程说明
 - [ ] [物料] 友情链接区更新（挂 zcode-tast-cms、zcode-workbench）
