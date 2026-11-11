@@ -1,3 +1,10 @@
+<div class="fde-one-pager" style="border:1px solid rgba(79,140,255,.35);border-radius:8px;padding:22px 26px;margin-bottom:28px;background:rgba(79,140,255,.04)">
+  <p style="font-size:22px;font-weight:700;line-height:1.4;margin:0 0 10px">吴庆宝 · FDE（Forward Deployed Engineer）</p>
+  <p style="font-size:17px;line-height:1.6;margin:0 0 6px">🎯 <strong>定位</strong>：把业务问题翻译成能跑的系统 —— AI 工程化 · 后端架构 · 技术方案落地</p>
+  <p style="font-size:17px;line-height:1.6;margin:0 0 6px">🖥️ <strong>证据</strong>：<a href="https://wuxiumu.github.io/zcode-workbench/" target="_blank" rel="noopener">15 个在线工作台</a>，运维 / 增长 / 客户成功 / AI 观测 / 财务，点开就能看，不是截图</p>
+  <p style="font-size:17px;line-height:1.6;margin:0">💬 <strong>合作</strong>：接 AI 商单 · 微信 <code>qingbao199101</code></p>
+</div>
+
 > 离开世界之前，一切都是过程。
 
 Hi，我是吴庆宝，一名全栈开发者。
