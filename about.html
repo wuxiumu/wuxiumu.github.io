@@ -8,6 +8,18 @@ multilingual: true
 
 {% include multilingual-sel.html %}
 
+<style>
+.fde-one-pager { border:1px solid rgba(79,140,255,.35); border-radius:8px; padding:22px 26px; margin-bottom:28px; background:rgba(79,140,255,.04) }
+.fde-one-pager .fde-op-title { font-size:22px; font-weight:700; line-height:1.4; margin:0 0 10px }
+.fde-one-pager .fde-op-line { font-size:17px; line-height:1.6; margin:0 0 6px }
+.fde-one-pager .fde-op-line:last-child { margin:0 }
+@media (max-width: 768px){
+    .fde-one-pager { padding:16px 14px }
+    .fde-one-pager .fde-op-title { font-size:19px }
+    .fde-one-pager .fde-op-line { font-size:15px }
+}
+</style>
+
 <!-- Chinese Version -->
 <div class="zh post-container">
     {% capture about_zh %}{% include about/zh.md %}{% endcapture %}

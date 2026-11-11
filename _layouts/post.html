@@ -96,14 +96,22 @@ layout: default
 {%- assign current_url = page.url -%}
 {%- assign related = related_pool | uniq | where_exp: "p", "p.url != current_url" | sort: "date" | reverse | slice: 0, 3 -%}
 {%- if related.size > 0 -%}
+<style>
+.fde-related { border:1px solid rgba(79,140,255,.25); border-radius:8px; padding:16px 22px; margin:30px 0 10px; background:rgba(79,140,255,.03) }
+.fde-related h4 { font-size:15px; font-weight:600; margin:0 0 10px }
+.fde-related ul { margin:0; padding-left:18px; font-size:14px }
+.fde-related li { margin-bottom:6px }
+.fde-related .fde-rel-date { color:#666 }
+@media (max-width: 768px){ .fde-related { padding:12px 14px } }
+</style>
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div style="border:1px solid rgba(79,140,255,.25);border-radius:8px;padding:16px 22px;margin:30px 0 10px;background:rgba(79,140,255,.03)">
-                <h4 style="font-size:15px;font-weight:600;margin:0 0 10px">🔗 相关文章 · 按共享标签推荐</h4>
-                <ul style="margin:0;padding-left:18px;font-size:14px">
+            <div class="fde-related">
+                <h4>🔗 相关文章 · 按共享标签推荐</h4>
+                <ul>
                     {%- for p in related -%}
-                    <li style="margin-bottom:6px"><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a> <span style="color:#999">· {{ p.date | date: "%Y-%m-%d" }}</span></li>
+                    <li><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a> <span class="fde-rel-date">· {{ p.date | date: "%Y-%m-%d" }}</span></li>
                     {%- endfor -%}
                 </ul>
             </div>
