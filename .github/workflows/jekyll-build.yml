@@ -16,11 +16,12 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.2"
-          bundler-cache: true
+      - name: 安装 Jekyll
+        run: gem install jekyll jekyll-paginate --no-document
       - name: Jekyll 构建（失败即暴露模板/配置错误）
         run: |
           set -o pipefail
-          bundle exec jekyll build --trace 2>&1 | tee build-output.log
+          jekyll build --trace 2>&1 | tee build-output.log
       - name: 构建失败时把错误日志提交回 auto-opt
         if: failure() && github.ref == 'refs/heads/auto-opt'
         run: |
