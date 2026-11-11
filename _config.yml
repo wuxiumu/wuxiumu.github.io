@@ -115,7 +115,7 @@ quotes:
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+featured-condition-size: 10             # A tag will be featured if the size of it is more than this condition value（64→23 个侧栏精选，修复全量堆侧栏）
 
 
 
