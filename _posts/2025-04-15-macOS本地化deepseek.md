@@ -76,4 +76,4 @@ ollama run deepseek-r1:32b
 1、下载Chatbox
 2、配置为本地DeepSeek，配置：该选择OLLAMA API
 3.无需联网也能和DeepSeek畅快聊天
-![](https://archive.biliimg.com/bfs/archive/9968eef3d3b5d5cc662f426a8e99c0b8b8d862af.png)
+![DeepSeek 本地化部署界面截图](https://archive.biliimg.com/bfs/archive/9968eef3d3b5d5cc662f426a8e99c0b8b8d862af.png)

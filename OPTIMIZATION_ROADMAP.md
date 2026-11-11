@@ -44,7 +44,7 @@
 - [x] [体验] TOC 目录启用（~~已核实：全站 0 篇使用 `catalog: true`，主题自带的目录机制形同虚设~~ **前述核实有误，本轮勘正**）：复查 post.html 与 hux-blog.min.js 确认——**TOC 对所有文章默认渲染**（仅 `no-catalog: true` 会关闭，全站 0 篇关闭），63 篇文章带 `catalog: true` 字段（冗余但无害），目录条目由 hux-blog.min.js 动态填充且已就位；结论：无需任何改动，此前的"0 篇"系统计口径错误（只统计了顶层 .md 且管道写错）
 - [x] [体验] gitalk 评论实测（已核实：clientID 已配置）：访问一篇文章页确认评论框正常加载；加载失败则加降级提示，不留白（✅ 2026-11-12 完成：实测三层——① 配置五项齐全；② GitHub Issues API 查证历史评论 issue 正常存在，gitalk 本体工作正常；③ CDN `cdn.jsdelivr.net` 部分网络环境不可达（实测 000）→ gitalk.html 加降级：脚本 onerror 标记 + `window.Gitalk` 不存在时渲染「到 GitHub Issues 留言」提示，渲染后 JS node --check 通过；另注：clientSecret 在公开仓库中属于 gitalk 机制固有的暴露，建议作者知悉）
 - [x] [体验] 文章代码块一键复制按钮（原生 JS，无外部依赖）（✅ 2026-11-12 完成：post.html 末尾 ~40 行原生 JS——遍历 .post-container 内 pre 块注入悬浮按钮（hover 显现），clipboard API + execCommand 双通道兜底，跳过 mermaid 图与重复注入，"复制→✅ 已复制"1.6s 回弹；样式跟随上轮对比度结论，全部内联 JS node --check 通过）
-- [ ] [体验] 全站图片巡检：alt 缺失清点、超大图片清单（只报告清单，不擅自重压缩二进制）
+- [x] [体验] 全站图片巡检：alt 缺失清点、超大图片清单（只报告清单，不擅自重压缩二进制）（✅ 2026-11-12 完成：报告落 `docs/IMAGE_AUDIT_REPORT.md`——51 张 markdown 图：alt 缺失仅 1 张（本轮已文本修复）、引用缺失 0、超大图 5 张共 2.7MB 已列清单与压缩建议待作者择机处理，未动任何二进制）
 - [ ] [体验] 归档页年份锚点导航（年份索引条，点击跳转对应年份区）
 
 ## D. 共创 · 内容草稿（作者把关制）
