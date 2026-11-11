@@ -14,3 +14,19 @@ permalink: /offline.html
 <script>
 	document.body.classList.add('page-fullscreen');
 </script>
+
+<!-- 离线帮助卡：说明现状 + 可用出口（首页已被 SW 预缓存，离线可打开） -->
+<div class="container" style="margin-top:-60px;position:relative;z-index:2">
+	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+		<div style="border:1px solid rgba(79,140,255,.35);border-radius:8px;padding:24px 28px;background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.08)">
+			<p style="font-size:19px;font-weight:700;margin:0 0 8px">📴 你当前处于离线状态</p>
+			<p style="font-size:14px;color:#666;margin:0 0 16px">浏览过的页面已缓存，离线也能打开；新页面需要恢复网络后刷新重试。</p>
+			<p style="margin:0 0 14px">
+				<button type="button" onclick="location.reload()"
+					style="display:inline-block;background:#2b6be0;color:#fff;font-size:15px;font-weight:600;padding:9px 20px;border:0;border-radius:6px;cursor:pointer">🔄 重试联网加载</button>
+				<a href="{{ site.baseurl }}/" style="display:inline-block;font-size:15px;font-weight:600;color:#2b6be0;padding:9px 14px;text-decoration:none">🏠 回首页（离线可用）</a>
+			</p>
+			<p style="font-size:13px;color:#999;margin:0">联网后这里的所有内容都可正常访问。</p>
+		</div>
+	</div>
+</div>
