@@ -36,7 +36,7 @@
 - [x] [基建] GA 统计已失效（已核实：`_config.yml` ga_track_id `UA-129669984-1` 是 Universal Analytics，UA 2023-07 已停止收数——统计代码在跑但数据为零）：产出一份「GA4 替换方案」报告（需要新 ID 由作者提供），未提供 ID 前不改任何代码（✅ 2026-11-12 完成：报告落 `docs/GA4_MIGRATION_REPORT.md`——现状核实（配置行/加载位置/失效原因）+ 三选项（GA4 升级 / 百度统计新增 / 置空停用）+ 作者决策路径，零代码改动）
 - [x] [基建] PWA 缓存审计（已核实：`sw.js` 缓存名 `precache-then-runtime-v5`）：核对预缓存清单与导航请求策略，确认文章更新后老访客不会被旧缓存挡住；发现问题修 sw.js 并升版本号（✅ 2026-11-12 完成审计：① 导航请求已是 network-first + cache 降级 + offline 兜底（sw.js:190-204），文章更新即时可见，无需改；② 预缓存 11 项逐个核对全部存在，addAll 原子性无风险；③ activate 会清理所有非当前版本缓存，旧缓存不会跨版本残留；④ 唯一清理：白名单移除主题作者遗留域名 huangxuan.me / yanshuu.io（本站无此二域资源），缓存策略无行为变化故不升版本号）
 - [x] [基建] 文章结构化数据：BlogPosting JSON-LD（标题/日期/作者/描述），利于搜索引擎摘要（✅ 2026-11-12 完成：`_layouts/post.html` 顶部插入 schema.org BlogPosting——headline/datePublished/author/description(subtitle 降级 excerpt)/mainEntityOfPage/keywords(tags)，全部字段走 `jsonify` 防 JSON 注入；4 组样本模拟解析含引号冒号最坏情况全过，252 篇全量生效零插件）
-- [ ] [基建] 页面性能巡检：首屏图片 loading="lazy"、CDN 回退链路验证、无阻塞渲染资源清点
+- [x] [基建] 页面性能巡检：首屏图片 loading="lazy"、CDN 回退链路验证、无阻塞渲染资源清点（✅ 2026-11-12 完成巡检+修复：**真 bug**——footer.html 的 highlight.js 与样式表走 `http://`，HTTPS 站点混合内容被浏览器拦截，等于全站代码高亮从未加载过，改 https 并验证 CDN 可达 200；连带 weibo 链接升级 https；其余结论：模板层 img 仅小头像（头图走 CSS 背景，lazy 不适用），无阻塞渲染资源清点干净，SW 运行时缓存已覆盖第三方 CDN（cdnjs 在白名单），lazy 改造无实际收益不做）
 
 ## C. 阅读体验 · 博客本职
 
