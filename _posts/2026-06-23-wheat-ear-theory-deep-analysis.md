@@ -6,9 +6,9 @@ date: 2026-06-23
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 大脑开发
-  - 潜能教育
-  - AI加速
+  - 心理学
+  - 教育
+  - AI
 ---
 # 🌾 大脑开发与潜能教育——"麦穗理论"深度解析
 

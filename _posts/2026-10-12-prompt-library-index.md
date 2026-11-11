@@ -6,9 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 提示词模板
-  - 索引
+  - AI协作
+  - 提示词工程
+  - 数据库
 ---
 # 00-模板库索引 · AI 协同提示词速查
 

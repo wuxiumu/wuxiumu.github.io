@@ -7,7 +7,7 @@ author:     "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - Distributed
+  - 架构设计
 ---
 
 > “Yeah It's on. ”

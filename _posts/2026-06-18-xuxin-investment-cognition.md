@@ -6,8 +6,8 @@ date: 2026-06-18
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 投资心法
-  - AI加速
+  - 财富思维
+  - AI
 ---
 # 徐新的投资心法：如何靠认知赚钱
 

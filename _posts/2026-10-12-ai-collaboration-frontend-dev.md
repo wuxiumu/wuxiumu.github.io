@@ -6,10 +6,10 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
+  - AI协作
   - 前端开发
-  - 组件设计
-  - 用户体验
+  - 架构设计
+  - 产品设计
   - 一人公司
 ---
 # 05-前端开发 × AI 协同

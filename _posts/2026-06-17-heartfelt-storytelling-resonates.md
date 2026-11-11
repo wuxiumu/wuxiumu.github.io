@@ -6,11 +6,8 @@ date: 2026-06-02
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 电影分析
-  - AI加速
-  - 小成本电影
-  - 叙事结构
-  - 王晶
+  - 读书笔记
+  - AI
 ---
 # 《给阿嬷的情书》：一部卖座电影的成功之道
 

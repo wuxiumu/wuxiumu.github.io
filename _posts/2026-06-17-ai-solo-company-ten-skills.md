@@ -6,8 +6,8 @@ date: 2026-06-17
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 创业
-  - AI技能
+  - 极简创业
+  - AI
   - 一人公司
   - 方法论
 ---

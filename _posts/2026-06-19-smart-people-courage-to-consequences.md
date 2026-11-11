@@ -6,9 +6,9 @@ date: 2026-06-19
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 领导力
-  - 决策思维
-  - AI加速
+  - 团队管理
+  - 思维模型
+  - AI
 ---
 # 帝王论：敢为天下先 vs 谋士万全策
 

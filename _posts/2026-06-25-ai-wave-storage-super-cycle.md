@@ -6,12 +6,8 @@ date: 2026-06-02
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
-  - 存储超级周期
-  - HBM
-  - DRAM
-  - 半导体周期
-  - 推理时代
+  - AI
+  - 半导体
 ---
 # AI浪潮下的存储超级周期
 

@@ -6,9 +6,8 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - AI
-  - 未来趋势
-  - 马斯克
-  - 商业洞察
+  - 人物观察
+  - 商业思维
 status: 已完成
 ---
 

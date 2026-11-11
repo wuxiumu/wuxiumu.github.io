@@ -6,9 +6,9 @@ date: 2026-06-17
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 招聘策略
-  - 小公司管理
-  - AI加速
+  - 人才招聘
+  - 团队管理
+  - AI
 ---
 # 小公司招聘策略：放弃幻想，脚踏实地
 

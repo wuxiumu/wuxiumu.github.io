@@ -6,7 +6,7 @@ date: 2026-06-22
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
+  - AI
   - 组织变革
   - 知识管理
 ---

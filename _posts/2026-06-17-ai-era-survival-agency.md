@@ -7,7 +7,7 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 个人成长
-  - AI加速
+  - AI
   - 认知升级
 ---
 # AI时代的生存技能：能动性

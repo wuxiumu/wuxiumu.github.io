@@ -6,10 +6,10 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
+  - AI协作
   - 后端开发
-  - Code Review
-  - 安全编码
+  - 研发规范
+  - 安全
   - 一人公司
 ---
 # 04-后端开发 × AI 协同

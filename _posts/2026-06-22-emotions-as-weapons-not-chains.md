@@ -6,9 +6,9 @@ date: 2026-06-22
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 处世智慧
-  - 情绪管理
-  - AI加速
+  - 人生智慧
+  - 心理学
+  - AI
 ---
 # 情绪是武器，不是枷锁 —— 处世中的情绪博弈论
 

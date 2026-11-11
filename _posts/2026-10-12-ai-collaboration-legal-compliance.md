@@ -6,11 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
+  - AI协作
   - 法务合规
-  - 合同审查
-  - 隐私政策
-  - 开源许可证
+  - 安全
 ---
 # 16-法务合规 × AI 协同（终册 · 附录级）
 

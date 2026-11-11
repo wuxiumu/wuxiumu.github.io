@@ -7,7 +7,7 @@ author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - jq
+  - 工具
 ---
 
 >  jq实战

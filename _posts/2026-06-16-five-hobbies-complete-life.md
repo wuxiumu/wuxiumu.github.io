@@ -6,8 +6,8 @@ date: 2026-06-16
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 五种爱好
-  - AI加速
+  - 个人成长
+  - AI
 ---
 # 一个人应该建立的五种爱好
 

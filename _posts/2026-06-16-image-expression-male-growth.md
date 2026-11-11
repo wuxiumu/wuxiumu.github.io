@@ -6,10 +6,9 @@ date: 2026-06-16
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 男性成长
-  - 形象管理
-  - 表达力
-  - AI加速
+  - 个人成长
+  - 沟通表达
+  - AI
 ---
 # 男性成长的两条捷径：形象 × 表达力
 

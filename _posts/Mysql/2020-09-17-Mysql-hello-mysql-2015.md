@@ -7,7 +7,7 @@ author:     "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - MySql
+  - MySQL
 ---
 
 > “Yeah It's on. ”

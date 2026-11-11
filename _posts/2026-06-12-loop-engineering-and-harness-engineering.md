@@ -5,8 +5,8 @@ date: 2026-06-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
-  - Agent工程
+  - AI
+  - Agent
   - 架构设计
 status: 进行中
 ---

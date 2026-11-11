@@ -6,10 +6,10 @@ date: 2026-06-24
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI组织变革
-  - AI加速
-  - 女性创造力
-  - 人机协作
+  - 组织变革
+  - AI
+  - 个人成长
+  - AI协作
 ---
 # 打破禁锢：AI工具降低了技术门槛
 

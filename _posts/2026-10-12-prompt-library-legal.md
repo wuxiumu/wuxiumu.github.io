@@ -6,8 +6,8 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 提示词模板
+  - AI协作
+  - 提示词工程
   - 法务合规
 ---
 # 16-法务合规 · 提示词模板

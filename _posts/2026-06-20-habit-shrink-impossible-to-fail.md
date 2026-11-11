@@ -6,11 +6,10 @@ date: 2026-06-20
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 微习惯
   - 习惯养成
-  - AI加速
+  - AI
   - 个人成长
-  - 行为心理学
+  - 心理学
 ---
 # 微习惯：小到不可能失败的 habit 养成术
 

@@ -7,9 +7,9 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - Palantir
-  - AI商业化
-  - 数据科技
-  - AI加速
+  - AI落地
+  - 数据分析
+  - AI
 ---
 # 🔥 Palantir 爆火背后：AI 的核心赚钱逻辑
 

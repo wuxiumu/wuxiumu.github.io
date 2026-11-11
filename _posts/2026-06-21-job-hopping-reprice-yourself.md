@@ -7,9 +7,8 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 职业发展
-  - AI加速
-  - 跳槽策略
-  - 能力杠杆
+  - AI
+  - 个人成长
 ---
 # 跳槽的本质：不是换工作，而是重新定价自己
 

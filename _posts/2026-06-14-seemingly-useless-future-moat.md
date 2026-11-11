@@ -7,10 +7,10 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 规划
-  - AI加速
+  - AI
   - 教育
-  - 护城河
-  - 人文素养
+  - 商业思维
+  - 人生智慧
 ---
 # 一些看似"没用"但实则是未来"护城河"的能力
 

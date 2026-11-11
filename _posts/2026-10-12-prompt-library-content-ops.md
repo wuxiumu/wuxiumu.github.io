@@ -6,9 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 提示词模板
-  - 内容运营
+  - AI协作
+  - 提示词工程
+  - 内容创作
 ---
 # 13-内容运营 · 提示词模板
 

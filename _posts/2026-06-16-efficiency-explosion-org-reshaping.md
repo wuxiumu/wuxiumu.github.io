@@ -6,10 +6,9 @@ date: 2026-06-16
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
-  - 工业革命
+  - AI
   - 组织变革
-  - 效率重塑
+  - 效率提升
 ---
 # 从”天轴”到 AI —— 效率爆发的真正密码
 

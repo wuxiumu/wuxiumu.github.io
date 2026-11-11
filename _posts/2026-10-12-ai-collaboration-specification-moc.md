@@ -6,10 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 系列导航
-  - 岗位全景
-  - MOC
+  - AI协作
+  - 知识管理
+  - 职业发展
   - 一人公司
 ---
 # 🏠 AI协同开发规范 · MOC（系列首页）

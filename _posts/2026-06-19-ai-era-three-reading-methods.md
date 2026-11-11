@@ -7,7 +7,7 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 读书笔记
-  - AI加速
+  - AI
 ---
 # AI 时代三种读书法：让知识成为血肉
 

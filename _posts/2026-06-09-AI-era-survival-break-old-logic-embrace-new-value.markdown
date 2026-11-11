@@ -5,7 +5,7 @@ date:       2026-06-09
 created: 2026-06-09
 tags:
   - 规划
-  - AI加速
+  - AI
 status: 进行中
 ---
 

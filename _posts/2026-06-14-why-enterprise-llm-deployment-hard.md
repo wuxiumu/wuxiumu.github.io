@@ -7,8 +7,8 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 规划
-  - AI加速
-  - 企业转型
+  - AI
+  - AI落地
   - 大模型
 ---
 # 企业级大模型落地为何困难？

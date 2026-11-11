@@ -7,7 +7,7 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 效率提升
-  - AI加速
+  - AI
 ---
 # 开会的本质：决策分配，而非讨论问题
 

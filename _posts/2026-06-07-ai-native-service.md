@@ -6,9 +6,9 @@ date: 2026-06-07
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI趋势
-  - AI创业
-  - AI组织
+  - AI
+  - 极简创业
+  - 组织变革
   - AI落地
 ---
 

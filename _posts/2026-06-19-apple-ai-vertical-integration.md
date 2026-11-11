@@ -6,10 +6,10 @@ date: 2026-06-19
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 苹果
-  - AI加速
-  - 系统整合
-  - 隐私计算
+  - 工具
+  - AI
+  - 架构设计
+  - 安全
 ---
 # 苹果在 AI 时代的隐秘王牌：为什么"计划经济"可能赢了自由市场
 

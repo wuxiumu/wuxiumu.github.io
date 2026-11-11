@@ -6,10 +6,9 @@ date: 2026-06-20
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI工作流
-  - 知识库
-  - 第二大脑
-  - AI加速
+  - AI协作
+  - 知识管理
+  - AI
 ---
 # 什么是”真正会用 AI”——从问答到第二大脑
 

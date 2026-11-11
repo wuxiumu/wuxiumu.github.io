@@ -6,9 +6,8 @@ date: 2026-06-02
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 沟通
-  - 职场
-  - 社交
+  - 沟通表达
+  - 职业发展
   - 思维模型
 ---
 # 社交和职场沟通的技巧

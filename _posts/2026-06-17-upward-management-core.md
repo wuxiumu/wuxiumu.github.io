@@ -6,8 +6,8 @@ date: 2026-06-17
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 职场沟通
-  - AI加速
+  - 沟通表达
+  - AI
 ---
 # 工作汇报：顶级向上管理的核心
 

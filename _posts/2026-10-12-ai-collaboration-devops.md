@@ -6,10 +6,8 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 运维DevOps
-  - IaC
-  - 生产变更
+  - AI协作
+  - 运维
 ---
 # 08-运维 DevOps × AI 协同
 

@@ -6,9 +6,8 @@ date: 2026-06-07
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
-  - VibeCoding
-  - 开发民主化
+  - AI
+  - AI编程
 ---
 
 # VibeCoding：非程序员的开发热潮

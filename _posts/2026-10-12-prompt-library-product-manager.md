@@ -6,9 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 提示词模板
-  - 产品经理
+  - AI协作
+  - 提示词工程
+  - 产品思维
 ---
 # 01-产品经理 · 提示词模板
 

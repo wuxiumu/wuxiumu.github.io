@@ -6,11 +6,11 @@ date: 2026-06-14
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 知识汇总
-  - AI加速
+  - 知识管理
+  - AI
   - 个人成长
   - 教育
-  - 投资哲学
+  - 财富思维
 ---
 # 📚 2026-06-14 知识汇总
 

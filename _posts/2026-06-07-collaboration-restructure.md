@@ -6,11 +6,11 @@ date: 2026-06-07
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
+  - AI
   - 团队管理
-  - 全栈开发
-  - 组织进化
-  - Qoder
+  - 职业发展
+  - 组织变革
+  - AI编程
 ---
 
 # Qoder 在中小团队中的 AI Coding 实践

@@ -6,10 +6,10 @@ date: 2026-06-17
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - Codex
-  - Obsidian
-  - 知识库
-  - AI加速
+  - AI编程
+  - 工具
+  - 知识管理
+  - AI
 ---
 # 📚 用 Codex + Obsidian 搭建自生长知识库
 

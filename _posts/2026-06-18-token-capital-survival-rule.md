@@ -6,10 +6,10 @@ date: 2026-06-18
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
+  - AI
   - 企业战略
-  - Token资本
-  - 纳德拉
+  - 半导体
+  - 人物观察
 ---
 # AI时代企业生存法则：Token资本
 

@@ -6,9 +6,7 @@ date: 2026-06-13
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 管理
-  - 团队
-  - 领导力
+  - 团队管理
   - 方法论
 ---
 # 管理的底层逻辑：从管控到成就人

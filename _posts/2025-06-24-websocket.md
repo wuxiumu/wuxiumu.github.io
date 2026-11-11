@@ -7,11 +7,11 @@ author: "ai wu"
 header-img: "https://archive.biliimg.com/bfs/archive/ced415ab3ac9ba35c050e32dffe15f8197db9ec8.png"
 tags:
   - AI
-  - Go
+  - Golang
   - Java
-  - Node.js
+  - 后端开发
   - Python
-  - PHP
+  - php
 ---
 非常好的问题！下面用技术人的角度，给你**通俗+专业地对比 Go、Java、Node.js、Python、PHP** 这几种主流语言的 WebSocket 服务端实现效果和极致性能，帮你认清各自优势、短板，以及什么场景用哪个更合适。
 

@@ -5,11 +5,9 @@ date: 2026-06-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 创业
-  - 融资
+  - 极简创业
   - 孙宇晨
-  - 风投
-  - 逆向思维
+  - 思维模型
 status: 进行中
 ---
 

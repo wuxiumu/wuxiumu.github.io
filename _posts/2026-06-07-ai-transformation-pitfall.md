@@ -6,9 +6,9 @@ date: 2026-06-07
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
+  - AI
   - 团队管理
-  - 组织进化
+  - 组织变革
 ---
 
 # 企业AI转型的误区：为何需要"重构"而非"升级"？

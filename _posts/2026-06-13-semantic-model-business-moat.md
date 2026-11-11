@@ -7,10 +7,9 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - Palantir
-  - Ontology
-  - 数据架构
+  - 数据库
   - AI
-  - 决策系统
+  - 思维模型
 ---
 # Palantir的技术基石：Ontology 解析
 

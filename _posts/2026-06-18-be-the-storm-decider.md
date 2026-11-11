@@ -6,9 +6,7 @@ date: 2026-06-18
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 历史智慧
-  - 权力博弈
-  - 生存哲学
+  - 人生智慧
   - 认知升级
 ---
 # 滥竽充数新解：权力洗牌中的生存智慧

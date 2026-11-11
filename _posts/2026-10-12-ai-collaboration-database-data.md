@@ -6,10 +6,8 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 数据库与数据分析
-  - SQL
-  - 数据建模
+  - AI协作
+  - 数据库
 ---
 # 10-数据库与数据分析 × AI 协同
 

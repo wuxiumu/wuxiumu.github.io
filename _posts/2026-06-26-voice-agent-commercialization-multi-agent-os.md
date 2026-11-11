@@ -6,10 +6,9 @@ date: 2026-06-26
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 多智能体协作
-  - 语音Agent
-  - 行业OS
-  - AI加速
+  - Agent
+  - AI落地
+  - AI
 ---
 # 未来5年，Agent的五大演进方向
 

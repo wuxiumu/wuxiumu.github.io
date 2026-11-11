@@ -6,10 +6,8 @@ date: 2026-06-07
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 赚钱逻辑
-  - 财富增长
-  - 杠杆思维
-  - 价值创造
+  - 商业思维
+  - 财富思维
 ---
 
 # 普通人赚钱的核心逻辑

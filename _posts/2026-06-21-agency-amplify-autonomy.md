@@ -7,9 +7,8 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - AI
-  - 职场变革
-  - 能动性
-  - AI加速
+  - 职业发展
+  - 个人成长
 ---
 # AI教母李飞飞：未来十年的职场分水岭 — 能动性（Agency）
 

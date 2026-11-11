@@ -6,10 +6,10 @@ date: 2026-06-07
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 自律
+  - 习惯养成
   - 心理学
-  - 目标管理
-  - 正反馈
+  - 效率提升
+  - 思维模型
 ---
 
 # 自律与坚持的心理学方法

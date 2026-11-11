@@ -6,10 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 产品经理
-  - PRD
-  - 需求分析
+  - AI协作
+  - 产品思维
+  - 产品设计
   - 一人公司
 ---
 # 01-产品经理 × AI 协同

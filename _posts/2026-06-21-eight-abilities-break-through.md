@@ -6,9 +6,8 @@ date: 2026-06-21
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 人生破局
-  - 核心能力
-  - AI加速
+  - 个人成长
+  - AI
   - 认知升级
 ---
 # 人生破局的八种能力：不同困境，不同武器

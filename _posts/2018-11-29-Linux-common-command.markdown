@@ -7,8 +7,8 @@ author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 命令
-    - Linux
+  - 工具
+  - Linux
 ---
 
 >  Linuxl基础

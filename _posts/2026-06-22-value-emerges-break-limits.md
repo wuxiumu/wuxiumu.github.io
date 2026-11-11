@@ -6,10 +6,10 @@ date: 2026-06-22
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
+  - AI
   - 认知升级
   - 思维模型
-  - 创业
+  - 极简创业
 ---
 # AI时代的价值逻辑：不学工具，去打破限制
 

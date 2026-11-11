@@ -6,9 +6,8 @@ date: 2026-06-07
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI智能体
-  - DeepAgents
-  - 技术笔记
+  - Agent
+  - 研发规范
 ---
 
 # DeepAgents 核心原理与适用场景

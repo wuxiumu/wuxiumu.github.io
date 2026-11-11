@@ -7,8 +7,7 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 读书笔记
-  - 毛选
-  - 战略思维
+  - 思维模型
   - 方法论
 ---
 # 《毛选》十句精髓图解

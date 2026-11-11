@@ -6,9 +6,9 @@ date: 2026-06-22
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
-  - 工程师定义
-  - Agent工程
+  - AI
+  - 职业发展
+  - Agent
 ---
 # 工程师的定义：长期维护与持续交付
 

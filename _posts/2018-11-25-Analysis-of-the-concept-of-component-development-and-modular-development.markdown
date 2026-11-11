@@ -7,7 +7,7 @@ author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 概念
+  - 架构设计
 ---
 
 组件化开发和模块化开发概念辨析

@@ -7,8 +7,7 @@ author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 底层
-    - php
+  - php
 ---
 
 >  PHP整个生命周期

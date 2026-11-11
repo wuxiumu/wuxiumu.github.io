@@ -8,8 +8,8 @@ header-img: "img/post-bg-2015.jpg"
 tags:
   - AI协作
   - 知识管理
-  - 日报方法论
-  - AI加速
+  - 方法论
+  - AI
 ---
 # 六问生成AI协作日报 —— 将对话转化为个人资产
 

@@ -6,11 +6,11 @@ date: 2025-08-11
 author: "宝总AI"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - Agentic AI
-  - 智能体
-  - AI架构
-  - 自动化
-  - 最优解
+  - AI协作
+  - Agent
+  - AI编程
+  - AI落地
+  - 思维模型
 ---
 
 ## 前言：Agentic AI 的"进化路线图"

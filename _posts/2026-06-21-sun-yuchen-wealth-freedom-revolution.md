@@ -7,11 +7,10 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 孙宇晨
-  - 财富自由
-  - AI加速
-  - 职业选择
-  - 公务员
-  - 互联网
+  - 财富思维
+  - AI
+  - 职业发展
+  - 网络
   - 认知升级
 ---
 # 孙宇晨：财富自由革命之路

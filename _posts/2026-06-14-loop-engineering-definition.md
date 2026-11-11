@@ -7,7 +7,7 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 规划
-  - AI加速
+  - AI
 ---
 > [!quote] 核心命题
 > AI编程正从「提示词工程」演进到「Loop工程」——最大的挑战不是让AI更聪明，而是让AI知道**什么时候该停下来**。

@@ -6,9 +6,9 @@ date: 2026-06-21
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 会议效率
-  - 决策前置
-  - AI加速
+  - 效率提升
+  - 思维模型
+  - AI
 ---
 # 开会的本质：决策分配，而非讨论问题
 

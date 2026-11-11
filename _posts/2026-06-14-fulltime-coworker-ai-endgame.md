@@ -6,9 +6,8 @@ date: 2026-06-14
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI行业趋势
-  - AI加速
-  - Coworker
+  - AI
+  - 职业发展
   - Agent
 ---
 # 全职 Coworker — AI 的终局形态

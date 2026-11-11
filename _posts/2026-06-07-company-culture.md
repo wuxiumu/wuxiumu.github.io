@@ -6,10 +6,9 @@ date: 2026-06-07
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 职场
-  - 能力
+  - 职业发展
   - 个人成长
-  - AI加速
+  - AI
 ---
 
 # 人才 vs 官僚：如何判断一家公司的真实面貌

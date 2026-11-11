@@ -6,12 +6,10 @@ date: 2026-06-18
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
-  - ToB
+  - AI
+  - 商业思维
   - FDE
-  - 商业模式
-  - OpenAI
-  - Anthropic
+  - 大模型
 ---
 # OpenAI与Anthropic为何同时押注FDE
 

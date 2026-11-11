@@ -6,9 +6,8 @@ date: 2026-06-07
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 成长
-  - 执行力
-  - 反直觉思维
+  - 个人成长
+  - 思维模型
 ---
 
 # 执行力的真相：不要结果

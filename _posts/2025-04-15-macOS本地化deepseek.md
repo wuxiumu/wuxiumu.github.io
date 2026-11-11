@@ -5,11 +5,9 @@ subtitle: "本地化deepseek"
 date: 2025-04-15
 author: "acewu"
 header-img: "img/post-bg-2015.jpg"
-tags: 
-    - mac
-    - deepseek
-    - ollama
-    - chatbox
+tags:
+  - 工具
+  - 大模型
 ---
 ## 1.在mac电脑上安装ollama，
 Ollama 是一个开源的本地大语言模型运行框架，专为在本地机器上便捷部署和运行大型语言模型。

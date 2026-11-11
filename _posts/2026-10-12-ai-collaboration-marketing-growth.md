@@ -6,10 +6,8 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 市场增长
-  - 增长实验
-  - 投放优化
+  - AI协作
+  - 商业思维
 ---
 # 12-市场增长 × AI 协同
 

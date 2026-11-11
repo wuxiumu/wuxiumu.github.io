@@ -7,7 +7,7 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 规划
-  - AI加速
+  - AI
   - 个人成长
   - 认知升级
 ---

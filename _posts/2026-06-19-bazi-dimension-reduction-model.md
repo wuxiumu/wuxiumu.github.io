@@ -6,8 +6,8 @@ date: 2026-06-19
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 认知模型
-  - AI加速
+  - 认知升级
+  - AI
 ---
 # 八字：一个降维模拟模型的本质
 

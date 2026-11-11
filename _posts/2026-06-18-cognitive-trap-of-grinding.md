@@ -6,8 +6,8 @@ date: 2026-06-18
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 认知觉醒
-  - AI加速
+  - 认知升级
+  - AI
 ---
 # "铁杵成针"的认知陷阱：被伪装成励志的驯化术
 

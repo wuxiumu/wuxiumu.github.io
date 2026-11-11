@@ -8,7 +8,7 @@ header-img: "https://archive.biliimg.com/bfs/archive/ced415ab3ac9ba35c050e32dffe
 tags:
   - AI
   - Vue
-  - GO
+  - Golang
 ---
 
 

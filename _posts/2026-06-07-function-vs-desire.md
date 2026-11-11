@@ -6,10 +6,8 @@ date: 2026-06-07
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 商业逻辑
-  - 品牌溢价
-  - 价值定位
-  - 消费心理
+  - 商业思维
+  - 财富思维
 ---
 
 # 商业的本质：功能 vs 欲望

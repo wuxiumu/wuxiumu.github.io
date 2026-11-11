@@ -6,11 +6,11 @@ date: 2026-06-27
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 企业AI落地
-  - AI加速
+  - AI落地
+  - AI
   - Agent
-  - 数据治理
-  - 超级个体
+  - 数据分析
+  - 极简创业
 ---
 # 企业AI落地：从工具到护城河的三层跃迁
 

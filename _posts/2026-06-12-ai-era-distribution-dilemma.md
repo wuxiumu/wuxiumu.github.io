@@ -5,11 +5,8 @@ date: 2026-06-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI浪潮
-  - 社会分配
-  - 消费主义
-  - 福特主义
-  - 共同富裕
+  - AI
+  - 财富思维
 status: 进行中
 ---
 

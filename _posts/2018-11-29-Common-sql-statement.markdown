@@ -7,8 +7,8 @@ author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 数据库
-    - MySql
+  - 数据库
+  - MySQL
 ---
 
 >  Mysql基础

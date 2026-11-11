@@ -6,9 +6,9 @@ date: 2026-06-16
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - Agent工程师
-  - 学习路线图
-  - AI加速
+  - Agent
+  - 规划
+  - AI
 ---
 # 6个月 Agent 工程师学习路线图
 

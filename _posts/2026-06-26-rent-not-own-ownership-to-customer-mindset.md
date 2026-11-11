@@ -6,9 +6,9 @@ date: 2026-06-26
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 消费观
-  - 极简生活
-  - AI加速
+  - 财富思维
+  - 个人成长
+  - AI
 ---
 # 能租就别买：从"占有执念"到"顾客思维"的认知革命
 

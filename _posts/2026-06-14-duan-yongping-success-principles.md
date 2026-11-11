@@ -7,9 +7,9 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 规划
-  - AI加速
+  - AI
   - 思维模型
-  - 投资哲学
+  - 财富思维
 ---
 # 段永平的成功心法：两大核心法则
 

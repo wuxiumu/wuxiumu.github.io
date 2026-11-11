@@ -6,11 +6,8 @@ date: 2025-08-13
 author: "宝总AI"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - Anthropic
-  - Agent最佳实践
-  - Claude
-  - 智能体
-  - 技术发布
+  - 大模型
+  - Agent
 ---
 
 ## 前言：Anthropic 的"大招"来了！

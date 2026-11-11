@@ -5,11 +5,9 @@ date: 2026-06-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - ToB
-  - 商业模式
+  - 商业思维
   - FDE
   - Palantir
-  - 中国ToB
 status: 进行中
 ---
 

@@ -7,7 +7,7 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 个人成长
-  - 兴趣变现
+  - 极简创业
   - 认知升级
 ---
 # 培养"离钱近"的兴趣：从消费到创造

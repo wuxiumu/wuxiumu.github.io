@@ -7,10 +7,9 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 知识管理
-  - AI加速
+  - AI
   - 组织变革
-  - 知识库
-  - 企业转型
+  - AI落地
 ---
 # 知识库：从个人到组织的知识转移
 

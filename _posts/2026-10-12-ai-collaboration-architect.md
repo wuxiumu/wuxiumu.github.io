@@ -6,9 +6,7 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 架构师
-  - 技术选型
+  - AI协作
   - 架构设计
   - 一人公司
 ---

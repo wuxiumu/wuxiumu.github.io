@@ -1,0 +1,19 @@
+name: Tag Guard
+
+on:
+  push:
+    paths:
+      - "_posts/**"
+      - "tools/tag_guard.py"
+  pull_request:
+    paths:
+      - "_posts/**"
+      - "tools/tag_guard.py"
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 检查唯一标签数不超过上限
+        run: python3 tools/tag_guard.py

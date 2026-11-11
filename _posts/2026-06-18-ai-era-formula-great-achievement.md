@@ -7,9 +7,8 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 人生智慧
-  - AI加速
-  - 心智模型
-  - 思维框架
+  - AI
+  - 思维模型
 ---
 # 人生智慧九则 · 全文逻辑图
 

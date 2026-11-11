@@ -6,10 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
+  - AI协作
   - 客服
-  - 知识库
-  - AI客服
+  - 知识管理
 ---
 # 14-客服 × AI 协同
 

@@ -6,9 +6,8 @@ date: 2026-06-22
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 小公司招聘
-  - 人才策略
-  - AI加速
+  - 人才招聘
+  - AI
 ---
 # 小公司招聘的核心真相：放弃幻想，回归本质
 

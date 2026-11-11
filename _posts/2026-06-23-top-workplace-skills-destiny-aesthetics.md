@@ -6,8 +6,8 @@ date: 2026-06-23
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 职场智慧
-  - AI加速
+  - 职业发展
+  - AI
   - 认知升级
   - 思维模型
 ---

@@ -7,10 +7,9 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 规划
-  - AI加速
+  - AI
   - 教育
-  - 人机协作
-  - 通才培养
+  - AI协作
 ---
 # AI负责处理和展开，形成一种新的人机协作模式
 

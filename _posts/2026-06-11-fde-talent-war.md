@@ -6,12 +6,12 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 规划
-  - AI加速
+  - AI
   - FDE
-  - 人才战略
+  - 人才招聘
   - AI落地
   - 方法论
-  - 职业规划
+  - 职业发展
 status: 进行中
 ---
 

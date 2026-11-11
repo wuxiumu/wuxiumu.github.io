@@ -6,9 +6,8 @@ date: 2026-06-19
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 长任务架构
-  - 状态机
-  - AI加速
+  - Agent
+  - AI
 ---
 # 长任务 Agent 的暂停、恢复与续跑：工程实现全解
 

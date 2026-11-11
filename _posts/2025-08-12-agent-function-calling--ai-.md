@@ -7,10 +7,8 @@ author: "宝总AI"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - Agent
-  - Function Calling
-  - AI技能
-  - 智能体
-  - 函数调用
+  - 提示词工程
+  - AI
 ---
 
 ## 前言：Agent 函数调用的"核心逻辑"

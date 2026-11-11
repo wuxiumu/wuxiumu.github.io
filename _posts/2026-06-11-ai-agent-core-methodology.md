@@ -5,10 +5,10 @@ date: 2026-06-11
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI智能体
+  - Agent
   - 方法论
   - 效率提升
-  - Prompt工程
+  - 提示词工程
 status: 进行中
 source: 视频笔记 + 拓展整理
 ---

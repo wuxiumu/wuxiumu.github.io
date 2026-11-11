@@ -6,10 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
+  - AI协作
   - 移动端开发
-  - Flutter
-  - 上架合规
+  - 法务合规
 ---
 # 06-移动端开发 × AI 协同（可选册）
 

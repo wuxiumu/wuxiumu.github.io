@@ -6,10 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 内容运营
+  - AI协作
   - 内容创作
-  - SEO
+  - 商业思维
 ---
 # 13-内容运营 × AI 协同
 

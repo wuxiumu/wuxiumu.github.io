@@ -7,8 +7,8 @@ author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 知识
-    - php
+  - 知识管理
+  - php
 ---
 
 > php技术栈后端程序员的知识储备仓库

@@ -6,10 +6,8 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
+  - AI协作
   - 测试QA
-  - 自动化测试
-  - 质量保障
 ---
 # 07-测试 QA × AI 协同
 

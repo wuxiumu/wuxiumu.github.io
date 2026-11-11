@@ -6,9 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - 提示词模板
-  - 运维DevOps
+  - AI协作
+  - 提示词工程
+  - 运维
 ---
 # 08-运维DevOps · 提示词模板
 

@@ -5,10 +5,9 @@ date: 2026-06-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 心理
-  - 效率
-  - 脑科学
-  - 习惯
+  - 心理学
+  - 效率提升
+  - 习惯养成
 status: 已完成
 ---
 

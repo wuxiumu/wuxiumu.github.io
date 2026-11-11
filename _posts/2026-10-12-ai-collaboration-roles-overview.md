@@ -6,10 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
+  - AI协作
   - 一人公司
-  - 岗位全景
-  - 人机分工
+  - 职业发展
 ---
 # 00-汇总 · 一人公司 AI 协同岗位全景
 

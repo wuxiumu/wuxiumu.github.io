@@ -6,10 +6,7 @@ date: 2026-06-07
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 管理
-  - 团队建设
-  - 容错文化
-  - 领导力
+  - 团队管理
 ---
 
 # 管理者如何接纳不完美：打造容错型团队

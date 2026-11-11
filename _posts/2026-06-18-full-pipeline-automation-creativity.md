@@ -6,9 +6,8 @@ date: 2026-06-18
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 自媒体
   - 内容创作
-  - AI加速
+  - AI
 ---
 # AI Agent 自媒体全流程自动化
 

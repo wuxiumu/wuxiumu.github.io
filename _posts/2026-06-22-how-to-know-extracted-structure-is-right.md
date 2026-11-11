@@ -7,8 +7,8 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 认知升级
-  - 提取结构
-  - AI加速
+  - 提示词工程
+  - AI
 ---
 # 提取结构 —— 任何领域一通百通的核心能力
 

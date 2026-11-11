@@ -6,10 +6,9 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
+  - AI协作
   - 研发规范
-  - Code Review
-  - AI加速
+  - AI
 ---
 # AI协同开发规范
 

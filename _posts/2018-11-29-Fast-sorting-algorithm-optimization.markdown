@@ -7,8 +7,8 @@ author:     "吴庆宝"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 算法
-    - 优化
+  - 算法
+  - 数据库
 ---
 
 >  php算法优化

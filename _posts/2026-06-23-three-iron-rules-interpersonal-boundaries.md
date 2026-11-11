@@ -6,8 +6,8 @@ date: 2026-06-23
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 人际沟通
-  - 心理边界
+  - 沟通表达
+  - 心理学
   - 个人成长
 ---
 # 过分礼貌 = 无意识的软弱？——建立人际边界的三条铁律

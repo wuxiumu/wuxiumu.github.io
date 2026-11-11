@@ -6,10 +6,10 @@ date: 2026-06-16
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI加速
-  - 副业
-  - 小程序开发
-  - 时间管理
+  - AI
+  - 极简创业
+  - 移动端开发
+  - 效率提升
 ---
 # 用AI开发小程序：普通人的时间投资指南
 

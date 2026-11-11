@@ -6,11 +6,7 @@ date: 2025-08-10
 author: "宝总AI"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI设计
-  - 用户体验
-  - 智能交互
   - 产品设计
-  - 思维设计
 ---
 
 ## 前言：AI 时代的"思维革命"

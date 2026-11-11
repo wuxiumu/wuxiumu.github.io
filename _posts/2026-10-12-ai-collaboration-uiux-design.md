@@ -6,10 +6,8 @@ date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI协同开发
-  - UIUX设计
-  - 设计系统
-  - 视觉设计
+  - AI协作
+  - 产品设计
   - 一人公司
 ---
 # 02-UI/UX 设计 × AI 协同

@@ -6,10 +6,7 @@ date: 2026-06-17
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - AI地缘政治
-  - G7
-  - AI治理
-  - AI加速
+  - AI
 ---
 # G7"终极AI联盟"：一场披着安全外衣的技术霸权博弈
 

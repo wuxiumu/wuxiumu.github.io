@@ -5,9 +5,9 @@ date: 2026-06-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
-  - 长期记忆
-  - 系统设计
-  - 面试
+  - 提示词工程
+  - 架构设计
+  - 职业发展
 status: 进行中
 ---
 

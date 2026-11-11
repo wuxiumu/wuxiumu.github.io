@@ -7,8 +7,8 @@ author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
 tags:
   - 内容创作
-  - 获客策略
-  - 决策窗口
+  - 商业思维
+  - 思维模型
   - 方法论
 ---
 # 获客视频的核心：抓住客户的「决策窗口」
