@@ -76,4 +76,5 @@
 - [x] [体验] photo 相册页全链路核对（新增于候选池并当轮完成，✅ 2026-11-12：索引 photo.html.js（4 相册）→ 封面图 4/4 可达（作者自有 OSS 桶 jiatingshiguangxiangce）→ 中文文件名相册数据 CDN 可达（URL 编码正确）→ 详情页 photo/photo.html?name=… 4/4 返回 200；全链路健康，零改动）
 - [x] [体验] photo 时间线封面图懒加载（新增于候选池并当轮完成，✅ 2026-11-12：巡检发现时间线 `<img>` 缺懒加载（alt 已有）；一行补 `loading="lazy" decoding="async"`；详情页 photo/photo.html 已自带 lazy 无需动，全站 101 张相册原图的加载路径核对完毕）
 - [x] [体验] 44 轮产出盘点小结（新增并当轮完成，✅ 2026-11-12：`docs/REVIEW_SUMMARY.md`——51 commit/215 文件/+2090-589 行的分类清单、5 份报告的决策项、合并前作者待办清单、验证基线；引用文件存在性全部核对）
+- [x] [体验] Rakefile `rake post` 模板修复（新增并当轮完成，✅ 2026-11-12：三个实锤 bug 一次修——① 新文章 author 默认写成主题作者 "Hux" → 改 "WuQingBao"；② tags 永远空 → 支持 `rake post tags="AI, 团队管理"` 逗号传入并提示白名单与 tag_guard；③ 纯中文标题 slug 被 gsub 清空致文件名残缺 → 兜底 "post"。实跑两条路径验证（带标签/纯中文标题）后清理测试文件）
 - [ ] [基建] master 合并上线后回访：确认 sitemap/robots/JSON-LD/搜索高亮在真实部署中的表现（需作者先合并 auto-opt → master；**本轮核实 master 仍停留 `e3af187`，未合并**，条目继续挂起）
