@@ -2,6 +2,24 @@
 layout: default
 ---
 
+<!-- BlogPosting 结构化数据：jsonify 保证 JSON 合法（引号/换行自动转义） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.date | date_to_xmlschema | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ page.author | default: site.author | default: site.title | jsonify }}
+  },
+  "description": {{ page.subtitle | default: page.excerpt | strip_html | strip_newlines | jsonify }},
+  "mainEntityOfPage": {{ page.url | prepend: site.baseurl | prepend: site.url | jsonify }},
+  "keywords": {{ page.tags | jsonify }}
+}
+</script>
+
 <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
