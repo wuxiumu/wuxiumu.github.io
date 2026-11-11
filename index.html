@@ -2,58 +2,263 @@
 layout: page
 ---
 
-<!-- ==================== FDE 接单说明 · 置顶 ==================== -->
+<!-- ==================== FDE 全屏开场 · 黑白红科技感 ==================== -->
 <style>
-  .fde-hero{position:relative;overflow:hidden;margin:4px 0 0;padding:34px 32px 28px;background:linear-gradient(165deg,#0a0e1a,#111a33 55%,#0a1428);border:1px solid #1f2a44;border-radius:18px;color:#e6ecff}
-  .fde-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 240px at 88% -12%,rgba(79,140,255,.22),transparent 70%),radial-gradient(420px 200px at -8% 108%,rgba(34,211,238,.14),transparent 70%);pointer-events:none}
+  :root{
+    --fi-red:#e5233c; --fi-red2:#ff4d5e; --fi-bg:#060607; --fi-panel:#0c0c0e;
+    --fi-line:rgba(255,255,255,.09); --fi-white:#f5f5f7; --fi-gray:#9a9aa2;
+  }
+  /* ---------- 全屏弹层 ---------- */
+  #fde-intro{position:fixed;inset:0;z-index:99999;background:var(--fi-bg);color:var(--fi-white);
+    opacity:0;transition:opacity .5s ease;overflow-y:auto;overscroll-behavior:contain}
+  #fde-intro[hidden]{display:none!important}
+  #fde-intro.on{opacity:1}
+  #fde-intro::before{content:"";position:fixed;inset:0;pointer-events:none;
+    background:
+      repeating-linear-gradient(0deg,rgba(255,255,255,.028) 0 1px,transparent 1px 64px),
+      repeating-linear-gradient(90deg,rgba(255,255,255,.028) 0 1px,transparent 1px 64px)}
+  #fde-intro::after{content:"";position:fixed;inset:0;pointer-events:none;
+    background:radial-gradient(900px 480px at 78% 12%,rgba(229,35,60,.16),transparent 62%),
+               radial-gradient(700px 420px at 12% 92%,rgba(229,35,60,.08),transparent 60%),
+               radial-gradient(140% 100% at 50% 50%,transparent 55%,rgba(0,0,0,.65) 100%)}
+  .fi-scan{position:fixed;left:0;right:0;top:0;height:2px;z-index:2;pointer-events:none;opacity:0;
+    background:linear-gradient(90deg,transparent,rgba(255,77,94,.75) 30%,rgba(255,255,255,.9) 50%,rgba(255,77,94,.75) 70%,transparent)}
+  #fde-intro.on .fi-scan{animation:fi-sweep 5.5s linear 1.2s infinite}
+  @keyframes fi-sweep{0%{opacity:.8;transform:translateY(-2px)}92%{opacity:.5}100%{opacity:0;transform:translateY(100vh)}}
+  .fi-progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:3;background:linear-gradient(90deg,var(--fi-red),var(--fi-red2))}
+  #fde-intro.on .fi-progress{animation:fi-load 1.1s ease-out .15s forwards}
+  @keyframes fi-load{to{width:100%}}
+  .fi-hud{position:fixed;z-index:2;font-family:"SF Mono","JetBrains Mono",Consolas,monospace;
+    font-size:10px;letter-spacing:.22em;color:rgba(255,255,255,.42);pointer-events:none}
+  .fi-hud b{color:var(--fi-red2);font-weight:400}
+  .fi-hud.tl{top:22px;left:26px}.fi-hud.tr{top:22px;right:92px;text-align:right}
+  .fi-hud.bl{bottom:20px;left:26px}.fi-hud.br{bottom:20px;right:26px;text-align:right}
+  .fi-corner{position:fixed;width:26px;height:26px;z-index:2;pointer-events:none;opacity:.9}
+  .fi-corner.c1{top:14px;left:14px;border-top:2px solid var(--fi-red);border-left:2px solid var(--fi-red)}
+  .fi-corner.c2{top:14px;right:14px;border-top:2px solid var(--fi-red);border-right:2px solid var(--fi-red)}
+  .fi-corner.c3{bottom:14px;left:14px;border-bottom:2px solid var(--fi-red);border-left:2px solid var(--fi-red)}
+  .fi-corner.c4{bottom:14px;right:14px;border-bottom:2px solid var(--fi-red);border-right:2px solid var(--fi-red)}
+
+  .fi-stage{position:relative;z-index:4;max-width:1080px;margin:0 auto;padding:72px 40px 64px;
+    min-height:100vh;display:flex;align-items:center}
+  .fi-cols{display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:center;width:100%}
+  .fx{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;transition-delay:calc(var(--d,0)*95ms)}
+  #fde-intro.on .fx{opacity:1;transform:none}
+
+  /* 照片 · 黑白 + 红框 */
+  .fi-photo-wrap{position:relative;width:320px;max-width:72vw;margin:0 auto}
+  .fi-photo{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.18);background:#000}
+  .fi-photo img{display:block;width:100%;filter:grayscale(1) contrast(1.08) brightness(1.02)}
+  .fi-photo::after{content:"";position:absolute;left:0;right:0;top:-30%;height:30%;pointer-events:none;
+    background:linear-gradient(180deg,transparent,rgba(255,77,94,.28) 55%,rgba(255,255,255,.5) 98%,transparent)}
+  #fde-intro.on .fi-photo::after{animation:fi-photo-scan 3.6s ease-in-out 1.4s infinite}
+  @keyframes fi-photo-scan{0%{top:-30%}55%{top:105%}100%{top:105%}}
+  .fi-glow{position:absolute;inset:-1px;box-shadow:0 0 90px rgba(229,35,60,.32),0 0 26px rgba(229,35,60,.18);pointer-events:none}
+  .fi-br{position:absolute;width:30px;height:30px;pointer-events:none}
+  .fi-br.b1{top:-9px;left:-9px;border-top:3px solid var(--fi-red);border-left:3px solid var(--fi-red)}
+  .fi-br.b2{top:-9px;right:-9px;border-top:3px solid var(--fi-red);border-right:3px solid var(--fi-red)}
+  .fi-br.b3{bottom:-9px;left:-9px;border-bottom:3px solid var(--fi-red);border-left:3px solid var(--fi-red)}
+  .fi-br.b4{bottom:-9px;right:-9px;border-bottom:3px solid var(--fi-red);border-right:3px solid var(--fi-red)}
+  .fi-photo-cap{margin-top:14px;text-align:center;font-family:"SF Mono","JetBrains Mono",Consolas,monospace;
+    font-size:11px;letter-spacing:.3em;color:var(--fi-gray)}
+  .fi-photo-cap b{color:var(--fi-red2);font-weight:400}
+
+  /* 文案区 */
+  .fi-badge{display:inline-flex;align-items:center;gap:10px;font-family:"SF Mono","JetBrains Mono",Consolas,monospace;
+    font-size:11px;letter-spacing:.26em;color:var(--fi-red2);border:1px solid rgba(229,35,60,.5);
+    padding:7px 16px;background:rgba(229,35,60,.07)}
+  .fi-badge i{width:7px;height:7px;border-radius:50%;background:var(--fi-red2);box-shadow:0 0 10px var(--fi-red2);animation:fi-pulse 1.8s infinite}
+  @keyframes fi-pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .fi-name{position:relative;margin:26px 0 6px;font-size:clamp(46px,7.2vw,78px);line-height:1.05;
+    font-weight:900;letter-spacing:.04em;color:var(--fi-white)}
+  .fi-name .fi-role{display:block;margin-top:10px;font-size:clamp(20px,2.6vw,28px);font-weight:800;letter-spacing:.14em;
+    background:linear-gradient(92deg,var(--fi-red),var(--fi-red2) 55%,#ff8a94);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .fi-name.glitch::before,.fi-name.glitch::after{content:attr(data-text);position:absolute;left:0;top:0;width:100%;overflow:hidden}
+  .fi-name.glitch::before{color:var(--fi-red);z-index:-1;clip-path:inset(12% 0 58% 0);animation:fi-gl1 3.2s infinite steps(2)}
+  .fi-name.glitch::after{color:rgba(255,255,255,.55);z-index:-2;clip-path:inset(62% 0 8% 0);animation:fi-gl2 2.7s infinite steps(2)}
+  @keyframes fi-gl1{0%,86%,100%{transform:none;opacity:0}88%{transform:translate(-5px,2px);opacity:.8}92%{transform:translate(4px,-1px);opacity:.8}96%{transform:none;opacity:0}}
+  @keyframes fi-gl2{0%,80%,100%{transform:none;opacity:0}84%{transform:translate(4px,1px);opacity:.7}90%{transform:translate(-4px,-2px);opacity:.7}94%{transform:none;opacity:0}}
+  .fi-en{font-family:"SF Mono","JetBrains Mono",Consolas,monospace;font-size:12px;letter-spacing:.4em;color:var(--fi-gray)}
+  .fi-typed{margin:22px 0 6px;font-size:17px;line-height:1.9;color:#d8d8dc;min-height:2em}
+  .fi-typed .fi-cursor{display:inline-block;width:9px;height:1.15em;margin-left:4px;vertical-align:-0.2em;
+    background:var(--fi-red2);animation:fi-blink 1s steps(1) infinite}
+  @keyframes fi-blink{50%{opacity:0}}
+
+  .fi-rules{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0 4px}
+  .fi-rule{border:1px solid var(--fi-line);background:rgba(255,255,255,.025);padding:14px 16px 12px}
+  .fi-rule h4{margin:0 0 10px;font-size:13px;letter-spacing:.2em;font-weight:700}
+  .fi-rule.no h4{color:var(--fi-red2)}
+  .fi-rule.yes h4{color:var(--fi-white)}
+  .fi-rule ul{margin:0;padding:0;list-style:none}
+  .fi-rule li{position:relative;padding-left:24px;margin-bottom:9px;font-size:13px;line-height:1.65;color:var(--fi-gray)}
+  .fi-rule li:last-child{margin-bottom:0}
+  .fi-rule li b{color:#e9e9ee;font-weight:600}
+  .fi-rule li::before{position:absolute;left:0;top:.2em;width:16px;height:16px;border-radius:4px;
+    font-size:10px;font-weight:700;line-height:16px;text-align:center;font-family:"SF Mono",Consolas,monospace}
+  .fi-rule.no li::before{content:"✕";color:var(--fi-red2);border:1px solid rgba(229,35,60,.55);background:rgba(229,35,60,.1)}
+  .fi-rule.yes li::before{content:"✓";color:#fff;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.08)}
+
+  .fi-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:26px}
+  .fi-btn{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:700;letter-spacing:.12em;
+    padding:14px 30px;border-radius:2px;cursor:pointer;text-decoration:none;transition:all .22s ease;font-family:inherit}
+  .fi-btn-red{color:#fff;background:linear-gradient(92deg,var(--fi-red),#c01229);border:1px solid rgba(255,77,94,.7)}
+  .fi-btn-red:hover{box-shadow:0 0 34px rgba(229,35,60,.55);transform:translateY(-2px);color:#fff;text-decoration:none}
+  .fi-btn-ghost{color:#eee;background:transparent;border:1px solid rgba(255,255,255,.4)}
+  .fi-btn-ghost:hover{border-color:#fff;box-shadow:0 0 22px rgba(255,255,255,.16);transform:translateY(-2px);color:#fff;text-decoration:none}
+  .fi-contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .fi-chip{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:#c7c7cd;border:1px solid var(--fi-line);
+    border-radius:2px;padding:8px 14px;text-decoration:none;background:rgba(255,255,255,.02);transition:all .2s ease;font-family:inherit}
+  a.fi-chip:hover{color:#fff;border-color:rgba(255,77,94,.7);text-decoration:none}
+  .fi-chip.todo{border-style:dashed;color:var(--fi-gray)}
+  .fi-chip.todo i{font-style:normal;color:var(--fi-red2)}
+  .fi-close{position:fixed;top:18px;right:26px;z-index:5;width:44px;height:44px;background:transparent;
+    border:1px solid rgba(255,255,255,.3);border-radius:2px;color:#ddd;font-size:18px;cursor:pointer;
+    font-family:"SF Mono",Consolas,monospace;transition:all .22s ease}
+  .fi-close:hover{color:#fff;border-color:var(--fi-red2);box-shadow:0 0 20px rgba(229,35,60,.4);transform:rotate(90deg)}
+
+  @media (max-width:900px){
+    .fi-stage{padding:64px 20px 48px}
+    .fi-cols{grid-template-columns:1fr;gap:34px}
+    .fi-photo-wrap{width:230px}
+    .fi-rules{grid-template-columns:1fr}
+    .fi-hud.tl,.fi-hud.br{display:none}
+    .fi-name{font-size:clamp(40px,11vw,54px)}
+    .fi-cta .fi-btn{flex:1;justify-content:center;padding:13px 16px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    #fde-intro *{animation:none!important}
+    .fx{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- 页内 FDE 板块 · 同步黑白红 ---------- */
+  .fde-hero{position:relative;overflow:hidden;margin:4px 0 0;padding:34px 32px 28px;
+    background:linear-gradient(165deg,#08080a,#111114 55%,#0a0a0c);border:1px solid #1f1f23;border-radius:18px;color:#ececf0}
+  .fde-hero::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(520px 240px at 88% -12%,rgba(229,35,60,.2),transparent 70%),
+               radial-gradient(420px 200px at -8% 108%,rgba(255,255,255,.05),transparent 70%);pointer-events:none}
   .fde-hero *{position:relative;z-index:1}
-  .fde-badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:#22d3ee;border:1px solid rgba(34,211,238,.4);border-radius:99px;padding:4px 14px;letter-spacing:.18em;background:rgba(34,211,238,.06)}
-  .fde-badge i{width:6px;height:6px;border-radius:50%;background:#22d3ee;box-shadow:0 0 8px #22d3ee;animation:fde-pulse 2s infinite}
+  .fde-badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--fi-red2);
+    border:1px solid rgba(229,35,60,.5);border-radius:99px;padding:4px 14px;letter-spacing:.18em;background:rgba(229,35,60,.07)}
+  .fde-badge i{width:6px;height:6px;border-radius:50%;background:var(--fi-red2);box-shadow:0 0 8px var(--fi-red2);animation:fde-pulse 2s infinite}
   @keyframes fde-pulse{0%,100%{opacity:1}50%{opacity:.3}}
   .fde-name{margin:16px 0 10px;font-size:30px;line-height:1.2;font-weight:800;color:#fff;letter-spacing:.02em}
-  .fde-name small{display:block;margin-top:6px;font-size:13px;font-weight:400;color:#8b98b8;letter-spacing:.14em}
-  .fde-name .fde-role{background:linear-gradient(92deg,#4f8cff,#22d3ee 60%,#34d399);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .fde-tagline{margin:0 0 24px;font-size:15px;line-height:1.9;color:#9fb0d0}
-  .fde-tagline b{color:#e6ecff}
+  .fde-name small{display:block;margin-top:6px;font-size:13px;font-weight:400;color:#8a8a92;letter-spacing:.14em}
+  .fde-name .fde-role{background:linear-gradient(92deg,var(--fi-red),var(--fi-red2) 60%,#ff8a94);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .fde-tagline{margin:0 0 24px;font-size:15px;line-height:1.9;color:#a6a6ae}
+  .fde-tagline b{color:#fff}
+  .fde-toprow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .fde-open{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.1em;
+    color:var(--fi-red2);background:rgba(229,35,60,.08);border:1px solid rgba(229,35,60,.5);border-radius:8px;
+    padding:9px 16px;cursor:pointer;transition:all .22s ease;font-family:inherit}
+  .fde-open:hover{color:#fff;background:rgba(229,35,60,.22);box-shadow:0 0 26px rgba(229,35,60,.35);transform:translateY(-1px)}
   .fde-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .fde-panel{border-radius:14px;padding:20px 20px 16px;background:rgba(255,255,255,.03);border:1px solid #1f2a44}
+  .fde-panel{border-radius:14px;padding:20px 20px 16px;background:rgba(255,255,255,.025);border:1px solid #1f1f23}
   .fde-panel h3{margin:0 0 14px;padding:0;font-size:16px;line-height:1.4;color:#fff}
-  .fde-panel.fde-no{border-color:rgba(248,113,113,.28)}
-  .fde-panel.fde-no h3{color:#f8a5a5}
-  .fde-panel.fde-yes{border-color:rgba(52,211,153,.28)}
-  .fde-panel.fde-yes h3{color:#7ce8bf}
+  .fde-panel.fde-no{border-color:rgba(229,35,60,.35)}
+  .fde-panel.fde-no h3{color:var(--fi-red2)}
+  .fde-panel.fde-yes{border-color:rgba(255,255,255,.3)}
   .fde-list{margin:0;padding:0;list-style:none}
-  .fde-list li{position:relative;margin:0 0 12px;padding-left:26px;font-size:13.5px;line-height:1.85;color:#9fb0d0}
+  .fde-list li{position:relative;margin:0 0 12px;padding-left:26px;font-size:13.5px;line-height:1.85;color:#a6a6ae}
   .fde-list li:last-child{margin-bottom:0}
-  .fde-list li b{color:#e6ecff}
-  .fde-list li::before{position:absolute;left:0;top:.45em;width:17px;height:17px;border-radius:5px;font-size:11px;font-weight:700;line-height:17px;text-align:center}
-  .fde-no .fde-list li::before{content:"✕";color:#f87171;border:1px solid rgba(248,113,113,.45);background:rgba(248,113,113,.08)}
-  .fde-yes .fde-list li::before{content:"✓";color:#34d399;border:1px solid rgba(52,211,153,.45);background:rgba(52,211,153,.08)}
-  .fde-contact{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px;padding-top:18px;border-top:1px dashed #2a3757}
-  .fde-contact-t{font-size:12px;letter-spacing:.16em;color:#8b98b8;margin-right:2px}
-  .fde-link{display:inline-flex;align-items:center;font-size:13px;color:#c9d6f2;border:1px solid rgba(139,152,184,.3);border-radius:10px;padding:8px 14px;text-decoration:none;transition:all .2s ease;background:rgba(10,14,26,.4)}
-  .fde-link:hover{color:#fff;border-color:#4f8cff;box-shadow:0 6px 18px -8px rgba(79,140,255,.6);text-decoration:none;transform:translateY(-1px)}
-  .fde-link.fde-todo{border-style:dashed;color:#8b98b8;cursor:default}
-  .fde-link.fde-todo i{font-style:normal;color:#fbbf24;margin-left:6px}
-  .fde-link.fde-todo:hover{color:#8b98b8;border-color:rgba(251,191,36,.5);box-shadow:none;transform:none}
+  .fde-list li b{color:#f0f0f4}
+  .fde-list li::before{position:absolute;left:0;top:.45em;width:17px;height:17px;border-radius:5px;
+    font-size:11px;font-weight:700;line-height:17px;text-align:center;font-family:"SF Mono",Consolas,monospace}
+  .fde-no .fde-list li::before{content:"✕";color:var(--fi-red2);border:1px solid rgba(229,35,60,.55);background:rgba(229,35,60,.1)}
+  .fde-yes .fde-list li::before{content:"✓";color:#fff;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.08)}
+  .fde-contact{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px;padding-top:18px;border-top:1px dashed #2a2a30}
+  .fde-contact-t{font-size:12px;letter-spacing:.16em;color:#8a8a92;margin-right:2px}
+  .fde-link{display:inline-flex;align-items:center;font-size:13px;color:#c9c9cf;border:1px solid rgba(255,255,255,.22);
+    border-radius:10px;padding:8px 14px;text-decoration:none;transition:all .2s ease;background:rgba(0,0,0,.35)}
+  .fde-link:hover{color:#fff;border-color:var(--fi-red2);box-shadow:0 6px 18px -8px rgba(229,35,60,.6);text-decoration:none;transform:translateY(-1px)}
+  .fde-link.fde-todo{border-style:dashed;color:#8a8a92;cursor:default}
+  .fde-link.fde-todo i{font-style:normal;color:var(--fi-red2);margin-left:6px}
+  .fde-link.fde-todo:hover{color:#8a8a92;border-color:rgba(229,35,60,.55);box-shadow:none;transform:none}
   .fde-recent{display:flex;align-items:center;gap:14px;margin:36px 0 4px;color:#666}
   .fde-recent::after{content:"";flex:1;height:1px;background:#e5e5e5}
   .fde-recent span{font-size:14px;font-weight:600;letter-spacing:.12em;color:#404040}
   @media (max-width:767px){
     .fde-hero{padding:24px 18px 20px;border-radius:14px}
     .fde-name{font-size:24px}
+    .fde-open{width:100%;justify-content:center}
     .fde-grid{grid-template-columns:1fr}
     .fde-contact{flex-direction:column;align-items:stretch}
     .fde-link{justify-content:flex-start}
   }
 </style>
 
+<section id="fde-intro" hidden role="dialog" aria-modal="true" aria-label="吴庆宝 · FDE 个人介绍">
+  <div class="fi-progress"></div><div class="fi-scan"></div>
+  <span class="fi-corner c1"></span><span class="fi-corner c2"></span>
+  <span class="fi-corner c3"></span><span class="fi-corner c4"></span>
+  <span class="fi-hud tl">WU_QINGBAO / FDE <b>//</b> INTRO.SEQ.01</span>
+  <span class="fi-hud tr">SYS.STATUS <b>● ONLINE</b></span>
+  <span class="fi-hud bl">© 2026 吴庆宝 · FDE</span>
+  <span class="fi-hud br">AI 工程化 <b>×</b> 落地交付</span>
+  <button id="fi-close" class="fi-close" type="button" aria-label="关闭介绍">✕</button>
+
+  <div class="fi-stage">
+    <div class="fi-cols">
+      <div class="fx" style="--d:1">
+        <div class="fi-photo-wrap">
+          <span class="fi-glow"></span>
+          <span class="fi-br b1"></span><span class="fi-br b2"></span>
+          <span class="fi-br b3"></span><span class="fi-br b4"></span>
+          <div class="fi-photo">
+            <img src="{% include img.html src=site.sidebar-avatar %}" alt="吴庆宝 · FDE" onerror="this.onerror=null;this.src='/img/aricwu.png'">
+          </div>
+          <div class="fi-photo-cap">WU_QINGBAO <b>/</b> IDENT.VERIFIED</div>
+        </div>
+      </div>
+      <div>
+        <span class="fi-badge fx" style="--d:0"><i></i>FDE · FORWARD DEPLOYED ENGINEER</span>
+        <h2 class="fi-name glitch fx" style="--d:2" data-text="吴庆宝">吴庆宝<span class="fi-role">FDE · 前驻场工程师</span></h2>
+        <div class="fi-en fx" style="--d:3">FORWARD DEPLOYED ENGINEER — WU QINGBAO</div>
+        <p class="fi-typed fx" style="--d:4">接 AI 商单：<span id="fi-typed-text"></span><span class="fi-cursor"></span></p>
+
+        <div class="fi-rules fx" style="--d:5">
+          <div class="fi-rule no">
+            <h4>丑话说在前头 · 三类不接</h4>
+            <ul>
+              <li><b>本地私有化项目</b> — 买卡洗数据，太重</li>
+              <li><b>二三十年的老系统</b> — 接口残缺坑无底洞</li>
+              <li><b>零容错场景</b> — 出不得半点差错</li>
+            </ul>
+          </div>
+          <div class="fi-rule yes">
+            <h4>能接的单 · 三条原则</h4>
+            <ul>
+              <li><b>先收钱，再动手</b> — 诚意用钱筛出来</li>
+              <li><b>成熟底座交付</b> — Coze / Dify / 豆包</li>
+              <li><b>员工配套落地</b> — 有人会用才算交付</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fi-cta fx" style="--d:6">
+          <button id="fi-enter" class="fi-btn fi-btn-red" type="button">进入博客 →</button>
+          <a class="fi-btn fi-btn-ghost" href="https://wuxiumu.github.io/zcode-workbench/" target="_blank" rel="noopener">FDE 工作台矩阵 ×15</a>
+        </div>
+        <div class="fi-contact fx" style="--d:7">
+          <a class="fi-chip" href="mailto:wuxiumu@163.com">✉️ wuxiumu@163.com</a>
+          <span class="fi-chip todo">💬 微信 · <i>预留入口</i></span>
+          <a class="fi-chip" href="https://github.com/wuxiumu" target="_blank" rel="noopener">GitHub @wuxiumu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 页内 FDE 接单说明 ==================== -->
+
 <section class="fde-hero">
-  <span class="fde-badge"><i></i>FDE · FORWARD DEPLOYED ENGINEER</span>
+  <div class="fde-toprow">
+    <span class="fde-badge"><i></i>FDE · FORWARD DEPLOYED ENGINEER · 接 AI 商单</span>
+    <button id="fde-open-hero" class="fde-open" type="button">▶ 重看全屏介绍</button>
+  </div>
   <h2 class="fde-name">吴庆宝 <span class="fde-role">· FDE</span>
     <small>FORWARD DEPLOYED ENGINEER / 前驻场工程师</small>
   </h2>
-  <p class="fde-tagline">接 <b>AI 商单</b>：把客户的业务问题，翻译成能跑起来的系统。<br>
+  <p class="fde-tagline">把客户的业务问题，翻译成能跑起来的系统。<br>
     合作之前，先把<b>丑话说在前头</b> —— 以下三类单子，直接不接。</p>
 
   <div class="fde-grid">
@@ -86,6 +291,38 @@ layout: page
 </section>
 
 <div class="fde-recent"><span>近期文章</span></div>
+
+<script>
+(function(){
+  var ov=document.getElementById('fde-intro');
+  if(!ov)return;
+  var KEY='fde_intro_seen_v2',typedStarted=false,typeTimer=null;
+  var TAG='把客户的业务问题，翻译成能跑起来的系统。';
+  function startTyping(){
+    if(typedStarted)return;typedStarted=true;
+    var el=document.getElementById('fi-typed-text'),i=0;
+    typeTimer=setInterval(function(){el.textContent=TAG.slice(0,++i);if(i>=TAG.length)clearInterval(typeTimer);},95);
+  }
+  function open(auto){
+    ov.hidden=false;document.body.style.overflow='hidden';
+    requestAnimationFrame(function(){requestAnimationFrame(function(){ov.classList.add('on')})});
+    startTyping();
+    if(auto){try{localStorage.setItem(KEY,'1')}catch(e){}}
+  }
+  function close(){
+    if(ov.hidden)return;
+    ov.classList.remove('on');document.body.style.overflow='';
+    try{localStorage.setItem(KEY,'1')}catch(e){}
+    setTimeout(function(){ov.hidden=true},500);
+  }
+  document.getElementById('fi-close').addEventListener('click',close);
+  document.getElementById('fi-enter').addEventListener('click',close);
+  document.getElementById('fde-open-hero').addEventListener('click',function(){open(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  var seen=false;try{seen=localStorage.getItem(KEY)==='1'}catch(e){}
+  if(!seen)setTimeout(function(){open(true)},600);
+})();
+</script>
 
 {% for post in paginator.posts %}
 <div class="post-preview">
