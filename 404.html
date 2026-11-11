@@ -14,3 +14,36 @@ permalink: /404.html
 <script>
 	document.body.classList.add('page-fullscreen');
 </script>
+
+<!-- 404 FDE 导航：3 秒内把迷路访客送到对的地方 -->
+<div class="container" style="margin-top:-60px;position:relative;z-index:2">
+	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+		<div style="border:1px solid rgba(79,140,255,.35);border-radius:8px;padding:26px 30px;background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.08)">
+			<p style="font-size:20px;font-weight:700;margin:0 0 6px">🧭 页面不存在，但 3 秒内可以去对的地方</p>
+			<p style="font-size:15px;color:#666;margin:0 0 18px">看看一个 FDE 是怎么把业务问题翻译成能跑的系统的：</p>
+
+			<p style="margin:0 0 18px">
+				<a href="https://wuxiumu.github.io/zcode-workbench/" target="_blank" rel="noopener"
+					style="display:inline-block;background:#4f8cff;color:#fff;font-size:16px;font-weight:600;padding:10px 22px;border-radius:6px;text-decoration:none">
+					🖥️ FDE 工作台矩阵 ×15 · 点开就能看 →
+				</a>
+			</p>
+
+			{% assign featured_posts = site.posts | where: "featured", true %}
+			{% if featured_posts.size > 0 %}
+			<p style="font-size:14px;font-weight:600;color:#666;margin:0 0 8px">🔥 或者读点 FDE 精选：</p>
+			<ul style="margin:0 0 18px;padding-left:20px">
+				{% for post in featured_posts %}
+				<li style="margin-bottom:6px"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+
+			<p style="font-size:14px;margin:0">
+				<a href="{{ site.baseurl }}/">🏠 回首页</a> ·
+				<a href="{{ site.baseurl }}/about/">About</a> ·
+				<a href="{{ site.baseurl }}/archive/">Archive</a>
+			</p>
+		</div>
+	</div>
+</div>
