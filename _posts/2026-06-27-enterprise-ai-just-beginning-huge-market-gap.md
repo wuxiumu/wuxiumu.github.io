@@ -5,6 +5,7 @@ subtitle: "本视频是博主基于半年来为企业提供AI服务的实践，�
 date: 2026-06-27
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
+featured: true
 tags:
   - AI落地
   - AI

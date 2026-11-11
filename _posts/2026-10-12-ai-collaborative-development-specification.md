@@ -5,6 +5,7 @@ subtitle: "一句话读懂本规范：AI 帮你把代码写快，但上线前必
 date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
+featured: true
 tags:
   - AI协作
   - 研发规范

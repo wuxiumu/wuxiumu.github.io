@@ -5,6 +5,7 @@ subtitle: "一人公司不是一个人干所有活，而是一个人当所有岗
 date: 2026-10-12
 author: "WuQingBao"
 header-img: "img/post-bg-2015.jpg"
+featured: true
 tags:
   - AI协作
   - 一人公司

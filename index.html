@@ -446,6 +446,35 @@ layout: page
 })();
 </script>
 
+<!-- FDE 精选置顶：featured: true 的文章（在 OPTIMIZATION_ROADMAP.md A 线维护） -->
+{% assign featured_posts = site.posts | where: "featured", true %}
+{% if featured_posts.size > 0 %}
+<style>
+.fde-featured { border: 1px solid rgba(79,140,255,.35); border-radius: 8px; padding: 18px 22px 6px; margin-bottom: 40px; background: rgba(79,140,255,.04); }
+.fde-featured-header { font-size: 15px; font-weight: 600; margin-bottom: 14px; }
+.fde-featured-header .fde-featured-more { float: right; font-weight: 400; font-size: 13px; }
+@media (max-width: 768px){ .fde-featured-header .fde-featured-more { float: none; display: block; margin-top: 6px; } }
+</style>
+<div class="fde-featured">
+    <div class="fde-featured-header">🔥 FDE 精选 · 看怎么把业务问题变成能跑的系统
+        <a class="fde-featured-more" href="https://wuxiumu.github.io/zcode-workbench/" target="_blank" rel="noopener">🖥️ 能力演示：FDE 工作台矩阵 ×15 →</a>
+    </div>
+    {% for post in featured_posts %}
+    <div class="post-preview">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+            <h2 class="post-title">{{ post.title }}</h2>
+            {% if post.subtitle %}
+            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+            {% endif %}
+        </a>
+        <p class="post-meta">
+            Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        </p>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
