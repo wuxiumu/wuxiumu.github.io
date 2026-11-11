@@ -24,7 +24,7 @@
 ## B. 同行视角 · 专业性
 
 - [x] [同行] Archive 页 64 个标签按域分组展示（AI 族 / 技术栈 / 商业创业 / 组织成长 / 品牌系列），组名可点击折叠（✅ 2026-11-12 完成：分组定义放 front matter tag-groups，纯 Liquid 动态查 site.tags 渲染 + 组内按热度排序 + 组计数；原生 details 折叠零 JS；未归组标签自动落「其他」兜底组防漏；data-encode 过滤机制原样保留，校验 64 标签全覆盖 0 死标签）
-- [ ] [同行] 给 10 篇 AI 主题高流量文章补「AI 协作说明」块（用什么模型、Prompt 策略、人工把关了什么），每轮补 2-3 篇，直至完成（此条目完成标准：10 篇全补完）
+- [ ] [同行] 给 10 篇 AI 主题高流量文章补「AI 协作说明」块（AI 承担什么 / 人工把关什么，链接协作规范），每轮补 2-3 篇，直至完成（此条目完成标准：10 篇全补完）（进度 3/10 @ 2026-11-12：enterprise-ai-just-beginning-huge-market-gap / ai-collaboration-roles-overview / ai-collaborative-development-specification，说明块置于 front matter 之后首屏位置，逐篇定制文案；剩余候选从 AI加速/AI协作 高热度标签文章中取）
 - [ ] [同行] 文章页底部加「相关文章」：按共享标签取 3 篇，Liquid 实现，无插件依赖
 - [ ] [同行] sitemap.xml + robots.txt 补全并引用（Jekyll 模板或静态文件，注意 252 篇全量 URL）
 - [ ] [同行] feed.xml 校验：XML 合法性、全文输出、分类/标签信息完整
