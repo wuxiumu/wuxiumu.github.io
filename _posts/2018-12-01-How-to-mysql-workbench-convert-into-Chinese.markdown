@@ -21,4 +21,4 @@ tags:
 ## 文件替换
 文件替换：右键点击MySQL客户端 > 属性 > 打开文件地址 > data文件夹 > 替换main_menu.xml文件（最好备份该文件） 
  
-main_menu.xml [下载地址](/sources/main_menu.xml)
+main_menu.xml（汉化文件旧下载地址已失效，可从 MySQL Workbench 安装目录提取后自行汉化）
