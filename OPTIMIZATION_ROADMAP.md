@@ -73,4 +73,5 @@
 - [x] [体验] media-ai-pages/ 孤儿子站审计（新增于候选池并当轮完成，✅ 2026-11-12：20 文件 200KB「媒体行业 AI 助手平台」方案子站，全仓零引用但 Pages 原样发布可直链访问；两个提醒——auth.js 为客户端密码（演示级保护）、零内部链接不可被发现；给作者三选一（保留挂入口/删除瘦身/移私有），报告落 `docs/MEDIA_AI_PAGES_AUDIT.md`，未动该目录任何文件）
 - [x] [体验] `可复用提示词库.md` 孤儿页面复活（新增于候选池并当轮完成，✅ 2026-11-12：页面清点发现该文件**无 front matter**——Jekyll 当静态文件原样吐 markdown，9000 字提示词库没有 URL 不进导航；补 `layout: page` + title 三行 front matter，页面恢复渲染并自动回到导航栏，正文零改动）
 - [x] [体验] offline.html 离线落地页完善（新增于候选池并当轮完成，✅ 2026-11-12：原页面头图之下完全空白，离线用户无路可走——对齐 404 卡片做法，加离线帮助卡（状态说明 + 🔄 重试按钮 + 🏠 回首页；首页与 offline.html 均在 SW 预缓存清单，离线点击真实可用，已核对 sw.js）；noindex 条件同步扩展至 offline 页；CTA 深蓝沿用对比度结论）
+- [x] [体验] photo 相册页全链路核对（新增于候选池并当轮完成，✅ 2026-11-12：索引 photo.html.js（4 相册）→ 封面图 4/4 可达（作者自有 OSS 桶 jiatingshiguangxiangce）→ 中文文件名相册数据 CDN 可达（URL 编码正确）→ 详情页 photo/photo.html?name=… 4/4 返回 200；全链路健康，零改动）
 - [ ] [基建] master 合并上线后回访：确认 sitemap/robots/JSON-LD/搜索高亮在真实部署中的表现（需作者先合并 auto-opt → master；**本轮核实 master 仍停留 `e3af187`，未合并**，条目继续挂起）
