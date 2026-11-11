@@ -67,4 +67,5 @@
 - [x] [体验] 文章 pager（上一篇/下一篇）移动端检查：长标题换行与点击区域，发现问题修（✅ 2026-11-12 完成：审计结论——点击区 `li > a width:100%` 已合格无需改；**长标题无截断**导致 ≤767px 时左右两块高低不齐 → 移动端媒体查询内给标题 span 加两行 clamp（`-webkit-line-clamp:2`）+ 加大点击 padding，桌面端不受影响；scope 锁死在 post.html 内联 style，不动主题 css）
 - [x] [共创] 2026-06 视频复盘类文章补「AI 协作说明」第二批（AI飞轮/AI过渡窗口/能租就别买等 3 篇，同第一批纪律）（✅ 2026-11-12 完成：3 篇逐篇定制（飞轮结构提炼/窗口期判断/顾客思维框架取舍），首屏插入链接协作规范；全站累计 18 篇带说明块（第一批 10 + 本批 3 + 企业管理约稿 5），对账一致）
 - [x] [物料] About 英文版（`_includes/about/en.md`）同步工作台矩阵入口（✅ 2026-11-12 完成：en.md「What I'm building」节末新增 "Live proof" 行——英文叙述的 Workbench Matrix ×15 入口，与 zh.md 版能力演示行对照；4 项断言全过，中文版零影响）
-- [ ] [基建] master 合并上线后回访：确认 sitemap/robots/JSON-LD/搜索高亮在真实部署中的表现（需作者先合并 auto-opt → master）
+- [x] [基建] search.json 重量审计 + 404 页 noindex（✅ 2026-11-12 完成：① 嫌疑排查——search.json 是每页都加载的搜索数据源，实测仅含 title/subtitle/tags/url/date 五字段无全文（约几十 KB），健康无需改动；② 真缺口——404 页缺 `noindex`，head.html 按 `page.url == '/404.html'` 条件插入 `robots noindex, follow`（sitemap 已排除，此处兜底外链引用场景）；OG meta 核查确认主题已齐备 og:image 兜底）
+- [ ] [基建] master 合并上线后回访：确认 sitemap/robots/JSON-LD/搜索高亮在真实部署中的表现（需作者先合并 auto-opt → master；**本轮核实 master 仍停留 `e3af187`，未合并**，条目继续挂起）
