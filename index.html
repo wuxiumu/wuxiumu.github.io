@@ -2,6 +2,91 @@
 layout: page
 ---
 
+<!-- ==================== FDE 接单说明 · 置顶 ==================== -->
+<style>
+  .fde-hero{position:relative;overflow:hidden;margin:4px 0 0;padding:34px 32px 28px;background:linear-gradient(165deg,#0a0e1a,#111a33 55%,#0a1428);border:1px solid #1f2a44;border-radius:18px;color:#e6ecff}
+  .fde-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 240px at 88% -12%,rgba(79,140,255,.22),transparent 70%),radial-gradient(420px 200px at -8% 108%,rgba(34,211,238,.14),transparent 70%);pointer-events:none}
+  .fde-hero *{position:relative;z-index:1}
+  .fde-badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:#22d3ee;border:1px solid rgba(34,211,238,.4);border-radius:99px;padding:4px 14px;letter-spacing:.18em;background:rgba(34,211,238,.06)}
+  .fde-badge i{width:6px;height:6px;border-radius:50%;background:#22d3ee;box-shadow:0 0 8px #22d3ee;animation:fde-pulse 2s infinite}
+  @keyframes fde-pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .fde-name{margin:16px 0 10px;font-size:30px;line-height:1.2;font-weight:800;color:#fff;letter-spacing:.02em}
+  .fde-name small{display:block;margin-top:6px;font-size:13px;font-weight:400;color:#8b98b8;letter-spacing:.14em}
+  .fde-name .fde-role{background:linear-gradient(92deg,#4f8cff,#22d3ee 60%,#34d399);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .fde-tagline{margin:0 0 24px;font-size:15px;line-height:1.9;color:#9fb0d0}
+  .fde-tagline b{color:#e6ecff}
+  .fde-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .fde-panel{border-radius:14px;padding:20px 20px 16px;background:rgba(255,255,255,.03);border:1px solid #1f2a44}
+  .fde-panel h3{margin:0 0 14px;padding:0;font-size:16px;line-height:1.4;color:#fff}
+  .fde-panel.fde-no{border-color:rgba(248,113,113,.28)}
+  .fde-panel.fde-no h3{color:#f8a5a5}
+  .fde-panel.fde-yes{border-color:rgba(52,211,153,.28)}
+  .fde-panel.fde-yes h3{color:#7ce8bf}
+  .fde-list{margin:0;padding:0;list-style:none}
+  .fde-list li{position:relative;margin:0 0 12px;padding-left:26px;font-size:13.5px;line-height:1.85;color:#9fb0d0}
+  .fde-list li:last-child{margin-bottom:0}
+  .fde-list li b{color:#e6ecff}
+  .fde-list li::before{position:absolute;left:0;top:.45em;width:17px;height:17px;border-radius:5px;font-size:11px;font-weight:700;line-height:17px;text-align:center}
+  .fde-no .fde-list li::before{content:"✕";color:#f87171;border:1px solid rgba(248,113,113,.45);background:rgba(248,113,113,.08)}
+  .fde-yes .fde-list li::before{content:"✓";color:#34d399;border:1px solid rgba(52,211,153,.45);background:rgba(52,211,153,.08)}
+  .fde-contact{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px;padding-top:18px;border-top:1px dashed #2a3757}
+  .fde-contact-t{font-size:12px;letter-spacing:.16em;color:#8b98b8;margin-right:2px}
+  .fde-link{display:inline-flex;align-items:center;font-size:13px;color:#c9d6f2;border:1px solid rgba(139,152,184,.3);border-radius:10px;padding:8px 14px;text-decoration:none;transition:all .2s ease;background:rgba(10,14,26,.4)}
+  .fde-link:hover{color:#fff;border-color:#4f8cff;box-shadow:0 6px 18px -8px rgba(79,140,255,.6);text-decoration:none;transform:translateY(-1px)}
+  .fde-link.fde-todo{border-style:dashed;color:#8b98b8;cursor:default}
+  .fde-link.fde-todo i{font-style:normal;color:#fbbf24;margin-left:6px}
+  .fde-link.fde-todo:hover{color:#8b98b8;border-color:rgba(251,191,36,.5);box-shadow:none;transform:none}
+  .fde-recent{display:flex;align-items:center;gap:14px;margin:36px 0 4px;color:#666}
+  .fde-recent::after{content:"";flex:1;height:1px;background:#e5e5e5}
+  .fde-recent span{font-size:14px;font-weight:600;letter-spacing:.12em;color:#404040}
+  @media (max-width:767px){
+    .fde-hero{padding:24px 18px 20px;border-radius:14px}
+    .fde-name{font-size:24px}
+    .fde-grid{grid-template-columns:1fr}
+    .fde-contact{flex-direction:column;align-items:stretch}
+    .fde-link{justify-content:flex-start}
+  }
+</style>
+
+<section class="fde-hero">
+  <span class="fde-badge"><i></i>FDE · FORWARD DEPLOYED ENGINEER</span>
+  <h2 class="fde-name">吴庆宝 <span class="fde-role">· FDE</span>
+    <small>FORWARD DEPLOYED ENGINEER / 前驻场工程师</small>
+  </h2>
+  <p class="fde-tagline">接 <b>AI 商单</b>：把客户的业务问题，翻译成能跑起来的系统。<br>
+    合作之前，先把<b>丑话说在前头</b> —— 以下三类单子，直接不接。</p>
+
+  <div class="fde-grid">
+    <div class="fde-panel fde-no">
+      <h3>丑话说在前头 · 三类单子不接</h3>
+      <ul class="fde-list">
+        <li><b>本地私有化项目不碰。</b>太重了：要买卡，不少还得进口算力卡；服务器搭完，还要找人洗数据、做向量化，耗人力耗周期，麻烦一堆。</li>
+        <li><b>年头太久的老系统不碰。</b>二三十年的老 ERP，接口残缺，改造坑是无底洞。</li>
+        <li><b>容错率为零的场景不碰。</b>出不得半点差错的活，不接。</li>
+      </ul>
+    </div>
+    <div class="fde-panel fde-yes">
+      <h3>能接的单 · 三条原则</h3>
+      <ul class="fde-list">
+        <li><b>先收钱，再动手。</b>先收一笔定金，试单几千块都可以。千把块都舍不得出的客户，别指望后面几万的尾款 —— 诚意是用钱筛出来的。</li>
+        <li><b>优先成熟底座交付。</b>Coze、Dify、豆包工作流这类现成工具上手快；不是所有客户都死磕本地数据隐私，能用成熟方案快速落地，就不盲目造轮子。</li>
+        <li><b>落地优先做员工配套。</b>模型搭得再花哨，员工不会用、不愿用，项目就是个摆设，客户照样不认账。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="fde-contact">
+    <span class="fde-contact-t">联系方式</span>
+    <a class="fde-link" href="mailto:wuxiumu@163.com">✉️ 邮箱：wuxiumu@163.com</a>
+    <!-- TODO: 微信预留入口 —— 拿到微信号后，替换下面一行的占位文本即可 -->
+    <span class="fde-link fde-todo">💬 微信：<i>预留入口 · 待补充</i></span>
+    <a class="fde-link" href="https://github.com/wuxiumu" target="_blank" rel="noopener">GitHub：@wuxiumu</a>
+    <a class="fde-link" href="https://wuxiumu.github.io/zcode-workbench/" target="_blank" rel="noopener">🖥️ 能力演示：FDE 工作台矩阵 ×15</a>
+  </div>
+</section>
+
+<div class="fde-recent"><span>近期文章</span></div>
+
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">

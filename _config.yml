@@ -3,8 +3,8 @@ title:  吴庆宝 Blog
 SEOTitle: 吴庆宝的博客 |  吴庆宝 Blog
 header-img: img/home-bg.jpg
 email: wuxiumu@163.com
-description: "吴庆宝（朽木）| 技术管理者 & 全栈开发者 | 专注 AI 工程化、后端架构、技术方案落地 | 用技术解决实际问题"
-keyword: "吴庆宝, 朽木博客, 技术管理, AI 应用落地, 全栈开发, 后端架构, Claude API, 系统设计, 技术决策, wuxiumu"
+description: "吴庆宝（朽木）| FDE · Forward Deployed Engineer | 接 AI 商单：AI 工程化、后端架构、技术方案落地 | 把业务问题翻译成能跑起来的系统"
+keyword: "吴庆宝, FDE, Forward Deployed Engineer, AI 商单, AI 应用落地, Coze, Dify, 全栈开发, 后端架构, 系统设计, wuxiumu"
 url: "https://wuxiumu.github.io"
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -100,6 +100,7 @@ sidebar-avatar: /img/aricwu.png      # use absolute URL, seeing it's used in bot
 
 # 首页轮播语录
 quotes:
+  - "吴庆宝 · FDE｜接 AI 商单：丑话说在前头，成熟底座快速落地。"
   - "我干了什么 究竟拿了时间换了什么"
   - "记住：你是来定义世界和规则的，不是来被规则和世界统一和教化的。"
   - "AI是杠杆，判断是支点，行动是力量。"
