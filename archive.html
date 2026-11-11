@@ -97,6 +97,25 @@ https://github.com/kitian616/jekyll-TeXt-theme
 			</div>
 
             <!-- Article List -->
+			<style>
+				.fde-year-nav { position: sticky; top: 0; z-index: 10; background: #fff; padding: 10px 0 8px; border-bottom: 1px solid #eee; margin-bottom: 12px; }
+				.fde-year-nav a { display: inline-block; padding: 2px 10px; margin-right: 4px; font-size: 13px; border-radius: 12px; color: #666; }
+				.fde-year-nav a:hover { background: rgba(79,140,255,.1); color: #2b6be0; text-decoration: none; }
+				.mini-post-list section { scroll-margin-top: 60px; }
+			</style>
+			{%- assign _sorted_list = site.posts -%}
+			{%- assign _sorted_list = _sorted_list | sort: 'date' -%}
+			{%- assign _sorted_list = _sorted_list | reverse -%}
+			{%- assign _years = '' | split: '' -%}
+			{%- for _p in _sorted_list -%}
+				{%- assign _y = _p.date | date: '%Y' -%}
+				{%- unless _years contains _y -%}{%- assign _years = _years | push: _y -%}{%- endunless -%}
+			{%- endfor -%}
+			{%- if _years.size > 1 -%}
+			<div class="fde-year-nav">{%- for _y in _years -%}
+				<a href="#year-{{ _y }}">{{ _y }}</a>{%- endfor -%}
+			</div>
+			{%- endif -%}
 			<div class="mini-post-list js-result d-none">
 			{%- assign _sorted_list = site.posts -%}
 			{%- assign _sorted_list = _sorted_list | sort: 'date' -%}
@@ -118,7 +137,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 			{%- assign _currentdate = _article.date | date: '%Y' -%}
 			{%- if _currentdate != _date -%}
 				{%- unless forloop.first -%}</section>{%- endunless -%}
-				<section>
+				<section id="year-{{ _currentdate }}">
 				<span class="fa listing-seperator">
 					<span class="tag-text">{{ _currentdate }}</span>
 				</span>
