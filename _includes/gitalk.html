@@ -2,18 +2,24 @@
 <!-- Gitalk 评论框 start -->
 <div id="gitalk-container"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" onerror="window.__gitalkCdnFailed=true"></script>
 <script>
-  var gitalk = new Gitalk({
-    clientID: '{{ site.gitalk.clientID }}',
-    clientSecret: '{{ site.gitalk.clientSecret }}',
-    repo: '{{ site.gitalk.repo }}',
-    owner: '{{ site.gitalk.owner }}',
-    admin: {{ site.gitalk.admin | jsonify }},
-    id: location.pathname.substr(0, 50),  // 唯一标识，最长 50 字符
-    distractionFreeMode: false
-  });
-  gitalk.render('gitalk-container');
+  if (window.Gitalk) {
+    var gitalk = new Gitalk({
+      clientID: '{{ site.gitalk.clientID }}',
+      clientSecret: '{{ site.gitalk.clientSecret }}',
+      repo: '{{ site.gitalk.repo }}',
+      owner: '{{ site.gitalk.owner }}',
+      admin: {{ site.gitalk.admin | jsonify }},
+      id: location.pathname.substr(0, 50),  // 唯一标识，最长 50 字符
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+  } else {
+    // CDN 不可达（jsdelivr 部分网络环境被拦）时降级提示，而不是留白
+    document.getElementById('gitalk-container').innerHTML =
+      '<p style="font-size:14px;color:#8a8a8a;padding:16px 0;border-top:1px solid #eee">💬 评论组件加载失败（CDN 不可达）。欢迎到 <a href="https://github.com/{{ site.gitalk.owner }}/{{ site.gitalk.repo }}/issues" target="_blank" rel="noopener">GitHub Issues</a> 留言讨论。</p>';
+  }
 </script>
 <!-- Gitalk 评论框 end -->
 {% endif %}
