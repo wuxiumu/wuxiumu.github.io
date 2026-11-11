@@ -17,7 +17,7 @@ jobs:
         with:
           ruby-version: "3.2"
       - name: 安装 Jekyll
-        run: gem install jekyll jekyll-paginate --no-document
+        run: gem install jekyll -v 3.9.5 jekyll-paginate --no-document  # 复现 Pages 官方构建器的 Jekyll 版本
       - name: Jekyll 构建（失败即暴露模板/配置错误）
         run: |
           set -o pipefail
