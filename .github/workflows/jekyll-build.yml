@@ -5,6 +5,9 @@ on:
     branches: [auto-opt, master]
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,4 +18,15 @@ jobs:
           ruby-version: "3.2"
           bundler-cache: true
       - name: Jekyll 构建（失败即暴露模板/配置错误）
-        run: bundle exec jekyll build --trace
+        run: |
+          set -o pipefail
+          bundle exec jekyll build --trace 2>&1 | tee build-output.log
+      - name: 构建失败时把错误日志提交回 auto-opt
+        if: failure() && github.ref == 'refs/heads/auto-opt'
+        run: |
+          git config user.email "auto-opt@users.noreply.github.com"
+          git config user.name "auto-opt bot"
+          tail -80 build-output.log > build-error.log || echo "no log" > build-error.log
+          git add build-error.log
+          git commit -m "ci: 构建失败日志回传 [skip ci]" || echo "nothing to commit"
+          git push origin auto-opt
