@@ -44,7 +44,6 @@ tags:
 ## Solr
 
 - [solr 官网](https://lucene.apache.org/solr/)
-- [Solr中国](https://www.solr.cc/blog/)
 - [Solr官方中文文档](https://www.w3cschool.cn/solr_doc/)
 - [Solr视频教程从入门到案例实战](https://www.bilibili.com/video/av34261318?from=search&seid=2314333354843835443)
 - [solr从入门到精通](https://www.bilibili.com/video/av35510289?from=search&seid=2314333354843835443)
