@@ -1,0 +1,18 @@
+name: Jekyll Build
+
+on:
+  push:
+    branches: [auto-opt, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+      - name: Jekyll 构建（失败即暴露模板/配置错误）
+        run: bundle exec jekyll build --trace
