@@ -25,8 +25,7 @@ layout: page
     background:linear-gradient(90deg,transparent,rgba(255,77,94,.75) 30%,rgba(255,255,255,.9) 50%,rgba(255,77,94,.75) 70%,transparent)}
   #fde-intro.on .fi-scan{animation:fi-sweep 5.5s linear 1.2s infinite}
   @keyframes fi-sweep{0%{opacity:.8;transform:translateY(-2px)}92%{opacity:.5}100%{opacity:0;transform:translateY(100vh)}}
-  .fi-progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:3;background:linear-gradient(90deg,var(--fi-red),var(--fi-red2))}
-  #fde-intro.on .fi-progress{animation:fi-load 1.1s ease-out .15s forwards}
+  .fi-progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:3;background:linear-gradient(90deg,var(--fi-red),var(--fi-red2))}  #fde-intro.on .fi-progress{animation:fi-load 1.1s ease-out .15s forwards}
   @keyframes fi-load{to{width:100%}}
   .fi-hud{position:fixed;z-index:2;font-family:"SF Mono","JetBrains Mono",Consolas,monospace;
     font-size:10px;letter-spacing:.22em;color:rgba(255,255,255,.42);pointer-events:none}
@@ -39,6 +38,35 @@ layout: page
   .fi-corner.c3{bottom:14px;left:14px;border-bottom:2px solid var(--fi-red);border-left:2px solid var(--fi-red)}
   .fi-corner.c4{bottom:14px;right:14px;border-bottom:2px solid var(--fi-red);border-right:2px solid var(--fi-red)}
 
+  /* ---------- 背景 · 电脑分解零件（CPU / GPU / AI 大脑 / 电路走线） ---------- */
+  .fi-parts{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .fi-part{position:absolute;opacity:.5;will-change:transform}
+  .fi-part svg{display:block;overflow:visible}
+  .fi-part .chip-body{fill:rgba(12,12,14,.88);stroke:rgba(255,255,255,.5);stroke-width:1.6}
+  .fi-part .chip-inner{fill:none;stroke:rgba(229,35,60,.85);stroke-width:1.4}
+  .fi-part .chip-pin{stroke:rgba(255,255,255,.4);stroke-width:2;stroke-linecap:round}
+  .fi-part .chip-label{fill:rgba(255,255,255,.55);font-family:"SF Mono",Consolas,monospace;font-size:11px;letter-spacing:2px}
+  .fi-part .wire{stroke:rgba(229,35,60,.35);stroke-width:1.2;fill:none}
+  .fi-part .node{fill:rgba(255,77,94,.9)}
+  .fi-part .node-dim{fill:rgba(255,255,255,.35)}
+  .fi-part.p-cpu{top:9%;left:5%;animation:fi-float 11s ease-in-out infinite}
+  .fi-part.p-gpu{bottom:12%;left:9%;animation:fi-float 13s ease-in-out 1.6s infinite reverse}
+  .fi-part.p-brain{top:11%;right:6%;animation:fi-float 12s ease-in-out .8s infinite}
+  .fi-part.p-core{bottom:8%;right:8%;animation:fi-float 14s ease-in-out 2.2s infinite reverse}
+  .fi-part.p-trace{top:0;left:0;right:0;bottom:0;opacity:.55;animation:none}
+  @keyframes fi-float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(1.6deg)}}
+  .fi-part .pulse{animation:fi-node 2.6s ease-in-out infinite}
+  .fi-part .pulse.d2{animation-delay:.9s}.fi-part .pulse.d3{animation-delay:1.7s}
+  @keyframes fi-node{0%,100%{opacity:.25}50%{opacity:1}}
+  @media (max-width:900px){
+    .fi-part{opacity:.32}
+    .fi-part.p-cpu{top:4%;left:3%;transform:scale(.62)}
+    .fi-part.p-gpu{bottom:4%;left:4%;transform:scale(.6)}
+    .fi-part.p-brain{top:4%;right:3%;transform:scale(.62)}
+    .fi-part.p-core{bottom:5%;right:4%;transform:scale(.6)}
+    @keyframes fi-float{0%,100%{transform:scale(.62) translateY(0)}50%{transform:scale(.62) translateY(-12px)}}
+  }
+
   .fi-stage{position:relative;z-index:4;max-width:1080px;margin:0 auto;padding:72px 40px 64px;
     min-height:100vh;display:flex;align-items:center}
   .fi-cols{display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:center;width:100%}
@@ -48,11 +76,23 @@ layout: page
   /* 照片 · 黑白 + 红框 */
   .fi-photo-wrap{position:relative;width:320px;max-width:72vw;margin:0 auto}
   .fi-photo{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.18);background:#000}
-  .fi-photo img{display:block;width:100%;filter:grayscale(1) contrast(1.08) brightness(1.02)}
+  .fi-photo img{display:block;width:100%;filter:contrast(1.06) saturate(1.08) brightness(1.03)}
+  /* 照片扫描线（红） */
   .fi-photo::after{content:"";position:absolute;left:0;right:0;top:-30%;height:30%;pointer-events:none;
     background:linear-gradient(180deg,transparent,rgba(255,77,94,.28) 55%,rgba(255,255,255,.5) 98%,transparent)}
   #fde-intro.on .fi-photo::after{animation:fi-photo-scan 3.6s ease-in-out 1.4s infinite}
   @keyframes fi-photo-scan{0%{top:-30%}55%{top:105%}100%{top:105%}}
+  /* 照片光变 · 斜向高光扫过（彩色高光流动） */
+  .fi-photo .fi-shine{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;
+    background:linear-gradient(115deg,transparent 32%,rgba(255,120,130,.16) 44%,rgba(255,255,255,.38) 50%,rgba(120,180,255,.14) 56%,transparent 68%);
+    background-size:260% 100%;background-position:120% 0;
+    animation:fi-shine-move 4.2s ease-in-out 1.8s infinite}
+  @keyframes fi-shine-move{0%{background-position:120% 0}55%{background-position:-60% 0}100%{background-position:-60% 0}}
+  /* 照片呼吸光晕 */
+  .fi-photo .fi-aura{position:absolute;inset:0;pointer-events:none;opacity:0;
+    box-shadow:inset 0 0 42px rgba(255,77,94,.22),inset 0 0 90px rgba(255,77,94,.1)}
+  #fde-intro.on .fi-photo .fi-aura{animation:fi-aura 4.2s ease-in-out infinite}
+  @keyframes fi-aura{0%,100%{opacity:0}50%{opacity:1}}
   .fi-glow{position:absolute;inset:-1px;box-shadow:0 0 90px rgba(229,35,60,.32),0 0 26px rgba(229,35,60,.18);pointer-events:none}
   .fi-br{position:absolute;width:30px;height:30px;pointer-events:none}
   .fi-br.b1{top:-9px;left:-9px;border-top:3px solid var(--fi-red);border-left:3px solid var(--fi-red)}
@@ -168,7 +208,7 @@ layout: page
   .fde-contact{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px;padding-top:18px;border-top:1px dashed #2a2a30}
   .fde-contact-t{font-size:12px;letter-spacing:.16em;color:#8a8a92;margin-right:2px}
   .fde-link{display:inline-flex;align-items:center;font-size:13px;color:#c9c9cf;border:1px solid rgba(255,255,255,.22);
-    border-radius:10px;padding:8px 14px;text-decoration:none;transition:all .2s ease;background:rgba(0,0,0,.35)}
+    border-radius:10px;padding:8px 14px;text-decoration:none;transition:all .2s ease;background:rgba(0,0,0,.35);font-family:inherit;cursor:pointer}
   .fde-link:hover{color:#fff;border-color:var(--fi-red2);box-shadow:0 6px 18px -8px rgba(229,35,60,.6);text-decoration:none;transform:translateY(-1px)}
   .fde-link.fde-todo{border-style:dashed;color:#8a8a92;cursor:default}
   .fde-link.fde-todo i{font-style:normal;color:var(--fi-red2);margin-left:6px}
@@ -187,6 +227,77 @@ layout: page
 </style>
 
 <section id="fde-intro" hidden role="dialog" aria-modal="true" aria-label="吴庆宝 · FDE 个人介绍">
+  <!-- 背景 · 电脑分解零件 -->
+  <div class="fi-parts" aria-hidden="true">
+    <div class="fi-part p-trace">
+      <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="none">
+        <path class="wire" d="M0,160 H260 V380 H430"/>
+        <path class="wire" d="M1440,110 H1180 V270 H1010"/>
+        <path class="wire" d="M0,770 H200 V580 H375"/>
+        <path class="wire" d="M1440,720 H1240 V520 H1065"/>
+        <circle class="node-dim" cx="430" cy="380" r="3"/>
+        <circle class="node-dim" cx="1010" cy="270" r="3"/>
+        <circle class="node-dim" cx="375" cy="580" r="3"/>
+        <circle class="node-dim" cx="1065" cy="520" r="3"/>
+      </svg>
+    </div>
+    <div class="fi-part p-cpu">
+      <svg width="130" height="130" viewBox="0 0 130 130">
+        <g stroke="rgba(255,255,255,.4)" stroke-width="2.4" stroke-linecap="round">
+          <line x1="30" y1="6" x2="30" y2="16"/><line x1="50" y1="6" x2="50" y2="16"/><line x1="70" y1="6" x2="70" y2="16"/><line x1="90" y1="6" x2="90" y2="16"/>
+          <line x1="30" y1="114" x2="30" y2="124"/><line x1="50" y1="114" x2="50" y2="124"/><line x1="70" y1="114" x2="70" y2="124"/><line x1="90" y1="114" x2="90" y2="124"/>
+          <line x1="6" y1="30" x2="16" y2="30"/><line x1="6" y1="50" x2="16" y2="50"/><line x1="6" y1="70" x2="16" y2="70"/><line x1="6" y1="90" x2="16" y2="90"/>
+          <line x1="114" y1="30" x2="124" y2="30"/><line x1="114" y1="50" x2="124" y2="50"/><line x1="114" y1="70" x2="124" y2="70"/><line x1="114" y1="90" x2="124" y2="90"/>
+        </g>
+        <rect class="chip-body" x="18" y="18" width="94" height="94" rx="6"/>
+        <rect class="chip-inner" x="34" y="34" width="62" height="62" rx="3"/>
+        <text class="chip-label" x="65" y="70" text-anchor="middle">CPU</text>
+        <circle class="node pulse" cx="65" cy="44" r="2.5"/>
+      </svg>
+    </div>
+    <div class="fi-part p-gpu">
+      <svg width="150" height="100" viewBox="0 0 150 100">
+        <rect class="chip-body" x="8" y="18" width="120" height="64" rx="5"/>
+        <rect class="chip-inner" x="20" y="30" width="44" height="40" rx="3"/>
+        <text class="chip-label" x="96" y="54" text-anchor="middle">GPU</text>
+        <g class="chip-pin">
+          <line x1="30" y1="82" x2="30" y2="92"/><line x1="50" y1="82" x2="50" y2="92"/><line x1="70" y1="82" x2="70" y2="92"/><line x1="90" y1="82" x2="90" y2="92"/><line x1="110" y1="82" x2="110" y2="92"/>
+        </g>
+        <circle class="node pulse d2" cx="42" cy="50" r="2.5"/>
+      </svg>
+    </div>
+    <div class="fi-part p-brain">
+      <svg width="170" height="150" viewBox="0 0 170 150">
+        <path class="wire" d="M85 12 C40 14 18 44 22 78 C25 108 52 132 85 136 C118 132 145 108 148 78 C152 44 130 14 85 12 Z" stroke="rgba(255,255,255,.4)" stroke-width="1.4" fill="rgba(12,12,14,.75)"/>
+        <g class="wire">
+          <path d="M85 30 L52 52 M85 30 L118 52 M52 52 L40 88 M118 52 L130 88 M40 88 L70 112 M130 88 L100 112 M70 112 L100 112 M52 52 L85 74 M118 52 L85 74 M40 88 L85 74 M130 88 L85 74 M85 74 L85 30"/>
+        </g>
+        <circle class="node pulse" cx="85" cy="30" r="4"/>
+        <circle class="node pulse d2" cx="52" cy="52" r="3.4"/>
+        <circle class="node pulse d3" cx="118" cy="52" r="3.4"/>
+        <circle class="node pulse d2" cx="40" cy="88" r="3.4"/>
+        <circle class="node pulse d3" cx="130" cy="88" r="3.4"/>
+        <circle class="node pulse" cx="85" cy="74" r="5"/>
+        <circle class="node pulse d3" cx="70" cy="112" r="3.4"/>
+        <circle class="node pulse d2" cx="100" cy="112" r="3.4"/>
+        <text class="chip-label" x="85" y="148" text-anchor="middle">AI BRAIN</text>
+      </svg>
+    </div>
+    <div class="fi-part p-core">
+      <svg width="120" height="120" viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="46" fill="rgba(12,12,14,.85)" stroke="rgba(255,255,255,.45)" stroke-width="1.6"/>
+        <circle cx="60" cy="60" r="30" fill="none" stroke="rgba(229,35,60,.8)" stroke-width="1.4" stroke-dasharray="8 6"/>
+        <circle cx="60" cy="60" r="12" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.4"/>
+        <text class="chip-label" x="60" y="115" text-anchor="middle">CORE</text>
+        <circle class="node pulse" cx="60" cy="60" r="3"/>
+        <g class="chip-pin">
+          <line x1="60" y1="6" x2="60" y2="14"/><line x1="60" y1="106" x2="60" y2="114"/>
+          <line x1="6" y1="60" x2="14" y2="60"/><line x1="106" y1="60" x2="114" y2="60"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
   <div class="fi-progress"></div><div class="fi-scan"></div>
   <span class="fi-corner c1"></span><span class="fi-corner c2"></span>
   <span class="fi-corner c3"></span><span class="fi-corner c4"></span>
@@ -205,6 +316,7 @@ layout: page
           <span class="fi-br b3"></span><span class="fi-br b4"></span>
           <div class="fi-photo">
             <img src="{% include img.html src=site.sidebar-avatar %}" alt="吴庆宝 · FDE" onerror="this.onerror=null;this.src='/img/aricwu.png'">
+            <span class="fi-shine"></span><span class="fi-aura"></span>
           </div>
           <div class="fi-photo-cap">WU_QINGBAO <b>/</b> IDENT.VERIFIED</div>
         </div>
@@ -240,7 +352,7 @@ layout: page
         </div>
         <div class="fi-contact fx" style="--d:7">
           <a class="fi-chip" href="mailto:wuxiumu@163.com">✉️ wuxiumu@163.com</a>
-          <span class="fi-chip todo">💬 微信 · <i>预留入口</i></span>
+          <button class="fi-chip" id="fi-wechat" type="button" title="点击复制微信号">💬 微信：qingbao199101</button>
           <a class="fi-chip" href="https://github.com/wuxiumu" target="_blank" rel="noopener">GitHub @wuxiumu</a>
         </div>
       </div>
@@ -283,8 +395,7 @@ layout: page
   <div class="fde-contact">
     <span class="fde-contact-t">联系方式</span>
     <a class="fde-link" href="mailto:wuxiumu@163.com">✉️ 邮箱：wuxiumu@163.com</a>
-    <!-- TODO: 微信预留入口 —— 拿到微信号后，替换下面一行的占位文本即可 -->
-    <span class="fde-link fde-todo">💬 微信：<i>预留入口 · 待补充</i></span>
+    <button class="fde-link" id="fde-wechat-copy" type="button" title="点击复制微信号">💬 微信：qingbao199101</button>
     <a class="fde-link" href="https://github.com/wuxiumu" target="_blank" rel="noopener">GitHub：@wuxiumu</a>
     <a class="fde-link" href="https://wuxiumu.github.io/zcode-workbench/" target="_blank" rel="noopener">🖥️ 能力演示：FDE 工作台矩阵 ×15</a>
   </div>
@@ -319,6 +430,17 @@ layout: page
   document.getElementById('fi-enter').addEventListener('click',close);
   document.getElementById('fde-open-hero').addEventListener('click',function(){open(false)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  // 点击复制微信号
+  function bindCopy(id){
+    var b=document.getElementById(id);if(!b)return;
+    b.addEventListener('click',function(){
+      var done=function(){var t=b.textContent;b.textContent='✅ 已复制 qingbao199101';setTimeout(function(){b.textContent=t},1600)};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText('qingbao199101').then(done,done)}
+      else{var i=document.createElement('input');i.value='qingbao199101';document.body.appendChild(i);i.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(i);done()}
+    });
+  }
+  bindCopy('fi-wechat');bindCopy('fde-wechat-copy');
   var seen=false;try{seen=localStorage.getItem(KEY)==='1'}catch(e){}
   if(!seen)setTimeout(function(){open(true)},600);
 })();
