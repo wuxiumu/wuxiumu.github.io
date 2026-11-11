@@ -310,23 +310,34 @@
         return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
     }
 
+    // 关键词高亮：把当前搜索词包进 <mark>，转义正则元字符防注入；
+    // 解码后含 HTML 标签的值跳过高亮，避免命中标签名/属性造成破损标记
+    var fdeSearchInput = document.getElementById('search-input');
+    function fdeHighlight(value) {
+        var decoded = htmlDecode(value);
+        if (/[<>]/.test(decoded)) return decoded;
+        var q = (fdeSearchInput.value || '').trim();
+        var terms = q.split(/\s+/).filter(function (w) { return w.length > 1; });
+        if (!terms.length) return decoded;
+        var re = new RegExp('(' + terms.map(function (w) {
+            return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }).join('|') + ')', 'gi');
+        return decoded.replace(re, '<mark class="fde-search-hit">$1</mark>');
+    }
+
     SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
+        searchInput: fdeSearchInput,
         resultsContainer: document.getElementById('search-results'),
         json: '/search.json',
         searchResultTemplate: '<div class="post-preview item"><a href="{url}"><h2 class="post-title">{title}</h2><h3 class="post-subtitle">{subtitle}</h3><hr></a></div>',
-        noResultsText: 'No results',
+        noResultsText: '<div class="fde-search-empty">🔍 没有找到相关文章，换个关键词试试？</div>',
         limit: 50,
         fuzzy: false,
-        // a hack to get escaped subtitle unescaped. for some reason, 
+        // a hack to get escaped subtitle unescaped. for some reason,
         // post.subtitle w/o escape filter nuke entire search.
         templateMiddleware: function (prop, value, template) {
             if (prop === 'subtitle' || prop === 'title') {
-                if (value.indexOf("code")) {
-                    return htmlDecode(value);
-                } else {
-                    return value;
-                }
+                return fdeHighlight(value);
             }
         }
     });
