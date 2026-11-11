@@ -75,4 +75,5 @@
 - [x] [体验] offline.html 离线落地页完善（新增于候选池并当轮完成，✅ 2026-11-12：原页面头图之下完全空白，离线用户无路可走——对齐 404 卡片做法，加离线帮助卡（状态说明 + 🔄 重试按钮 + 🏠 回首页；首页与 offline.html 均在 SW 预缓存清单，离线点击真实可用，已核对 sw.js）；noindex 条件同步扩展至 offline 页；CTA 深蓝沿用对比度结论）
 - [x] [体验] photo 相册页全链路核对（新增于候选池并当轮完成，✅ 2026-11-12：索引 photo.html.js（4 相册）→ 封面图 4/4 可达（作者自有 OSS 桶 jiatingshiguangxiangce）→ 中文文件名相册数据 CDN 可达（URL 编码正确）→ 详情页 photo/photo.html?name=… 4/4 返回 200；全链路健康，零改动）
 - [x] [体验] photo 时间线封面图懒加载（新增于候选池并当轮完成，✅ 2026-11-12：巡检发现时间线 `<img>` 缺懒加载（alt 已有）；一行补 `loading="lazy" decoding="async"`；详情页 photo/photo.html 已自带 lazy 无需动，全站 101 张相册原图的加载路径核对完毕）
+- [x] [体验] 44 轮产出盘点小结（新增并当轮完成，✅ 2026-11-12：`docs/REVIEW_SUMMARY.md`——51 commit/215 文件/+2090-589 行的分类清单、5 份报告的决策项、合并前作者待办清单、验证基线；引用文件存在性全部核对）
 - [ ] [基建] master 合并上线后回访：确认 sitemap/robots/JSON-LD/搜索高亮在真实部署中的表现（需作者先合并 auto-opt → master；**本轮核实 master 仍停留 `e3af187`，未合并**，条目继续挂起）
