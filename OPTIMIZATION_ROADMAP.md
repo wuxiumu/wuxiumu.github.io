@@ -55,7 +55,7 @@
 
 ## 扩展候选（全部完成后从这里取）
 
-- [ ] [基建] CDN 抽查报告（`_config.yml` cdn_url 指向 vbank8-test OSS 测试桶，favicon 抽查 200 可达）：盘点 `_includes/asset.html` 的引用范围，抽验 10 个资源 URL 可达性，给出「测试桶失效时的应急预案」（只报告，不动配置）
+- [x] [基建] CDN 抽查报告（`_config.yml` cdn_url 指向 vbank8-test OSS 测试桶，favicon 抽查 200 可达）：盘点 `_includes/asset.html` 的引用范围，抽验 10 个资源 URL 可达性，给出「测试桶失效时的应急预案」（只报告，不动配置）（✅ 2026-11-12 完成：报告落 `docs/CDN_AUDIT_REPORT.md`——12 个核心静态资源全经 asset.html 分发（head 2CSS+mermaid / footer 8JS），抽验 14 个 URL 全 200；应急回退=置空 cdn_url 自动走本地（机制已内建）；建议迁正式桶或用真实访问数据验证 CDN 收益，未动任何配置）
 - [ ] [体验] 站内搜索结果模板美化与关键词高亮
 - [ ] [体验] 深色模式适配巡检与截图对比
 - [ ] [体验] 首页 Hero 区动态数字带（文章数 / 标签域 / 工作台数）
