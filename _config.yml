@@ -133,6 +133,12 @@ page-mathjax: false
 # Friends
 friends: [
     {
+        title: "🖥️ FDE 工作台矩阵 ×15（在线）",
+        href: "https://wuxiumu.github.io/zcode-workbench/"
+    },{
+        title: "zcode-tast-cms · 素材库图文代发系统（PHP+React 全栈）",
+        href: "https://github.com/wuxiumu/zcode-tast-cms"
+    },{
         title: "meiyoufan Blog",
         href: "https://meiyoufan.com/"
     },{

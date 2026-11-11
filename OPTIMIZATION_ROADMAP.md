@@ -60,4 +60,11 @@
 - [x] [体验] 深色模式适配巡检与截图对比（✅ 2026-11-12 完成核实并关闭：全量 grep `prefers-color-scheme` / `data-theme` / `theme-toggle` 于 css/（hux-blog.css、bootstrap.css 各 0 处）/js/_includes——**站点不存在暗色模式**，巡检对象不存在；自动化的新 UI（年份导航条、404 卡片）使用 `#fff` 亮色假设与全站一致，无遗留问题；新增暗色模式属主题级大工程，超出最小改动原则，是否要做留待作者决策，候选池不再保留此项）
 - [x] [体验] 首页 Hero 区动态数字带（文章数 / 标签域 / 工作台数）（✅ 2026-11-12 完成：fde-hero 联系方式下方新增三格数字带——`site.posts.size` 篇文章 / `site.tags | size` 个规范标签 / 15 个在线工作台，Liquid 取真值零硬编码；原生 JS ease-out cubic 数字滚动 900ms，`prefers-reduced-motion` 直接显示终值；样式沿用 fde-hero 色系（白字+品牌红分隔点）；渲染后 JS node --check 通过，tag_guard PASS）
 - [x] [物料] README 更新：站点定位一句话、目录结构、标签治理说明（链接 tools/TAG_MIGRATION.md）、auto-opt 协作流程说明（✅ 2026-11-12 完成：定位一句话+能力演示入口；目录结构补齐 _drafts/tools/docs/sitemap 等新产物；标签白名单与 CI 守门说明；auto-opt 分支工作流程图示；**顺带纠正两处过时信息**——许可证 MIT→实际 Apache 2.0（核对 LICENSE 文件）、功能特性里的 Disqus/网易云跟帖（实际 gitalk，已删除段落）；7 项断言全过含引用文件存在性）
-- [ ] [物料] 友情链接区更新（挂 zcode-tast-cms、zcode-workbench）
+- [x] [物料] 友情链接区更新（挂 zcode-tast-cms、zcode-workbench）（✅ 2026-11-12 完成：`_config.yml` friends 数组头部插入两个自有项目——FDE 工作台矩阵在线站 + zcode-tast-cms 仓库（链接 curl 验证 200），旧友链保持不动；ruby YAML 解析验证数组完整（13 条），site.url 红线未触碰）
+
+## 扩展候选（补充于 2026-11-12 主队列清空后）
+
+- [ ] [体验] 文章 pager（上一篇/下一篇）移动端检查：长标题换行与点击区域，发现问题修
+- [ ] [共创] 2026-06 视频复盘类文章补「AI 协作说明」第二批（AI飞轮/AI过渡窗口/能租就别买等 3 篇，同第一批纪律）
+- [ ] [物料] About 英文版（`_includes/about/en.md`）同步工作台矩阵入口
+- [ ] [基建] master 合并上线后回访：确认 sitemap/robots/JSON-LD/搜索高亮在真实部署中的表现（需作者先合并 auto-opt → master）
