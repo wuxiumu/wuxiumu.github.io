@@ -82,6 +82,8 @@ A long-term personal brand driven by **Content · Judgment · Tech · Data**.
 
 No trend-chasing. No info-reselling. No "good enough" shipped.
 
+🖥️ **Live proof**: [FDE Workbench Matrix ×15](https://wuxiumu.github.io/zcode-workbench/) — 15 ready-to-open dashboards (Ops, Growth, Customer Success, AI Agent Observatory, Finance...). Not screenshots; click and see how business problems become running systems.
+
 ---
 
 > The road ahead is long and has no ending — yet high and low I'll search, with my will unbending.
