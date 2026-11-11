@@ -84,6 +84,35 @@ layout: default
     </div>
 </article>
 
+<!-- 相关文章：按共享标签取 3 篇（纯 Liquid，无插件） -->
+{% if page.tags.size > 0 %}
+{%- assign related_pool = '' | split: '' -%}
+{%- for t in page.tags -%}
+    {%- assign tkey = t | strip -%}
+    {%- for p in site.tags[tkey] -%}
+        {%- assign related_pool = related_pool | push: p -%}
+    {%- endfor -%}
+{%- endfor -%}
+{%- assign current_url = page.url -%}
+{%- assign related = related_pool | uniq | where_exp: "p", "p.url != current_url" | sort: "date" | reverse | slice: 0, 3 -%}
+{%- if related.size > 0 -%}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div style="border:1px solid rgba(79,140,255,.25);border-radius:8px;padding:16px 22px;margin:30px 0 10px;background:rgba(79,140,255,.03)">
+                <h4 style="font-size:15px;font-weight:600;margin:0 0 10px">🔗 相关文章 · 按共享标签推荐</h4>
+                <ul style="margin:0;padding-left:18px;font-size:14px">
+                    {%- for p in related -%}
+                    <li style="margin-bottom:6px"><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a> <span style="color:#999">· {{ p.date | date: "%Y-%m-%d" }}</span></li>
+                    {%- endfor -%}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{%- endif -%}
+{% endif %}
+
 <!-- add support for mathjax by voleking-->
 {% if page.mathjax %}
   {% include mathjax_support.html %}
