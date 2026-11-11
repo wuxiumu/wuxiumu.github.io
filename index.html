@@ -399,7 +399,44 @@ layout: page
     <a class="fde-link" href="https://github.com/wuxiumu" target="_blank" rel="noopener">GitHub：@wuxiumu</a>
     <a class="fde-link" href="https://wuxiumu.github.io/zcode-workbench/" target="_blank" rel="noopener">🖥️ 能力演示：FDE 工作台矩阵 ×15</a>
   </div>
+
+  <!-- 站点数字带：Liquid 取真值 + 原生 JS 数字滚动（prefers-reduced-motion 友好） -->
+  <div class="fde-statbar" role="list">
+    <span class="fde-stat" role="listitem"><b data-stat="{{ site.posts.size }}">0</b> 篇文章</span>
+    <span class="fde-stat-sep">·</span>
+    <span class="fde-stat" role="listitem"><b data-stat="{{ site.tags | size }}">0</b> 个规范标签</span>
+    <span class="fde-stat-sep">·</span>
+    <span class="fde-stat" role="listitem"><b data-stat="15">0</b> 个在线工作台</span>
+  </div>
 </section>
+
+<style>
+.fde-statbar { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; font-size: 14px; color: #c9c9cf; }
+.fde-statbar .fde-stat b { display: inline-block; min-width: 2ch; font-size: 22px; color: #fff; font-variant-numeric: tabular-nums; margin-right: 4px; }
+.fde-statbar .fde-stat-sep { color: rgba(229,35,60,.8); }
+@media (prefers-reduced-motion: reduce) { .fde-statbar .fde-stat b { transition: none !important; } }
+</style>
+<script>
+(function(){
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.fde-statbar b[data-stat]');
+  if (reduced || !('requestAnimationFrame' in window)) {
+    for (var i=0;i<els.length;i++) els[i].textContent = els[i].getAttribute('data-stat');
+    return;
+  }
+  for (var i=0;i<els.length;i++) (function(el){
+    var target = parseInt(el.getAttribute('data-stat'), 10) || 0;
+    var start = null, DUR = 900;
+    function step(ts){
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / DUR, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))); // ease-out cubic
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  })(els[i]);
+})();
+</script>
 
 <div class="fde-recent"><span>近期文章</span></div>
 
