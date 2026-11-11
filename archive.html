@@ -3,6 +3,17 @@ title: Archive
 layout: default
 description: keep hungry keep foolish
 header-img: "img/tag-bg.jpg"
+tag-groups:
+  - name: "🤖 AI 族"
+    tags: [AI, AI协作, AI编程, AI落地, Agent, 提示词工程, RAG, 大模型]
+  - name: "🛠 技术栈"
+    tags: [php, 算法, 数据库, Redis, MySQL, Python, Golang, Java, Linux, Docker, Vue, 架构设计, 后端开发, 前端开发, 移动端开发, 网络, 运维, 安全, 测试QA, 研发规范, 法务合规, 工具]
+  - name: "💼 商业创业"
+    tags: [一人公司, 极简创业, 商业思维, 财富思维, 产品思维, 产品设计, 内容创作, 数据分析, Palantir, 半导体]
+  - name: "🌱 组织成长"
+    tags: [团队管理, 人才招聘, 组织变革, 企业战略, 终身成长, 认知升级, 思维模型, 个人成长, 习惯养成, 职业发展, 效率提升, 沟通表达, 方法论, 规划, 读书笔记, 人生智慧, 心理学, 教育, 知识管理]
+  - name: "🏷 品牌系列"
+    tags: [FDE, 互联网边缘搬砖研究院, 孙宇晨, 人物观察, 客服]
 ---
 
 <!-- 
@@ -16,25 +27,73 @@ https://github.com/kitian616/jekyll-TeXt-theme
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			<!-- Tags (as filter) -->
+			<!-- Tags (as filter)，按域分组可折叠（组定义在 front matter tag-groups） -->
+			<style>
+				#tag_cloud details { margin-bottom: 6px; }
+				#tag_cloud summary { cursor: pointer; font-weight: 600; font-size: 15px; padding: 4px 0; user-select: none; }
+				#tag_cloud summary .group-count { color: #999; font-weight: 400; font-size: 12px; margin-left: 6px; }
+			</style>
 			<div id='tag_cloud' class="tags tags-sup js-tags">
 				<a class="tag-button--all" data-encode="" title="全部文章，共 {{site.posts.size}} 篇">
 					Show All
 					<sup>{{site.posts.size}} 篇</sup>
 				</a>
 
-				{% capture tags %}
-				{% for tag in site.tags %}
-				<a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}"
-					data-encode="{{ tag[0] | strip | url_encode }}"
-					class="tag-button"
-					title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-					{{ tag[0] }}
-					<sup>{{tag[1].size}}</sup>
-				</a>__SEPERATOR__
-				{% endfor %}
-				{% endcapture %}
-        {{ tags | split:'__SEPERATOR__' | sort }}
+				{%- capture grouped_names -%}{%- for group in page.tag-groups -%}{%- for tname in group.tags -%}{{ tname | strip }}|{%- endfor -%}{%- endfor -%}{%- endcapture -%}
+				{%- assign grouped_arr = grouped_names | split: '|' -%}
+
+				{%- for group in page.tag-groups -%}
+				{%- assign group_count = 0 -%}
+				{%- for tname in group.tags -%}
+					{%- assign tkey = tname | strip -%}
+					{%- assign tagdata = site.tags[tkey] -%}
+					{%- if tagdata %}{% assign group_count = group_count | plus: tagdata.size %}{% endif -%}
+				{%- endfor -%}
+				<details open>
+					<summary>{{ group.name }}<span class="group-count">{{ group_count }} 篇</span></summary>
+					<div>
+					{%- for tname in group.tags -%}
+						{%- assign tkey = tname | strip -%}
+						{%- assign tagdata = site.tags[tkey] -%}
+						{%- if tagdata -%}
+						<a data-sort="{{ site.posts.size | minus: tagdata.size | prepend: '0000' | slice: -4, 4 }}"
+							data-encode="{{ tkey | url_encode }}"
+							class="tag-button"
+							title="{{ tkey }}" rel="{{ tagdata.size }}">
+							{{ tkey }}
+							<sup>{{ tagdata.size }}</sup>
+						</a>
+						{%- endif -%}
+					{%- endfor -%}
+					</div>
+				</details>
+				{%- endfor -%}
+
+				{%- comment %} 未归组的标签兜底（防止将来新标签漏分组） {% endcomment -%}
+				{%- assign other_tags = '' | split: '' -%}
+				{%- for tag in site.tags -%}
+					{%- assign tkey = tag[0] | strip -%}
+					{%- unless grouped_arr contains tkey -%}
+						{%- assign other_tags = other_tags | push: tkey -%}
+					{%- endunless -%}
+				{%- endfor -%}
+				{%- if other_tags.size > 0 -%}
+				<details open>
+					<summary>📦 其他<span class="group-count">{{ other_tags.size }} 个标签</span></summary>
+					<div>
+					{%- for tkey in other_tags -%}
+						{%- assign tagdata = site.tags[tkey] -%}
+						<a data-sort="{{ site.posts.size | minus: tagdata.size | prepend: '0000' | slice: -4, 4 }}"
+							data-encode="{{ tkey | url_encode }}"
+							class="tag-button"
+							title="{{ tkey }}" rel="{{ tagdata.size }}">
+							{{ tkey }}
+							<sup>{{ tagdata.size }}</sup>
+						</a>
+					{%- endfor -%}
+					</div>
+				</details>
+				{%- endif -%}
 			</div>
 
             <!-- Article List -->
