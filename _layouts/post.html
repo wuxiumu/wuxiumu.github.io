@@ -38,10 +38,15 @@ layout: default
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <!-- Multi-Lingual -->
+				<!-- Multi-Lingual -->
                 {% if page.multilingual %}
                     {% include multilingual-sel.html %}
                 {% endif %}
+
+                {% assign _wc = content | strip_html | strip_newlines | size %}
+                <p class="fde-readtime" style="font-size:13px;color:#8a8a8a;margin:0 0 1.5em">
+                    📝 全文约 {{ _wc }} 字 · 预计阅读 {{ _wc | divided_by: 400.0 | ceil }} 分钟
+                </p>
 
 				{{ content }}
 
