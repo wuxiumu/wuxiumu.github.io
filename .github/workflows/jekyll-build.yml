@@ -18,7 +18,7 @@ jobs:
           ruby-version: "3.2"
       - name: 安装 Jekyll 3.9.5（Pages 官方构建器同版本）并构建
         run: |
-          (gem install jekyll -v 3.9.5 jekyll-paginate --no-document 2>&1 | tee gem-install.log) || true
+          (gem install jekyll:3.9.5 jekyll-paginate --no-document 2>&1 | tee gem-install.log) || true
           set -o pipefail
           jekyll build --trace 2>&1 | tee build-output.log
       - name: 失败时把日志提交回 auto-opt
