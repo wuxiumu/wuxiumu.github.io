@@ -1,0 +1,43 @@
+# 自建 Pages 部署流：Jekyll 4.x 构建（已在 CI 验证模板兼容）+ 官方 deploy-pages
+# 启用方式：仓库 Settings → Pages → Source 选 "GitHub Actions"（仅需一次）
+name: Deploy Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+      - name: 安装 Jekyll（绕开 Gemfile 的版本环境差异，与已验证路径一致）
+        run: gem install jekyll jekyll-paginate --no-document
+      - name: 构建
+        run: jekyll build --destination _site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
