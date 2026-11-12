@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # sassc 原生编译在 24.04 的 gcc13 下失败，Pages 同款 Jekyll 3.9.5 需要 22.04
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
