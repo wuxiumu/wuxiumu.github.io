@@ -25,12 +25,12 @@ jobs:
         if: failure()
         run: |
           echo "::error::[ls] $(ls -la gem-install.log build-output.log 2>&1 | tr '\n' ' ' | cut -c1-180)"
-          tail -10 gem-install.log | cut -c1-200 | while IFS= read -r l; do echo "::error::[gem] $l"; done
           if [ -f build-output.log ]; then
             echo "::error::[size] build-output.log $(wc -c < build-output.log) bytes"
-            tail -40 build-output.log | cut -c1-200 | while IFS= read -r l; do echo "::error::[jekyll] $l"; done
+            grep -i -m3 -E "error|Liquid|Invalid|conflict" build-output.log | cut -c1-200 | while IFS= read -r l; do echo "::error::[err] $l"; done
+            tail -5 build-output.log | cut -c1-200 | while IFS= read -r l; do echo "::error::[jekyll] $l"; done
           else
-            echo "::error::[size] build-output.log 不存在——步骤4在构建行之前就已终止"
+            echo "::error::[size] build-output.log 不存在"
           fi
       - name: 失败时把日志提交回 auto-opt
         if: failure() && github.ref == 'refs/heads/auto-opt'
