@@ -24,8 +24,14 @@ jobs:
       - name: 失败时把日志转成 error 注解（公开 API 可读）
         if: failure()
         run: |
-          tail -12 gem-install.log | while IFS= read -r l; do echo "::error::[gem] ${l//%/%%}"; done || true
-          tail -30 build-output.log | while IFS= read -r l; do echo "::error::[jekyll] ${l//%/%%}"; done || true
+          echo "::error::[ls] $(ls -la gem-install.log build-output.log 2>&1 | tr '\n' ' ' | cut -c1-180)"
+          tail -10 gem-install.log | cut -c1-200 | while IFS= read -r l; do echo "::error::[gem] $l"; done
+          if [ -f build-output.log ]; then
+            echo "::error::[size] build-output.log $(wc -c < build-output.log) bytes"
+            tail -40 build-output.log | cut -c1-200 | while IFS= read -r l; do echo "::error::[jekyll] $l"; done
+          else
+            echo "::error::[size] build-output.log 不存在——步骤4在构建行之前就已终止"
+          fi
       - name: 失败时把日志提交回 auto-opt
         if: failure() && github.ref == 'refs/heads/auto-opt'
         run: |
